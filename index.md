@@ -32,7 +32,7 @@
 
 四级 229+203+191=623
 
-大一上GPA4.39/5(12门课 3门5.0 9门4.4以上)
+大一上GPA4.39/5
 
 绩点班级6/21 综排班级5/21 
 
@@ -72,9 +72,9 @@
 
 ### 寻找我
 
-<a href ="space.bilibili.com/220871609"><img src="https://img.88icon.com/upload/jpg/20210524/079ee72073488f25699e7da3d6aef8be_73267_800_800.jpg!88con" width="20%"> </a>
+<a href ="https://space.bilibili.com/220871609"><img src="https://img.88icon.com/upload/jpg/20210524/079ee72073488f25699e7da3d6aef8be_73267_800_800.jpg!88con" width="20%"> </a>
 
-<a href ="cnblogs.com/wky32768"><img src="https://www.cnblogs.com/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" width="20%"></a>
+<a href ="https://cnblogs.com/wky32768"><img src="https://www.cnblogs.com/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" width="20%"></a>
 
 <a href ="https://codeforces.com/profile/wky32768"><img src="
 https://codeforces.org/s/59989/images/codeforces-logo-with-telegram.png" width="20%"> </a>
