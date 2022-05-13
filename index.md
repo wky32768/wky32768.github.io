@@ -1,5 +1,7 @@
 ## 王可逸の自我介绍
 
+[English](https://wky32768.github.io/en.html)
+
 <div style="float: left;display: flex;flex-wrap: wrap;width: 75%;justify-content: space-between;">
     <div style="width: 45%;font-weight: 500;color: #4c4c4c;font-size: 14px;margin: 5px;">姓名： 王可逸</div>
     <div style="width: 45%;font-weight: 500;color: #4c4c4c;font-size: 14px;margin: 5px;">杭州电子科技大学 2021级在读</div>
