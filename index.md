@@ -1,6 +1,7 @@
 ## 王可逸の自我介绍
 
 [English](https://wky32768.github.io/en.html)
+[日本語](https://wky32768.github.io/jp.html)
 
 <div style="float: left;display: flex;flex-wrap: wrap;width: 75%;justify-content: space-between;">
     <div style="width: 45%;font-weight: 500;color: #4c4c4c;font-size: 14px;margin: 5px;">姓名： 王可逸</div>
