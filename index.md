@@ -36,9 +36,13 @@
 
 四级 229+203+191=623
 
-大一上GPA4.39/5
+大一上GPA 4.39/5
 
 绩点班级6/21 综排班级5/21 
+
+大一下GPA 4.38/5
+
+绩点班级?/24 综排班级?/24
 
 ### 奖项:
 
@@ -56,6 +60,8 @@
 
 2022华为软件精英挑战赛 杭厦赛区第17名(二等奖)
 
+2022校数学建模竞赛 校二等奖
+
 
 ### 编程语言:
 
@@ -64,15 +70,19 @@
 初步掌握: Pascal, C, Python, Java, LaTeX, markdown, Matlab
 
 ### 其他奇奇怪怪
-算法竞赛网站历史最高分:Codeforces1591, Atcoder1269
+算法竞赛网站历史最高分:Codeforces1653, Atcoder1269
+[![](https://cfrating.ihcr.top/?user=wky32768](https://codeforces.com/profile/wky32768)
+[![](https://cfrating.ihcr.top/?user=Mr.shua](https://codeforces.com/profile/Mr.shua)
 
+C1驾驶执照
 
+🇨🇳中文(普通话90.2 二级甲等)
 
 🇬🇧英语(~B2, CET4:623)
 
 🇪🇸西班牙语（约A1)
 
-🇫🇷 法语（入门)
+🇫🇷 法语（约A1)
 
 🇯🇵 日语（入门）
 
@@ -83,7 +93,7 @@
 <a href ="https://cnblogs.com/wky32768"><img src="https://www.cnblogs.com/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" width="20%"></a>
 
 <a href ="https://codeforces.com/profile/wky32768"><img src="
-https://codeforces.org/s/59989/images/codeforces-logo-with-telegram.png" width="20%"> </a>
+https://cdn.codeforces.com/s/49126/images/codeforces-sponsored-by-ton.png" width="20%"> </a>
 
 <a href ="https://atcoder.jp/users/wky32768"><img src="
 https://img.atcoder.jp/assets/top/img/logo_bk.svg" width="20%"> </a>
