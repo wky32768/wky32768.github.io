@@ -3,6 +3,7 @@
 [English,](https://wky32768.github.io/en.html)
 [日本語,](https://wky32768.github.io/jp.html)
 [Español](https://wky32768.github.io/es.html)
+其他语言的版本非最新
 
 <div style="float: left;display: flex;flex-wrap: wrap;width: 75%;justify-content: space-between;">
     <div style="width: 45%;font-weight: 500;color: #4c4c4c;font-size: 14px;margin: 5px;">姓名： 王可逸</div>
@@ -26,7 +27,7 @@
 | 时间      | 学校       | 班级/学历   |
 | --------- | ---------- | ----------- |
 | 2021- | 杭州电子科技大学 | 卓越学院计算机科学英才班/本科在读 |
-| 2018-2021 | 绍兴市第一中学       | 高一信息班， 后物化重点班）/高中 |
+| 2018-2021 | 绍兴市第一中学       | (高一信息班， 后物化重点班）/高中 |
 |  2015-2018  |   台州学院附属中学 |  初中 |
 | 2009-2015 | 台州市哲商小学 |小学 |
 
@@ -44,7 +45,7 @@
 
 大一下GPA 4.38/5
 
-绩点班级7/24 综排班级?/24
+绩点班级7/24 综排班级6/24
 
 ### 奖项:
 
@@ -64,6 +65,10 @@
 
 2022校数学建模竞赛 校二等奖
 
+2021-2022第一学期 校二等奖学金
+
+2022高教社杯数学建模大赛 浙江赛区三等奖
+
 
 ### 编程语言:
 
@@ -72,9 +77,8 @@
 初步掌握: Pascal, C, Python, Java, LaTeX, markdown, Matlab
 
 ### 其他奇奇怪怪
-算法竞赛网站历史最高分:Codeforces1653, Atcoder1269
-[![](https://cfrating.ihcr.top/?user=wky32768](https://codeforces.com/profile/wky32768)
-[![](https://cfrating.ihcr.top/?user=Mr.shua](https://codeforces.com/profile/Mr.shua)
+算法竞赛网站历史最高分:Codeforces1653(wky32768, Mr.Shua), Atcoder1269(wky32768)
+
 
 C1驾驶执照
 
