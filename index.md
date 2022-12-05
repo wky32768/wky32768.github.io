@@ -15,7 +15,7 @@
 </div>
 <div>
     <div style="float: right;margin-right: 10px;">
-        <img src="https://s1.328888.xyz/2022/05/12/HBBBk.jpg" width="120px" height="150px" style="box-shadow: 5px 5px 5px rgba(0,0,0,.5);">
+        <img src="http://imgloc.com/i/VNK8v" width="120px" height="150px" style="box-shadow: 5px 5px 5px rgba(0,0,0,.5);">
     </div>
 </div>
 
@@ -41,11 +41,11 @@
 
 大一上GPA 4.39/5
 
-绩点班级6/21 综排班级5/21 
+绩点班级6/21 综排班级5/21 (二奖)
 
 大一下GPA 4.38/5
 
-绩点班级7/24 综排班级6/24
+绩点班级7/24 综排班级6/24 (二奖)
 
 ### 奖项:
 
@@ -57,15 +57,11 @@
 
 2021杭州电子科技大学新生数学建模竞赛 校三等奖
 
-2021-2022第一学期 校二等奖学金
-
 2022天府杯数学建模竞赛 三等奖
 
 2022华为软件精英挑战赛 杭厦赛区第17名(二等奖)
 
 2022校数学建模竞赛 校二等奖
-
-2021-2022第一学期 校二等奖学金
 
 2022高教社杯数学建模大赛 浙江赛区三等奖
 
@@ -74,7 +70,7 @@
 
 较为熟练: C++
 
-初步掌握: Pascal, C, Python, Java, LaTeX, markdown, Matlab
+初步掌握: Pascal, C, Python, Java, LaTeX, Markdown, Matlab, Go
 
 ### 其他奇奇怪怪
 算法竞赛网站历史最高分:Codeforces1653(wky32768, Mr.Shua), Atcoder1269(wky32768)
