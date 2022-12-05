@@ -15,7 +15,7 @@
 </div>
 <div>
     <div style="float: right;margin-right: 10px;">
-        <img src="http://imgloc.com/i/VNK8v" width="120px" height="150px" style="box-shadow: 5px 5px 5px rgba(0,0,0,.5);">
+        <img src="https://i.328888.xyz/2022/12/05/VNK8v.jpeg" width="120px" height="150px" style="box-shadow: 5px 5px 5px rgba(0,0,0,.5);">
     </div>
 </div>
 
