@@ -13,7 +13,7 @@
 	 </div>
 </center>
 
-last upd: 2023-04-30
+last upd: 2023-05-17
 
 English version: [English](https://wky32768.github.io/en.html)
 
@@ -22,7 +22,7 @@ English version: [English](https://wky32768.github.io/en.html)
 
 <div id="expand-box-header">
     <span style="float: left; font-weight: bold">瑞典克里斯蒂安斯塔德大学</span> 
-    <span style="float: right;">2023年09月 - 2024年01月</span><br>
+    <span style="float: right;">2023年08月 - 2024年01月</span><br>
     <span style="float: left">一学期交换项目</span> 
     <span style="float: right;">克里斯蒂安斯塔德</span><br>
 </div>
@@ -53,7 +53,7 @@ English version: [English](https://wky32768.github.io/en.html)
     <span style="float: left; font-weight: bold">卓越学院学习共同体</span> 
     <span style="float: right;">2022年9月 - 2023年6月</span><br>
 </div>
-先后指导 <法语共同体>, <语言杂谈共同体> 课程.
+先后指导 <法语共同体>, <[语言杂谈共同体](https://space.bilibili.com/220871609/channel/seriesdetail?sid=3291933&ctype=0)> 课程.
 
 ## 🏆比赛获奖
 
@@ -71,6 +71,8 @@ English version: [English](https://wky32768.github.io/en.html)
 
 2022亚太地区数学建模竞赛 二等奖
 
+2023美国大学生数学建模竞赛 一等奖(M奖)
+
 
 
 ##  🔧技能/证书及其他
@@ -79,3 +81,4 @@ English version: [English](https://wky32768.github.io/en.html)
 - 技能: C++, C, Python,  LaTeX, Markdown, Java, Matlab, Golang
 - 证书: 普通话二级甲等, 英语六级
 - 语言: 🇨🇳中文, 🇬🇧英语(~B2, CET4:623 CET6:552), 🇫🇷法语(~A1), 🇪🇸西班牙语(~A1), 🇯🇵日语(入门), 🇸🇪瑞典语(入门)
+- Coursera 翻译志愿者: 已翻译1,917 words
