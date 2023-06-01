@@ -2,10 +2,9 @@
 
 
 
-
  <center>
     <div>
-        <img src="https://i.328888.xyz/2022/12/05/VNK8v.jpeg" style="float:right" width="80" height="100"/>
+        <img src="https://picdl.sunbangyan.cn/2023/06/01/nadf4i.jpg" style="float:right" width="80" height="100"/>
 		<b><font size = 5>王可逸</font></b><br>
 		<span style="font-size:18px">&#x1F4DE;</span>(+86) 138-6765-1901 | <span style="font-size:18px">&#x1F4E7;</span><a href="mailto:ycshi2018@gmail.com">wky32768@qq.com</a> | 杭州市<br>
         <span style="font-size:18px">&#x1F5A5;</span><a href="https://cnblogs.com/wky32768">Blog</a> | <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Symbol.png" width="18px"><a href="https://github.com/wky32768">Github</a> | <img src="http://thumb11.jfcdns.com/thumb/n331gxl2a0aj126pz2a/16f5c42823e6c01a_160_160.png" width="18px"><a href="https://www.linkedin.cn/incareer/in/ACoAAEAJQREBd633rsjmQ0URUgRNMwN5Srr6PSk/">Linkedin</a> | <img src="https://ts1.cn.mm.bing.net/th/id/R-C.a730d8d0232d9b65e1e17c9d2c6f3c14?rik=KyN0LN9lb7o8Aw&riu=http%3a%2f%2fsrc.onlinedown.net%2fnew_img%2fapk_logo%2f2016%2f0126%2f12202_1453787358_6672.png&ehk=T3wg27yeAX8y0HW8vNvSFpg1%2bQ1BiyZm8QoEpiJjoj8%3d&risl=&pid=ImgRaw&r=0" width="18px"><a href="https://www.zhihu.com/people/32768-61">知乎</a><br>
@@ -13,7 +12,8 @@
 	 </div>
 </center>
 
-last upd: 2023-05-17
+
+last upd: 2023-06-01
 
 English version: [English](https://wky32768.github.io/en.html)
 
@@ -34,8 +34,6 @@ English version: [English](https://wky32768.github.io/en.html)
     <span style="float: right;">杭州</span><br>
 </div>
 
-<br>
-
 - GPA: 4.30 / 5.00
 - 课程: 相关课程: 程序设计与算法基础(94), 数学分析2(90), 离散数学(90), ACM程序设计(100), 雅思英语1(98), 数据结构(91)
 - 研究方向: 自然语言处理
@@ -53,7 +51,7 @@ English version: [English](https://wky32768.github.io/en.html)
     <span style="float: left; font-weight: bold">卓越学院学习共同体</span> 
     <span style="float: right;">2022年9月 - 2023年6月</span><br>
 </div>
-先后指导 <法语共同体>, <[语言杂谈共同体](https://space.bilibili.com/220871609/channel/seriesdetail?sid=3291933&ctype=0)> 课程.
+先后指导 <法语共同体>, < [语言杂谈共同体](https://space.bilibili.com/220871609/channel/seriesdetail?sid=3291933&ctype=0)> 课程.
 
 ## 🏆比赛获奖
 
@@ -77,8 +75,8 @@ English version: [English](https://wky32768.github.io/en.html)
 
 ##  🔧技能/证书及其他
 
-- 算法竞赛: codeforces(1653), atcoder(1269)
-- 技能: C++, C, Python,  LaTeX, Markdown, Java, Matlab, Golang
+- 算法竞赛: Codeforces(1653), Atcoder(1269)
+- 技能: C++, Python, LaTeX, Markdown, (Java, Matlab, Golang, HTML)
 - 证书: 普通话二级甲等, 英语六级
-- 语言: 🇨🇳中文, 🇬🇧英语(~B2, CET4:623 CET6:552), 🇫🇷法语(~A1), 🇪🇸西班牙语(~A1), 🇯🇵日语(入门), 🇸🇪瑞典语(入门)
-- Coursera 翻译志愿者: 已翻译1,917 words
+- 语言: 🇨🇳中文, 🇬🇧英语(~B2, CET4:623 CET6:552), 🇫🇷法语(入门), 🇪🇸西班牙语(入门), 🇯🇵日语(入门), 🇸🇪瑞典语(入门)
+- [Coursera 翻译志愿者]([GTC | Profile (translate-coursera.org)](https://translate-coursera.org/new_gtc/app/#/translator/profile/560157)): 已翻译1,917 words
