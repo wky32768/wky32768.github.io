@@ -6,14 +6,14 @@
     <div>
         <img src="https://picdl.sunbangyan.cn/2023/06/01/nadf4i.jpg" style="float:right" width="80" height="100"/>
 		<b><font size = 5>王可逸</font></b><br>
-		<span style="font-size:18px">&#x1F4DE;</span>(+86) 138-6765-1901 | <span style="font-size:18px">&#x1F4E7;</span><a href="mailto:ycshi2018@gmail.com">wky32768@qq.com</a> | 杭州市<br>
+		 <span style="font-size:18px">&#x1F4E7;</span><a href="mailto:wky32768@qq.com">wky32768@qq.com</a> | 杭州市<br>
         <span style="font-size:18px">&#x1F5A5;</span><a href="https://cnblogs.com/wky32768">Blog</a> | <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Symbol.png" width="18px"><a href="https://github.com/wky32768">Github</a> | <img src="http://thumb11.jfcdns.com/thumb/n331gxl2a0aj126pz2a/16f5c42823e6c01a_160_160.png" width="18px"><a href="https://www.linkedin.cn/incareer/in/ACoAAEAJQREBd633rsjmQ0URUgRNMwN5Srr6PSk/">Linkedin</a> | <img src="https://ts1.cn.mm.bing.net/th/id/R-C.a730d8d0232d9b65e1e17c9d2c6f3c14?rik=KyN0LN9lb7o8Aw&riu=http%3a%2f%2fsrc.onlinedown.net%2fnew_img%2fapk_logo%2f2016%2f0126%2f12202_1453787358_6672.png&ehk=T3wg27yeAX8y0HW8vNvSFpg1%2bQ1BiyZm8QoEpiJjoj8%3d&risl=&pid=ImgRaw&r=0" width="18px"><a href="https://www.zhihu.com/people/32768-61">知乎</a><br>
         20岁 | 男
 	 </div>
 </center>
 
 
-last upd: 2023-06-01
+last upd: 2023-06-021
 
 English version: [English](https://wky32768.github.io/en.html)
 
@@ -21,7 +21,7 @@ English version: [English](https://wky32768.github.io/en.html)
 ## 🎓 教育经历
 
 <div id="expand-box-header">
-    <span style="float: left; font-weight: bold">瑞典克里斯蒂安斯塔德大学</span> 
+    <span style="float: left; font-weight: bold">瑞典克里斯蒂安斯塔德大学(拟)</span> 
     <span style="float: right;">2023年08月 - 2024年01月</span><br>
     <span style="float: left">一学期交换项目</span> 
     <span style="float: right;">克里斯蒂安斯塔德</span><br>
@@ -44,14 +44,19 @@ English version: [English](https://wky32768.github.io/en.html)
     <span style="float: left; font-weight: bold">浙江省大学生科技创新活动计划（新苗人才计划）</span> 
     <span style="float: right;">2023年2月 - </span><br>
 </div>
+
 项目名为<文本刻刀：文本引导的三维实景自构建>, 已经通过校审核, 预计2023年内结题.
 
 负责自然语言处理, 后端, 英语的相关工作.
+
 <div id="expand-box-header">
     <span style="float: left; font-weight: bold">卓越学院学习共同体</span> 
     <span style="float: right;">2022年9月 - 2023年6月</span><br>
 </div>
-先后指导 <法语共同体>, < [语言杂谈共同体](https://space.bilibili.com/220871609/channel/seriesdetail?sid=3291933&ctype=0)> 课程.
+
+先后指导 "法语共同体", "[语言杂谈共同体](https://space.bilibili.com/220871609/channel/seriesdetail?sid=3291933&ctype=0)" 课程.
+
+
 
 ## 🏆比赛获奖
 
