@@ -13,7 +13,7 @@
 </center>
 
 
-last upd: 2023-06-021
+last upd: 2023-07-02
 
 English version: [English](https://wky32768.github.io/en.html)
 
@@ -35,7 +35,7 @@ English version: [English](https://wky32768.github.io/en.html)
 </div>
 
 - GPA: 4.30 / 5.00
-- 课程: 相关课程: 程序设计与算法基础(94), 数学分析2(90), 离散数学(90), ACM程序设计(100), 雅思英语1(98), 数据结构(91)
+- 课程: 相关课程: 程序设计与算法基础(94), 数学分析2(90), 离散数学(90), ACM程序设计(100), 雅思英语1(98), 数据结构(91), 最优化理论和方法(90), 数据挖掘(93), 高级数据结构与算法分析(100)
 - 研究方向: 自然语言处理
 
 ##  💼项目经历
@@ -76,6 +76,8 @@ English version: [English](https://wky32768.github.io/en.html)
 
 2023美国大学生数学建模竞赛 一等奖(M奖)
 
+2023浙江省高等数学(微积分)竞赛 工科组三等奖
+
 
 
 ##  🔧技能/证书及其他
@@ -84,4 +86,4 @@ English version: [English](https://wky32768.github.io/en.html)
 - 技能: C++, Python, LaTeX, Markdown, (Java, Matlab, Golang, HTML)
 - 证书: 普通话二级甲等, 英语六级
 - 语言: 🇨🇳中文, 🇬🇧英语(~B2, CET4:623 CET6:552), 🇫🇷法语(入门), 🇪🇸西班牙语(入门), 🇯🇵日语(入门), 🇸🇪瑞典语(入门)
-- [Coursera 翻译志愿者]([GTC | Profile (translate-coursera.org)](https://translate-coursera.org/new_gtc/app/#/translator/profile/560157)): 已翻译1,917 words
+- [Coursera 翻译志愿者]((https://translate-coursera.org/new_gtc/app/#/translator/profile/560157)): 已翻译1,917 words
