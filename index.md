@@ -6,14 +6,14 @@
     <div>
         <img src="https://picdl.sunbangyan.cn/2023/06/01/nadf4i.jpg" style="float:right" width="80" height="100"/>
 		<b><font size = 5>王可逸</font></b><br>
-		 <span style="font-size:18px">&#x1F4E7;</span><a href="mailto:wky32768@qq.com">wky32768@qq.com</a> | 杭州市<br>
-        <span style="font-size:18px">&#x1F5A5;</span><a href="https://cnblogs.com/wky32768">Blog</a> | <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Symbol.png" width="18px"><a href="https://github.com/wky32768">Github</a> | <img src="http://thumb11.jfcdns.com/thumb/n331gxl2a0aj126pz2a/16f5c42823e6c01a_160_160.png" width="18px"><a href="https://www.linkedin.cn/incareer/in/ACoAAEAJQREBd633rsjmQ0URUgRNMwN5Srr6PSk/">Linkedin</a> | <img src="https://ts1.cn.mm.bing.net/th/id/R-C.a730d8d0232d9b65e1e17c9d2c6f3c14?rik=KyN0LN9lb7o8Aw&riu=http%3a%2f%2fsrc.onlinedown.net%2fnew_img%2fapk_logo%2f2016%2f0126%2f12202_1453787358_6672.png&ehk=T3wg27yeAX8y0HW8vNvSFpg1%2bQ1BiyZm8QoEpiJjoj8%3d&risl=&pid=ImgRaw&r=0" width="18px"><a href="https://www.zhihu.com/people/32768-61">知乎</a><br>
+		 <span style="font-size:18px">&#x1F4E7;</span><a href="mailto:wky32768@qq.com">wky32768@qq.com</a> | 杭州市
+        <br>
         20岁 | 男
 	 </div>
 </center>
 
 
-last upd: 2023-07-02
+last upd: 2023-08-21
 
 English version: [English](https://wky32768.github.io/en.html)
 
@@ -21,21 +21,22 @@ English version: [English](https://wky32768.github.io/en.html)
 ## 🎓 教育经历
 
 <div id="expand-box-header">
-    <span style="float: left; font-weight: bold">瑞典克里斯蒂安斯塔德大学(拟)</span> 
+    <span style="float: left; font-weight: bold"><a href="https://www.hkr.se/">瑞典克里斯蒂安斯塔德大学</a> </span> 
     <span style="float: right;">2023年08月 - 2024年01月</span><br>
     <span style="float: left">一学期交换项目</span> 
     <span style="float: right;">克里斯蒂安斯塔德</span><br>
 </div>
 
+
 <div id="expand-box-header">
-    <span style="float: left; font-weight: bold">杭州电子科技大学</span> 
+    <span style="float: left; font-weight: bold"> <a href="http://www.hdu.edu.cn">杭州电子科技大学</a> </span> 
     <span style="float: right;">2021年09月 - 2025年06月</span><br>
     <span style="float: left">计算机科学与技术 学士 卓越学院计算机科学英才班</span> 
     <span style="float: right;">杭州</span><br>
 </div>
 
-- GPA: 4.30 / 5.00
-- 课程: 相关课程: 程序设计与算法基础(94), 数学分析2(90), 离散数学(90), ACM程序设计(100), 雅思英语1(98), 数据结构(91), 最优化理论和方法(90), 数据挖掘(93), 高级数据结构与算法分析(100)
+- GPA: 4.36 / 5.00 (88.6 / 100)
+- 相关课程: 程序设计与算法基础(94), 数学分析2(90), 离散数学(90), ACM程序设计(100), 数据结构(91), 最优化理论和方法(90), 数据挖掘(94), 计算机组成原理(88), 编译原理(88), 高级数据结构与算法分析(100)
 - 研究方向: 自然语言处理
 
 ##  💼项目经历
@@ -54,7 +55,7 @@ English version: [English](https://wky32768.github.io/en.html)
     <span style="float: right;">2022年9月 - 2023年6月</span><br>
 </div>
 
-先后指导 "法语共同体", "[语言杂谈共同体](https://space.bilibili.com/220871609/channel/seriesdetail?sid=3291933&ctype=0)" 课程.
+先后指导 "法语共同体", "[语言杂谈共同体](https://space.bilibili.com/220871609/channel/collectiondetail?sid=1560464&ctype=0)" 课程.
 
 
 
@@ -82,8 +83,8 @@ English version: [English](https://wky32768.github.io/en.html)
 
 ##  🔧技能/证书及其他
 
-- 算法竞赛: Codeforces(1653), Atcoder(1269)
+- 算法竞赛: [Codeforces](https://codeforces.com/profile/Mr.Shua)(1653), [Atcoder](https://atcoder.jp/users/wky32768)(1269)
 - 技能: C++, Python, LaTeX, Markdown, (Java, Matlab, Golang, HTML)
 - 证书: 普通话二级甲等, 英语六级
-- 语言: 🇨🇳中文, 🇬🇧英语(~B2, CET4:623 CET6:552), 🇫🇷法语(入门), 🇪🇸西班牙语(入门), 🇯🇵日语(入门), 🇸🇪瑞典语(入门)
+- 语言: 🇨🇳中文, 🇬🇧英语(~B2, CET4:623 CET6:552)
 - [Coursera 翻译志愿者]((https://translate-coursera.org/new_gtc/app/#/translator/profile/560157)): 已翻译1,917 words
