@@ -13,7 +13,7 @@
 </center>
 
 
-last upd: 2023-08-21
+last upd: 2023-10-20
 
 English version: [English](https://wky32768.github.io/en.html)
 
@@ -46,7 +46,7 @@ English version: [English](https://wky32768.github.io/en.html)
     <span style="float: right;">2023年2月 - </span><br>
 </div>
 
-项目名为<文本刻刀：文本引导的三维实景自构建>, 已经通过校审核, 预计2023年内结题.
+项目名为<文本刻刀：文本引导的三维实景自构建>, 已经通过省立项, 预计2023年内结题.
 
 负责自然语言处理, 后端, 英语的相关工作.
 
@@ -61,6 +61,8 @@ English version: [English](https://wky32768.github.io/en.html)
 
 ## 🏆比赛获奖
 
+获一次校一等奖学金, 三次校二等奖学金, 两次校单项奖学金
+
 2018-2020全国青少年信息学奥林匹克竞赛 浙江省二等奖
 
 2019-2020 CCF CSP非专业级软件能力认证 浙江省二等奖
@@ -71,7 +73,7 @@ English version: [English](https://wky32768.github.io/en.html)
 
 2022外研社杯英语竞赛 校阅读, 写作双二等奖
 
-2022高教社杯数学建模大赛 浙江赛区三等奖
+2022-2023高教社杯数学建模大赛 浙江赛区三等奖
 
 2022亚太地区数学建模竞赛 二等奖
 
@@ -88,3 +90,4 @@ English version: [English](https://wky32768.github.io/en.html)
 - 证书: 普通话二级甲等, 英语六级
 - 语言: 🇨🇳中文, 🇬🇧英语(~B2, CET4:623 CET6:552)
 - [Coursera 翻译志愿者]((https://translate-coursera.org/new_gtc/app/#/translator/profile/560157)): 已翻译1,917 words
+- 欧盟[欧洲语言日教学志愿者](https://edl.ecml.at/)
