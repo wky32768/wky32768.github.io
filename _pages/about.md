@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Student from <a href='www.hdu.edu.cn'>hangzhou Dianzi University</a>
+subtitle: Student from <a href='https://www.hdu.edu.cn'>hangzhou Dianzi University</a>
 
 profile:
   align: right
