@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: Student from <a href='https://www.hdu.edu.cn'>hangzhou Dianzi University</a>
+subtitle: Student from <a href='https://www.hdu.edu.cn'>Hangzhou Dianzi University</a>
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic_color.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Hangzhou, China</p>
