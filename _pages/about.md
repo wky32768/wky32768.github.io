@@ -21,4 +21,3 @@ I am currently a third-year student in [Hangzhou Dianzi University](https://www.
 I used to exchange in [Kristianstad University, Sweden](https://www.hkr.se/) in 2023.08-2024.01
 
 Interested in NLP, algorithm, Linguistic(Languages), Geography(especially maps)
-

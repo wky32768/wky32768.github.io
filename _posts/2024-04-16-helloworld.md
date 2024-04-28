@@ -12,4 +12,3 @@ chart:
 ```cpp
 Hello World!
 ```
-
