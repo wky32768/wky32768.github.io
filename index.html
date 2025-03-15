@@ -2,26 +2,47 @@
 <html>
 
 <head>
-    <title>我的个人网站</title>
+    <title>My Personal Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            text-align: center;
+            padding: 2em;
+            background-color: #4CAF50;
+            color: white;
         }
 
         nav {
             background-color: #333;
             color: white;
             padding: 1em;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
             color: white;
             margin: 0 1em;
             text-decoration: none;
+            font-weight: bold;
         }
 
         section {
-            margin: 2em 0;
+            margin: 2em auto;
+            padding: 2em;
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .resume-button {
@@ -33,38 +54,261 @@
             text-decoration: none;
             border-radius: 5px;
         }
+
+        .photo {
+            width: 150px;
+            height: 200px;
+            border-radius: 5px;
+            margin-bottom: 1em;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5em;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        .education,
+        .publication,
+        .research,
+        .internship,
+        .awards,
+        .activities,
+        .skills {
+            margin-top: 1em;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .about-text {
+            margin-left: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin: 0.5em 0;
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <h1>Keyi Wang</h1>
+        <p>UG year 4 | going to be M.Sc. Student at <a href="https://www.hku.hk/" style="color: white;">The University
+                of Hong Kong</a></p>
+    </header>
+
     <nav>
-        <a href="#about">关于我</a>
-        <a href="#projects">项目</a>
-        <a href="#contact">联系我</a>
-        <!-- 添加CV按钮 -->
-        <a href="path/to/your/resume.pdf" target="_blank">CV</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#research">Research Experience</a>
+        <a href="#internship">Internship</a>
+        <a href="#awards">Awards</a>
+        <a href="#activities">Extracurricular Activities</a>
+        <a href="#skills">Skills</a>
+        <a href="EnglishCV.pdf" target="_blank">CV</a>
     </nav>
+
     <section id="about">
-        <h2>关于我</h2>
-        <p>你好，我是 [你的名字]，欢迎来到我的个人网站！我是一名 [你的职业或爱好]，喜欢 [你的兴趣或特长]。</p>
+        <h2>About</h2>
+        <div class="about-container">
+            <img src="assets/keyiwang.jpg" alt="Keyi Wang" class="photo">
+            <div class="about-text">
+                <p>Hello, I'm Keyi Wang, currently a senior undergraduate student majoring in Computer Science at <a
+                        href="http://www.hdu.edu.cn/">Hangzhou Dianzi University</a>. I will be pursuing an M.Sc. in
+                    Computer Science at <a href="https://www.hku.hk/">The University of Hong Kong</a> starting in
+                    September 2025.</p>
+            </div>
+        </div>
     </section>
-    <section id="projects">
-        <h2>项目</h2>
-        <p>这里是我参与的一些项目：</p>
-        <ul>
-            <li>项目1</li>
-            <li>项目2</li>
-            <li>项目3</li>
-        </ul>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education">
+            <h3><a href="https://www.hku.hk/">The University of Hong Kong</a></h3>
+            <p>M.Sc. in Computer Science, General Stream</p>
+            <p>Sept. 2025 – July 2026 | Hong Kong S.A.R., China</p>
+        </div>
+        <div class="education">
+            <h3><a href="http://www.hdu.edu.cn/">Hangzhou Dianzi University</a></h3>
+            <p>B.Eng. in Computer Science</p>
+            <p>Sept. 2021 – June 2025 | Hangzhou, China</p>
+            <p>GPA: 4.36/5 (88.6/100), rank in the top 2.7% of the department</p>
+            <p>Main courses: Advanced Data Structure and Algorithm Analysis (100), ACM Programming (100), Data Mining
+                (94), Theories and Approaches for Optimization (93), Data Structure (91), Discrete Mathematics (90),
+                Mathematical Analysis 2 (90), Principle and Practice of Compiler (88), Principle of Computer
+                Organization (88)</p>
+        </div>
+        <div class="education">
+            <h3><a href="https://hkr.se/">Kristianstad University</a></h3>
+            <p>School-Sponsored One-Semester Exchange Student</p>
+            <p>Aug. 2023 – Jan. 2024 | Kristianstad, Sweden</p>
+            <p>Learned Data Communication, Operating System and Computer Security, with enhanced understanding of
+                international perspectives in computer science.</p>
+        </div>
     </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <div class="publication">
+            <p>Ding Chen, Keyi Wang, Zhou Yu, Jun Yu. A Human Posture Scene Restoration Method Based on the Adaptive
+                Network Enhanced Diffusion Model. CN202311293866.1[P]. 2024.01.12</p>
+        </div>
+    </section>
+
+    <section id="research">
+        <h2>Research Experience</h2>
+        <div class="research">
+            <h3>Edit-GPT: Instance-level Image Editing with LLM Agent</h3>
+            <p>Nov. 2023 – Present | Co-author</p>
+            <ul>
+                <li>Developed a novel LLM-based interface for image editing, achieving a 30% reduction in discrepancies
+                    between model outcomes and editing commands.</li>
+                <li>Enabled complex editing commands with 79.55% accuracy, including add, delete, replace, move, style
+                    conversion.</li>
+                <li>Outperformed SDEdit, InstructPix2Pix and MGLE in 94.73% of test within 5 metrics, including CLIP.
+                </li>
+                <li>Authored a research paper, currently under review of IEEE TCSVT following valuable ACM MM
+                    feedback(2, 3, 4).</li>
+            </ul>
+            <p>Skills: Natural Language Processing, Large Language Models, Diffusion Models, Image Editing, Academic
+                Writing, Pytorch, Python</p>
+        </div>
+        <div class="research">
+            <h3>Text Knife: Text-Guided 3D model Self-Construction</h3>
+            <p>Feb. 2023 - Oct. 2023 | Co-author</p>
+            <ul>
+                <li>Implemented Text-to-3D conversion by integrating OpenAI’s Point-E with ControlNet for constrained
+                    point cloud generation.</li>
+                <li>Completed preliminary baseline model.</li>
+                <li>Achieved a public patent (as second author, see "Publication"), which proved a theoretical upper
+                    bound on the discrepancy between multiple diffusion models in 3D generation tasks.</li>
+            </ul>
+            <p>Skills: Text-to-3D Conversion, Point Cloud Generation, Artificial Intelligence, Pytorch, Python</p>
+        </div>
+    </section>
+
+    <section id="internship">
+        <h2>Internship</h2>
+        <div class="internship">
+            <h3><a href="https://www.qianxin.com/">Qi-AnXin Technology Group Inc.</a></h3>
+            <p>July 2024 – Aug. 2024 | Internship in Security Services</p>
+            <p>Hangzhou, China</p>
+            <ul>
+                <li>Conducted comprehensive vulnerability assessments, identified and reported over 10 critical
+                    vulnerabilities such as Username Enumeration, SMS Bombing, and Sensitive File Leakage.</li>
+                <li>Participated in 3 external penetration tests for various enterprises and provincial departments,
+                    Enhanced the security posture of the enterprise by providing detailed vulnerability reports and
+                    recommended mitigations.</li>
+            </ul>
+            <p>Skills: Burpsuite, Dirsearch, CKnife, Kali, SQL, PHP, AWVS, OWASP TOP10</p>
+        </div>
+    </section>
+
+    <section id="awards">
+        <h2>Awards</h2>
+        <div class="awards">
+            <ul>
+                <li>The Mathematical Contest in Modeling (MCM)®, Meritorious Prize, Top 6%</li>
+                <li>Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM), Third Prize in Zhejiang
+                    Province</li>
+                <li>Advanced Mathematics (Calculus) Contest, Third Prize in Zhejiang Province</li>
+                <li>Huawei Software Elite Challenge, the 17th place (Second Prize) in the Hangzhou-Xiamen Division</li>
+                <li>China Computer Federation Certified Software Professional (CCF CSP), 330/500 Point, rank 2.43%</li>
+                <li>Multiple first-level and individual scholarships of the school</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="activities">
+        <h2>Extracurricular Activities</h2>
+        <div class="activities">
+            <h3>Shenzhen Zhisike Culture Education Technology Co., LTD</a></h3>
+            <p>Sept. 2024 – Present | Teacher</p>
+            <p>Hangzhou, China</p>
+            <p>Teach the USACO programming competition to students in foreign high schools. I am in charge of the
+                fundamental C++ language course, whose difficulties range from fundamental grammar to STL algorithms.
+            </p>
+        </div>
+        <div class="activities">
+            <h3>European Days of Language</h3>
+            <p>Sept. 2023 | Teacher</p>
+            <p>Kristianstad, Sweden</p>
+            <p>Volunteered as a Chinese language teacher at Degebergaskolan School, receiving outstanding volunteer
+                recognition for engaging with students and sharing Chinese culture.</p>
+            <p>Actively impart Chinese knowledge to Swedish students, enthusiastically answer students’ questions, and
+                have in-depth exchanges with school teachers.</p>
+        </div>
+        <div class="activities">
+            <h3>Language Chat Community of Zhuoyue College, <a href="http://www.hdu.edu.cn/">HDU</a></h3>
+            <p>Sept. 2022 – June 2023 | Teacher</p>
+            <p>Hangzhou, China</p>
+            <p>Teach linguistics, geography, and history in these series of courses, published 18 videos and reaching
+                over 64,000 views online.</p>
+            <p>Provide teaching of linguistics, geography, history and other knowledge related to language for younger
+                schoolmates.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <h3>Human Languages</h3>
+            <p>Chinese (native), English (C1, IELTS 7.0 (R8.5))</p>
+        </div>
+        <div class="skills">
+            <h3>Programming Languages</h3>
+            <p>C++, Python, Java, LaTeX</p>
+        </div>
+        <div class="skills">
+            <h3>Interests</h3>
+            <p>Linguistic, Geography</p>
+        </div>
+    </section>
+
     <section id="contact">
-        <h2>联系我</h2>
-        <p>你可以通过以下方式联系我：</p>
-        <ul>
-            <li>Email: [你的邮箱]</li>
-            <li>LinkedIn: [你的LinkedIn链接]</li>
-            <li>GitHub: [你的GitHub链接]</li>
-        </ul>
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <ul>
+                <li>Email: <a href="mailto:wky32768@qq.com">wky32768@qq.com</a></li>
+            </ul>
+            <ul>
+                <li>GitHub: <a href="https://github.com/wky32768" target="_blank">wky32768</a></li>
+            </ul>
+        </div>
     </section>
 </body>
 
