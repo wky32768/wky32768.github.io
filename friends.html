@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Internship - Keyi Wang</title>
+    <title>Keyi Wang(王可逸)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -140,11 +140,57 @@
             margin: 0.5em 0;
         }
 
-        .logo {
-            width: 192px;
-            height: 108px;
-            margin-right: 10px;
-            vertical-align: middle;
+        .friends-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .friend-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            gap: 15px;
+        }
+
+        .friend-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .friend-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ecf0f1;
+            flex-shrink: 0;
+        }
+
+        .friend-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .friend-card h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .friend-card p {
+            margin: 0;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            line-height: 1.4;
         }
 
         @media (max-width: 768px) {
@@ -179,16 +225,19 @@
         </div>
     </nav>
 
-    <section id="internship">
-        <h2>Internship</h2>
-        <div class="internship">
-            <img src="assets/qax.jpg" alt="Qi-AnXin Logo" class="logo">
-            <h3><a href="https://www.qianxin.com/">Qi-AnXin Technology Group Inc.(奇安信)</a></h3>
-            <p>July 2024 – Aug. 2024 | Internship in Security Services</p>
-            <p>Hangzhou, China</p>
-            <p>Skills: Burpsuite, Dirsearch, CKnife, Kali, SQL, PHP, AWVS, OWASP TOP10</p>
+    <section id="friends">
+        <h2>Friends</h2>
+        <div class="friends-container">
+            <a href="https://desarguesc.github.io/" class="friend-card">
+                <img src="assets/cd.jpeg" alt="cd">
+                <h3>Ding Chen</h3>
+            </a>
         </div>
     </section>
+
+    <footer>
+        <p>© 2025 Keyi Wang. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
