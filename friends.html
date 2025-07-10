@@ -2,7 +2,9 @@
 <html>
 
 <head>
-    <title>Keyi Wang(王可逸)</title>
+    <title>Keyi Wang(王可逸) - Friends</title>
+    <!-- 添加viewport meta标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -149,48 +151,27 @@
 
         .friend-card {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            text-align: left;
-            padding: 15px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            gap: 15px;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .friend-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .friend-card img {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ecf0f1;
-            flex-shrink: 0;
-        }
-
-        .friend-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .friend-card h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.1em;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-
-        .friend-card p {
-            margin: 0;
-            color: #7f8c8d;
-            font-size: 0.9em;
-            line-height: 1.4;
+            margin-bottom: 10px;
         }
 
         @media (max-width: 768px) {
@@ -219,7 +200,6 @@
             <a href="publications.html">Publications</a>
             <a href="internship.html">Internship</a>
             <a href="awards.html">Awards</a>
-            <a href="contact.html">Contact</a>
             <a href="assets/EnglishCV.pdf" target="_blank">CV</a>
             <a href="friends.html">Friends</a>
         </div>
@@ -230,10 +210,19 @@
         <div class="friends-container">
             <a href="https://desarguesc.github.io/" class="friend-card">
                 <img src="assets/cd.jpeg" alt="cd">
-                <h3>Ding Chen</h3>
+                <h3>Ding Chen(陳鼎)</h3>
             </a>
         </div>
     </section>
+
+
+    <!-- 添加B站视频播放器 -->
+    <div style="margin: 30px auto; max-width: 800px;">
+        <iframe src="https://player.bilibili.com/player.html?bvid=BV18J3ezoEEj&page=1" scrolling="no" border="0"
+            frameborder="no" framespacing="0" allowfullscreen="true"
+            style="width: 100%; height: 450px; border-radius: 8px;">
+        </iframe>
+    </div>
 
     <footer>
         <p>© 2025 Keyi Wang. All rights reserved.</p>

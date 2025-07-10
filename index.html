@@ -3,6 +3,8 @@
 
 <head>
     <title>Keyi Wang(王可逸)</title>
+    <!-- 添加viewport meta标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -140,6 +142,38 @@
             margin: 0.5em 0;
         }
 
+        .friends-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .friend-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .friend-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .friend-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
         @media (max-width: 768px) {
             .about-container {
                 flex-direction: column;
@@ -166,7 +200,6 @@
             <a href="publications.html">Publications</a>
             <a href="internship.html">Internship</a>
             <a href="awards.html">Awards</a>
-            <a href="contact.html">Contact</a>
             <a href="assets/EnglishCV.pdf" target="_blank">CV</a>
             <a href="friends.html">Friends</a>
         </div>
@@ -177,11 +210,25 @@
         <div class="about-container">
             <img src="assets/keyiwang.jpg" alt="Keyi Wang" class="photo">
             <div class="about-text">
-                <p>Hello, I'm Keyi Wang, currently a senior undergraduate student majoring in Computer Science at <a
-                        href="http://www.hdu.edu.cn/">Hangzhou Dianzi University</a>.</p>
-                <p>And I will study M.Sc. in Computer Science at <a href="https://www.fudan.edu.cn/">Fudan
-                        University</a> from 2025 to 2028.</p>
+                <p> My name's Keyi Wang, I'm currently a postgraduate student at <a
+                        href="https://www.fudan.edu.cn/">Fudan University</a>, China. </p>
+                <p> Before that, I
+                    did my bachelor at <a href="http://www.hdu.edu.cn/">Hangzhou Dianzi University</a>, China and
+                    exchanged in <a href="https://hkr.se/"> Kristianstad University </a>,
+                    Sweden. </p>
             </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <ul>
+                <li>Email: <a href="mailto:wky32768@qq.com">wky32768@qq.com</a></li>
+            </ul>
+            <ul>
+                <li>GitHub: <a href="https://github.com/wky32768" target="_blank">wky32768</a></li>
+            </ul>
         </div>
     </section>
 

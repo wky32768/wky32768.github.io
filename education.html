@@ -2,7 +2,9 @@
 <html>
 
 <head>
-    <title>Education</title>
+    <title>Keyi Wang(王可逸) - Education</title>
+    <!-- 添加viewport meta标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -77,10 +79,20 @@
         }
 
         .logo {
-            width: 192px;
-            height: 108px;
-            margin-right: 10px;
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
             vertical-align: middle;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            padding: 5px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
         }
 
         h2 {
@@ -156,6 +168,35 @@
             .photo {
                 margin: 0 auto;
             }
+
+            .nav-section {
+                flex-direction: column;
+                gap: 0.3em;
+            }
+
+            nav a {
+                margin: 0.2em 0;
+                padding: 0.5em;
+                display: block;
+            }
+
+            header {
+                padding: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            section {
+                padding: 1em 0.5em;
+            }
         }
     </style>
 </head>
@@ -173,7 +214,6 @@
             <a href="publications.html">Publications</a>
             <a href="internship.html">Internship</a>
             <a href="awards.html">Awards</a>
-            <a href="contact.html">Contact</a>
             <a href="assets/EnglishCV.pdf" target="_blank">CV</a>
             <a href="friends.html">Friends</a>
         </div>
@@ -183,13 +223,13 @@
         <h2>Education</h2>
         <div class="education">
             <img src="assets/fdu.svg" alt="Fudan University Logo" class="logo">
-            <h3> <a href="https://www.fudan.edu.cn/">Fudan University(复旦大学)</a></h3>
+            <h3> <a href="https://www.fudan.edu.cn/">Fudan University(復旦大學)</a></h3>
             <p>M.Sc. in Computer Science,</p>
             <p>Sept. 2025 – July 2028 | Shanghai, China</p>
         </div>
         <div class="education">
             <img src="assets/hdu.svg" alt="Hangzhou Dianzi University Logo" class="logo">
-            <h3><a href="http://www.hdu.edu.cn/">Hangzhou Dianzi University(杭州电子科技大学)</a></h3>
+            <h3><a href="http://www.hdu.edu.cn/">Hangzhou Dianzi University(杭州電子科技大學)</a></h3>
             <p>B.Eng. in Computer Science</p>
             <p>Sept. 2021 – June 2025 | Hangzhou, China</p>
             <p>GPA: 4.36/5 (88.6/100), rank in the top 2.7% of the department</p>
