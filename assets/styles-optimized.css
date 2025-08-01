@@ -506,6 +506,20 @@ a:hover {
     margin: 0 auto;
 }
 
+@media (min-width: 768px) {
+    .internship-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .internship-logo {
+        margin-bottom: 0;
+        margin-right: 30px;
+        width: 200px;
+        flex-shrink: 0;
+    }
+}
+
 .internship-logo {
     margin-bottom: 20px;
     text-align: center;
@@ -701,6 +715,13 @@ a:hover {
     flex-direction: column;
 }
 
+@media (min-width: 768px) {
+    .publication-card {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
 .publication-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
@@ -713,6 +734,15 @@ a:hover {
 .publication-image {
     margin-bottom: var(--spacing-md);
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .publication-image {
+        margin-bottom: 0;
+        margin-right: var(--spacing-md);
+        width: 200px;
+        flex-shrink: 0;
+    }
 }
 
 .publication-photo {
