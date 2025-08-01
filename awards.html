@@ -2,222 +2,82 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Awards - Keyi Wang</title>
     <!-- 添加viewport meta标签 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f5f5f5;
-            line-height: 1.6;
-        }
-
-        header {
-            text-align: center;
-            padding: 2em;
-            background-color: #2c3e50;
-            color: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            background-color: #34495e;
-            color: white;
-            padding: 1em;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        nav a {
-            color: white;
-            margin: 0 1em;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ecf0f1;
-        }
-
-        section {
-            margin: 2em auto;
-            padding: 2em;
-            max-width: 800px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .resume-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #2ecc71;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .resume-button:hover {
-            background-color: #27ae60;
-        }
-
-        .photo {
-            width: 150px;
-            height: 200px;
-            border-radius: 5px;
-            margin-bottom: 1em;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5em;
-            margin-top: 0;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 1.5em;
-            margin: 1em 0;
-        }
-
-        li {
-            margin-bottom: 0.5em;
-        }
-
-        .education,
-        .publication,
-        .research,
-        .internship,
-        .awards,
-        .activities,
-        .skills {
-            margin-top: 1em;
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2em;
-            flex-wrap: wrap;
-        }
-
-        .contact-info ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .contact-info li {
-            margin: 0.5em 0;
-        }
-
-        .friends-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        .friend-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .friend-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .friend-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .photo {
-                margin: 0 auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/styles-optimized.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add AOS for animations -->
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1>Keyi Wang(王可逸)</h1>
-        <p>2021 HDU CS → 2025 FDU CS, AI | Algorithm | Linguistic | Geography</p>
-    </header>
-
-    <nav>
-        <div class="nav-section">
-            <a href="index.html">About</a>
-            <a href="education.html">Education</a>
-            <a href="publications.html">Publications</a>
-            <a href="internship.html">Internship</a>
-            <a href="awards.html">Awards</a>
-            <a href="assets/EnglishCV.pdf" target="_blank">CV</a>
-            <a href="friends.html">Friends</a>
-        </div>
-    </nav>
+    <div id="header-container"></div>
+    <div id="nav-container"></div>
 
     <section id="awards">
         <h2>Awards</h2>
-        <div class="awards">
-            <ul>
-                <li>The Mathematical Contest in Modeling (MCM)®, Meritorious Prize, Top 6%</li>
-                <li>Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM), Third Prize in Zhejiang
-                    Province</li>
-                <li>Advanced Mathematics (Calculus) Contest, Third Prize in Zhejiang Province</li>
-                <li>Huawei Software Elite Challenge, the 17th place (Second Prize) in the Hangzhou-Xiamen Division</li>
-                <li>China Computer Federation Certified Software Professional (CCF CSP), 330/500 Point, rank 2.43%</li>
-            </ul>
+        <div class="awards-container">
+            <div class="award-card" data-aos="fade-up">
+                <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                <div class="award-content">
+                    <h3>Mathematical Contest in Modeling (MCM)</h3>
+                    <p>Meritorious Prize, Top 6%</p>
+                    <div class="award-badge">International</div>
+                </div>
+            </div>
+            
+            <div class="award-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="award-icon"><i class="fas fa-award"></i></div>
+                <div class="award-content">
+                    <h3>Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)</h3>
+                    <p>Third Prize in Zhejiang Province</p>
+                    <div class="award-badge">Provincial</div>
+                </div>
+            </div>
+            
+            <div class="award-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="award-icon"><i class="fas fa-calculator"></i></div>
+                <div class="award-content">
+                    <h3>Advanced Mathematics (Calculus) Contest</h3>
+                    <p>Third Prize in Zhejiang Province</p>
+                    <div class="award-badge">Provincial</div>
+                </div>
+            </div>
+            
+            <div class="award-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="award-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="award-content">
+                    <h3>Huawei Software Elite Challenge</h3>
+                    <p>17th place (Second Prize) in the Hangzhou-Xiamen Division</p>
+                    <div class="award-badge">Regional</div>
+                </div>
+            </div>
+            
+            <div class="award-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="award-icon"><i class="fas fa-certificate"></i></div>
+                <div class="award-content">
+                    <h3>China Computer Federation Certified Software Professional (CCF CSP)</h3>
+                    <p>330/500 Point, rank 2.43%</p>
+                    <div class="award-badge">National</div>
+                </div>
+            </div>
         </div>
     </section>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    <div id="footer-container"></div>
+    <script src="components/load-components.js"></script>
 </body>
 
 </html>

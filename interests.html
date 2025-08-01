@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Keyi Wang - Interests</title>
+    <!-- 添加viewport meta标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles-optimized.css">
+    <style>
+        .video-collection {
+            margin: 2rem 0;
+        }
+
+        .collection-container {
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+
+        .collection-container:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .collection-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            padding: 1.5rem;
+            background: var(--gradient-light);
+        }
+
+        .collection-cover {
+            width: 250px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-normal);
+        }
+
+        .collection-cover:hover {
+            transform: scale(1.03);
+        }
+
+        .collection-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .collection-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .collection-info p {
+            margin-bottom: 1rem;
+        }
+
+        .collection-link {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: var(--gradient-accent);
+            color: white;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            transition: var(--transition-normal);
+        }
+
+        .collection-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        .video-player {
+            padding: 1.5rem;
+            background-color: #fff;
+        }
+
+        .video-player iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-light);
+        }
+
+        .chinese-title {
+            display: inline-block;
+            margin-left: 0.5rem;
+            font-weight: normal;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .languages-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .languages-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .language-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .language-tag {
+            padding: 0.6rem 1.2rem;
+            background-color: #f0f7ff;
+            color: var(--accent-color);
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition-normal);
+        }
+
+        .language-tag:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <div id="nav-container"></div>
+
+    <section id="interests">
+        <h2>Interests</h2>
+
+        <div class="video-collection">
+            <div class="collection-container">
+                <div class="collection-header">
+                    <img src="assets/ling.png" alt="Video Collection Cover" class="collection-cover">
+                    <div class="collection-info">
+                        <h3>Language Discussion Community <span class="chinese-title">語言雜談共同體</span></h3>
+                        <a href="https://space.bilibili.com/220871609/lists/1560464?type=season" target="_blank"
+                            class="collection-link">View Full Collection</a>
+                    </div>
+                </div>
+
+                <div class="video-player">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV18J3ezoEEj&page=1" scrolling="no"
+                        border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+                    </iframe>
+                </div>
+
+                <div class="languages-section">
+                    <h4>Featured Languages <span class="chinese-title">涵蓋語言</span></h4>
+                    <div class="language-tags">
+                        <span class="language-tag">French 法語</span>
+                        <span class="language-tag">Spanish 西班牙語</span>
+                        <span class="language-tag">Arabic 阿拉伯語</span>
+                        <span class="language-tag">Russian 俄語</span>
+                        <span class="language-tag">German 德語</span>
+                        <span class="language-tag">Portuguese 葡萄牙語</span>
+                        <span class="language-tag">Swedish 瑞典語</span>
+                        <span class="language-tag">Japanese 日語</span>
+                        <span class="language-tag">Greek 希臘語</span>
+                        <span class="language-tag">Vietnamese 越南語</span>
+                        <span class="language-tag">Turkish 土耳其語</span>
+                        <span class="language-tag">Hindi 印地語</span>
+                        <span class="language-tag">Italian 意大利語</span>
+                        <span class="language-tag">Thai 泰語</span>
+                        <span class="language-tag">Swahili 斯瓦希里語</span>
+                        <span class="language-tag">Korean 朝鮮語/韓國語</span>
+                        <span class="language-tag">Latin 拉丁語</span>
+                        <span class="language-tag">Icelandic 冰島語</span>
+                        <span class="language-tag">Norwegian 挪威語</span>
+                        <span class="language-tag">Finnish 芬蘭語</span>
+                    </div>
+
+                    <div class="language-map-section">
+                        <h4>Language Distribution Map <span class="chinese-title">語言分佈地圖</span></h4>
+                        <div id="language-map"
+                            style="height: 400px; margin-top: 1rem; border-radius: var(--border-radius-md); box-shadow: var(--shadow-light);">
+                        </div>
+                    </div>
+
+                    <script src="https://webapi.amap.com/maps?v=1.4.15&key=0a1987bccd5fd9df8482c28eb2805637"></script>
+                    <script>
+                        // 语言及其主要分布国家的ISO代码、颜色和首都经纬度
+                        const languageCountries = {
+                            '法語': {
+                                countries: [
+                                    { country: 'FRA', capital: [2.3522, 48.8566] }, // 法国-巴黎
+                                    { country: 'CAN', capital: [-75.6972, 45.4215] }, // 加拿大-渥太华(法语区)
+                                    { country: 'BEL', capital: [4.3517, 50.8476] },  // 比利时-布鲁塞尔
+                                    { country: 'CIV', capital: [-5.3173, 7.5399] },  // 科特迪瓦-亚穆苏克罗
+                                    { country: 'BEN', capital: [2.3200, 6.4965] },   // 贝宁-波多诺伏
+                                    { country: 'BDI', capital: [29.3697, -3.3731] }, // 布隆迪-布琼布拉
+                                    { country: 'CAF', capital: [18.5500, 4.3625] },  // 中非共和国-班吉
+                                    { country: 'LUX', capital: [6.1296, 49.6116] }   // 卢森堡-卢森堡市
+                                ],
+                                color: '#FF6B6B'
+                            },
+                            '西班牙語': {
+                                countries: [
+                                    { country: 'ESP', capital: [-3.7038, 40.4168] }, // 西班牙-马德里
+                                    { country: 'MEX', capital: [-99.1332, 19.4326] }, // 墨西哥城
+                                    { country: 'ARG', capital: [-58.3816, -34.6037] }, // 阿根廷-布宜诺斯艾利斯
+                                    { country: 'CHL', capital: [-70.6693, -33.4489] }, // 智利-圣地亚哥
+                                    { country: 'COL', capital: [-74.0721, 4.7110] },  // 哥伦比亚-波哥大
+                                    { country: 'VEN', capital: [-66.9036, 10.4806] }, // 委内瑞拉-加拉加斯
+                                    { country: 'PER', capital: [-77.0282, -12.0464] }, // 秘鲁-利马
+                                    { country: 'ECU', capital: [-78.5249, -0.1807] },  // 厄瓜多尔-基多
+                                    { country: 'CUB', capital: [-82.3830, 23.1330] },  // 古巴-哈瓦那
+                                    { country: 'DOM', capital: [-70.1620, 18.4861] },  // 多米尼加共和国-圣多明各
+                                    { country: 'GNQ', capital: [8.7816, 3.7597] }     // 赤道几内亚-马拉博
+                                ],
+                                color: '#4ECDC4'
+                            },
+                            '阿拉伯語': {
+                                countries: [
+                                    { country: 'SAU', capital: [46.7385, 24.7742] }, // 沙特阿拉伯-利雅得
+                                    { country: 'EGY', capital: [31.2357, 30.0444] }, // 埃及-开罗
+                                    { country: 'IRQ', capital: [44.3661, 33.3152] }, // 伊拉克-巴格达
+                                    { country: 'DZA', capital: [3.0589, 36.7538] },  // 阿尔及利亚-阿尔及尔
+                                    { country: 'MAR', capital: [-7.5898, 33.5731] }, // 摩洛哥-拉巴特
+                                    { country: 'ARE', capital: [55.3075, 25.2711] }, // 阿联酋-阿布扎比
+                                    { country: 'QAT', capital: [51.5310, 25.2854] }  // 卡塔尔-多哈
+                                ],
+                                color: '#FFD166'
+                            },
+                            '俄語': {
+                                countries: [
+                                    { country: 'RUS', capital: [37.6176, 55.7558] }, // 俄罗斯-莫斯科
+                                    { country: 'BLR', capital: [27.5618, 53.9045] }, // 白俄罗斯-明斯克
+                                    { country: 'KAZ', capital: [71.4301, 51.1694] }  // 哈萨克斯坦-阿斯塔纳
+                                ],
+                                color: '#6A0572'
+                            },
+                            '德語': {
+                                countries: [
+                                    { country: 'DEU', capital: [13.4050, 52.5200] }, // 德国-柏林
+                                    { country: 'AUT', capital: [16.3738, 48.2082] }, // 奥地利-维也纳
+                                    { country: 'CHE', capital: [8.5417, 47.3769] }, // 瑞士-伯尔尼
+                                    { country: 'LIE', capital: [9.5203, 47.1387] }  // 列支敦士登-瓦杜兹
+                                ],
+                                color: '#1A535C'
+                            },
+                            '葡萄牙語': {
+                                countries: [
+                                    { country: 'PRT', capital: [-9.1393, 38.7223] }, // 葡萄牙-里斯本
+                                    { country: 'BRA', capital: [-47.8825, -15.7939] }, // 巴西-巴西利亚
+                                    { country: 'AGO', capital: [13.2420, -8.8115] },  // 安哥拉-罗安达
+                                    { country: 'CPV', capital: [-23.5087, 14.9119] }, // 佛得角-普拉亚
+                                    { country: 'MOZ', capital: [32.5822, -25.9693] }, // 莫桑比克-马普托
+                                    { country: 'GNB', capital: [11.8673, 12.0488] }  // 几内亚比绍-比绍
+                                ],
+                                color: '#F9C80E'
+                            },
+                            '瑞典語': {
+                                countries: [
+                                    { country: 'SWE', capital: [18.0686, 59.3293] }  // 瑞典-斯德哥尔摩
+                                ],
+                                color: '#7B2CBF'
+                            },
+                            '日語': {
+                                countries: [
+                                    { country: 'JPN', capital: [139.6503, 35.6762] }  // 日本-东京
+                                ],
+                                color: '#3A86FF'
+                            },
+                            '希臘語': {
+                                countries: [
+                                    { country: 'GRC', capital: [23.7275, 37.9838] }  // 希腊-雅典
+                                ],
+                                color: '#FB5607'
+                            },
+                            '越南語': {
+                                countries: [
+                                    { country: 'VNM', capital: [105.8542, 21.0285] }  // 越南-河内
+                                ],
+                                color: '#8338EC'
+                            },
+                            '土耳其語': {
+                                countries: [
+                                    { country: 'TUR', capital: [28.9784, 41.0082] }, // 土耳其-安卡拉
+                                    { country: 'CYP', capital: [33.3823, 35.1856] }  // 北塞浦路斯-尼科西亚
+                                ],
+                                color: '#3A86FF'
+                            },
+                            '意大利語': {
+                                countries: [
+                                    { country: 'ITA', capital: [12.4964, 41.9028] }, // 意大利-罗马
+                                    { country: 'SMR', capital: [12.4418, 43.9424] }  // 圣马力诺
+                                ],
+                                color: '#8AC926'
+                            },
+                            '泰語': {
+                                countries: [
+                                    { country: 'THA', capital: [100.5018, 13.7563] }  // 泰国-曼谷
+                                ],
+                                color: '#E76F51'
+                            },
+                            '斯瓦希里語': {
+                                countries: [
+                                    { country: 'TZA', capital: [39.2003, -6.1751] }, // 坦桑尼亚-多多马
+                                    { country: 'KEN', capital: [36.8172, -1.2864] },  // 肯尼亚-内罗毕
+                                    { country: 'UGA', capital: [32.5822, 0.3476] },  // 乌干达-坎帕拉
+                                    { country: 'RWA', capital: [30.0571, -1.9403] }  // 卢旺达-基加利
+                                ],
+                                color: '#1D3557'
+                            },
+                            '朝鮮語/韓國語': {
+                                countries: [
+                                    { country: 'KOR', capital: [126.9780, 37.5665] }, // 韩国-首尔
+                                    { country: 'PRK', capital: [125.7625, 39.0392] }  // 朝鲜-平壤
+                                ],
+                                color: '#E9C46A'
+                            },
+                            '冰島語': {
+                                countries: [
+                                    { country: 'ISL', capital: [-21.8174, 64.1265] }  // 冰岛-雷克雅未克
+                                ],
+                                color: '#4361EE'
+                            },
+                            '挪威語': {
+                                countries: [
+                                    { country: 'NOR', capital: [10.7522, 59.9139] }  // 挪威-奥斯陆
+                                ],
+                                color: '#06D6A0'
+                            },
+                            '芬蘭語': {
+                                countries: [
+                                    { country: 'FIN', capital: [24.9384, 60.1699] }  // 芬兰-赫尔辛基
+                                ],
+                                color: '#EF476F'
+                            },
+                            '印地語': {
+                                countries: [
+                                    { country: 'IND', capital: [77.2090, 28.6139] }, // 印度-新德里
+                                    { country: 'NPL', capital: [85.3131, 27.7172] }, // 尼泊尔-加德满都
+                                    { country: 'FJI', capital: [178.4419, -18.1416] }  // 斐济-苏瓦
+                                ],
+                                color: '#FF9F1C'
+                            },
+                            '拉丁語': {
+                                countries: [
+                                    { country: 'VAT', capital: [12.4453, 41.9029] }  // 梵蒂冈城
+                                ],
+                                color: '#9B5DE5'
+                            }
+                        };
+
+                        // 初始化高德地图
+                        const map = new AMap.Map('language-map', {
+                            zoom: 2,
+                            center: [0, 20],
+                            viewMode: '2D'
+                        });
+
+                        // 创建首都标记的辅助函数
+                        function createCapitalMarker(capital, color, language) {
+                            // 创建圆形标记
+                            const circle = new AMap.Circle({
+                                center: new AMap.LngLat(capital[0], capital[1]),
+                                radius: 50000,  // 50公里半径
+                                strokeColor: color,
+                                fillColor: color,
+                                fillOpacity: 0.3,
+                                strokeWeight: 2
+                            });
+
+                            // 添加到地图
+                            circle.setMap(map);
+
+                            // 添加鼠标事件
+                            circle.on('mouseover', function () {
+                                this.setOptions({
+                                    fillOpacity: 0.6
+                                });
+                            });
+
+                            circle.on('mouseout', function () {
+                                this.setOptions({
+                                    fillOpacity: 0.3
+                                });
+                            });
+
+                            // 添加点击弹出信息
+                            circle.on('click', function (e) {
+                                const infoWindow = new AMap.InfoWindow({
+                                    content: `<div style="padding: 10px;"><b>${language}</b></div>`,
+                                    position: e.lnglat
+                                });
+                                infoWindow.open(map);
+                            });
+
+                            return circle;
+                        }
+
+                        // 在各国首都添加标记
+                        for (const language in languageCountries) {
+                            if (languageCountries.hasOwnProperty(language)) {
+                                const langData = languageCountries[language];
+                                const color = langData.color;
+                                const countries = langData.countries;
+
+                                if (Array.isArray(countries)) {
+                                    countries.forEach(country => {
+                                        const { capital } = country;
+                                        if (capital) {
+                                            createCapitalMarker(capital, color, language);
+                                        }
+                                    });
+                                }
+                            }
+                        }
+
+                        // 暂时移除地图控件，待确认正确API后再添加
+                        // map.addControl(new AMap.ZoomControl());
+                        // map.addControl(new AMap.ScaleControl());
+                        // map.addControl(new AMap.MapTypeControl());
+                    </script>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <style>
+        .language-map-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        /* 自定义高德地图信息窗口样式 */
+        .amap-info-content {
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-light);
+            border: none;
+        }
+    </style>
+
+    <div id="footer-container"></div>
+    <script src="components/load-components.js"></script>
+</body>
+
+</html>
