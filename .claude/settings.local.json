@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "WebSearch"
     ]
   }
 }

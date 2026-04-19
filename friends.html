@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Keyi Wang(王可逸) - Friends</title>
-    <!-- 添加viewport meta标签 -->
+    <title>Friends - Keyi Wang (王可逸)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Friends of Keyi Wang - links to personal websites and profiles.">
+    <meta name="author" content="Keyi Wang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wky32768.github.io/friends.html">
+    <meta property="og:title" content="Friends - Keyi Wang (王可逸)">
+    <meta property="og:description" content="Links to personal websites and profiles of friends.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
     <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>var pageLastModified = 'April 3, 2026';</script>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <div id="header-container"></div>
     <div id="nav-container"></div>
 
-    <section id="friends">
-        <h2>Friends</h2>
-        <div class="friends-container">
-            <a href="https://desarguesc.github.io/" class="friend-card">
-                <img src="assets/cd.jpeg" alt="cd">
-                <h3>Ding Chen(陳鼎)</h3>
-            </a>
-            <a href="https://user.qzone.qq.com/1273041739" class="friend-card" target="_blank">
-                <img src="assets/lj.jfif" alt="刘进">
-                <h3>Jin Liu(劉進)</h3>
-            </a>
-        </div>
-    </section>
-
-
-
+    <main id="main-content">
+        <section id="friends" aria-labelledby="friends-heading">
+            <h2 id="friends-heading">Friends</h2>
+            <div class="friends-container">
+                <a href="https://desarguesc.github.io/" class="friend-card" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/cd.jpeg" alt="Profile photo of Ding Chen" loading="lazy">
+                    <h3>Ding Chen (陳鼎)</h3>
+                </a>
+                <a href="https://user.qzone.qq.com/1273041739" class="friend-card" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/lj.jfif" alt="Profile photo of Jin Liu" loading="lazy">
+                    <h3>Jin Liu (劉進)</h3>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <div id="footer-container"></div>
     <script src="components/load-components.js"></script>

@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Keyi Wang - Interests</title>
-    <!-- 添加viewport meta标签 -->
+    <title>Interests - Keyi Wang (王可逸)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interests of Keyi Wang including language learning, video collections on linguistic topics, and various languages such as French, Spanish, Arabic, and more.">
+    <meta name="author" content="Keyi Wang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wky32768.github.io/interests.html">
+    <meta property="og:title" content="Interests - Keyi Wang (王可逸)">
+    <meta property="og:description" content="Language learning, video collections on linguistic topics, and various languages.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
     <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>var pageLastModified = 'April 3, 2026';</script>
     <style>
         .video-collection {
             margin: 2rem 0;
         }
 
         .collection-container {
-            background-color: #f9f9f9;
+            background-color: var(--color-cream);
             border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow-sm);
             overflow: hidden;
-            transition: var(--transition-normal);
+            transition: all var(--duration-normal) var(--ease-out);
+            border: 1px solid var(--color-cream-dark);
         }
 
         .collection-container:hover {
-            box-shadow: var(--shadow-medium);
+            box-shadow: var(--shadow-md);
         }
 
         .collection-header {
@@ -30,7 +47,7 @@
             gap: 2rem;
             align-items: center;
             padding: 1.5rem;
-            background: var(--gradient-light);
+            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);
         }
 
         .collection-cover {
@@ -38,8 +55,8 @@
             height: 160px;
             object-fit: cover;
             border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-light);
-            transition: var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--duration-normal) var(--ease-spring);
         }
 
         .collection-cover:hover {
@@ -48,66 +65,67 @@
 
         .collection-info {
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
         }
 
         .collection-info h3 {
-            color: var(--primary-color);
+            color: var(--color-ink);
             margin-bottom: 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .collection-info p {
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
         }
 
         .collection-link {
             display: inline-block;
             padding: 0.6rem 1.2rem;
-            background: var(--gradient-accent);
+            background: var(--gradient-warm);
             color: white;
             border-radius: var(--border-radius-sm);
             font-weight: 600;
-            transition: var(--transition-normal);
+            transition: all var(--duration-fast) var(--ease-out);
+            margin-top: 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
         }
 
         .collection-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 4px 12px rgba(139, 38, 53, 0.25);
             text-decoration: none;
             color: white;
         }
 
         .video-player {
             padding: 1.5rem;
-            background-color: #fff;
+            background-color: white;
         }
 
         .video-player iframe {
             width: 100%;
             height: 450px;
             border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow-sm);
+            border: none;
         }
 
         .chinese-title {
             display: inline-block;
             margin-left: 0.5rem;
             font-weight: normal;
-            color: #666;
+            color: var(--color-ink-light);
             font-size: 1rem;
         }
 
         .languages-section {
             margin-top: 2rem;
             padding: 1.5rem;
-            background-color: #fff;
-            border-top: 1px solid #eee;
+            background-color: white;
+            border-top: 1px solid var(--color-cream-dark);
         }
 
         .languages-section h4 {
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: var(--color-ink);
         }
 
         .language-tags {
@@ -118,78 +136,99 @@
 
         .language-tag {
             padding: 0.6rem 1.2rem;
-            background-color: #f0f7ff;
-            color: var(--accent-color);
-            border-radius: 50px;
+            background-color: rgba(139, 38, 53, 0.08);
+            color: var(--color-burgundy);
+            border-radius: var(--border-radius-full);
             font-weight: 500;
-            transition: var(--transition-normal);
+            font-size: 0.95rem;
+            transition: all var(--duration-fast) var(--ease-out);
+            border: 1px solid rgba(139, 38, 53, 0.12);
         }
 
         .language-tag:hover {
-            background-color: var(--accent-color);
+            background: var(--gradient-warm);
             color: white;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 38, 53, 0.2);
+        }
+
+        @media (max-width: var(--bp-sm)) {
+            .collection-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .collection-cover {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+
+            .video-player iframe {
+                height: 280px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <div id="header-container"></div>
     <div id="nav-container"></div>
 
-    <section id="interests">
-        <h2>Interests</h2>
+    <main id="main-content">
+        <section id="interests" aria-labelledby="interests-heading">
+            <h2 id="interests-heading">Interests</h2>
 
-        <div class="video-collection">
-            <div class="collection-container">
-                <div class="collection-header">
-                    <img src="assets/ling.png" alt="Video Collection Cover" class="collection-cover">
-                    <div class="collection-info">
-                        <h3>Language Discussion Community <span class="chinese-title">語言雜談共同體</span></h3>
-                        <a href="https://space.bilibili.com/220871609/lists/1560464?type=season" target="_blank"
-                            class="collection-link">View Full Collection</a>
-                    </div>
-                </div>
-
-                <div class="video-player">
-                    <iframe src="https://player.bilibili.com/player.html?bvid=BV18J3ezoEEj&page=1" scrolling="no"
-                        border="0" frameborder="no" framespacing="0" allowfullscreen="true">
-                    </iframe>
-                </div>
-
-                <div class="languages-section">
-                    <h4>Featured Languages <span class="chinese-title">涵蓋語言</span></h4>
-                    <div class="language-tags">
-                        <span class="language-tag">French 法語</span>
-                        <span class="language-tag">Spanish 西班牙語</span>
-                        <span class="language-tag">Arabic 阿拉伯語</span>
-                        <span class="language-tag">Russian 俄語</span>
-                        <span class="language-tag">German 德語</span>
-                        <span class="language-tag">Portuguese 葡萄牙語</span>
-                        <span class="language-tag">Swedish 瑞典語</span>
-                        <span class="language-tag">Japanese 日語</span>
-                        <span class="language-tag">Greek 希臘語</span>
-                        <span class="language-tag">Vietnamese 越南語</span>
-                        <span class="language-tag">Turkish 土耳其語</span>
-                        <span class="language-tag">Hindi 印地語</span>
-                        <span class="language-tag">Italian 意大利語</span>
-                        <span class="language-tag">Thai 泰語</span>
-                        <span class="language-tag">Swahili 斯瓦希里語</span>
-                        <span class="language-tag">Korean 朝鮮語/韓國語</span>
-                        <span class="language-tag">Latin 拉丁語</span>
-                        <span class="language-tag">Icelandic 冰島語</span>
-                        <span class="language-tag">Norwegian 挪威語</span>
-                        <span class="language-tag">Finnish 芬蘭語</span>
-                        <span class="language-tag">Persian 波斯語</span>
+            <div class="video-collection">
+                <div class="collection-container">
+                    <div class="collection-header">
+                        <img src="assets/ling.png" alt="Video Collection Cover" class="collection-cover" loading="lazy">
+                        <div class="collection-info">
+                            <h3>Language Discussion Community <span class="chinese-title">語言雜談共同體</span></h3>
+                            <a href="https://space.bilibili.com/220871609/lists/1560464?type=season" target="_blank" rel="noopener noreferrer" class="collection-link">
+                                View Full Collection
+                            </a>
+                        </div>
                     </div>
 
-                                    </div>
+                    <div class="video-player">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV18J3ezoEEj&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true" title="Language discussion video" loading="lazy">
+                        </iframe>
+                    </div>
+
+                    <div class="languages-section">
+                        <h4>Featured Languages <span class="chinese-title">涵蓋語言</span></h4>
+                        <div class="language-tags">
+                            <span class="language-tag">French 法語</span>
+                            <span class="language-tag">Spanish 西班牙語</span>
+                            <span class="language-tag">Arabic 阿拉伯語</span>
+                            <span class="language-tag">Russian 俄語</span>
+                            <span class="language-tag">German 德語</span>
+                            <span class="language-tag">Portuguese 葡萄牙語</span>
+                            <span class="language-tag">Swedish 瑞典語</span>
+                            <span class="language-tag">Japanese 日語</span>
+                            <span class="language-tag">Greek 希臘語</span>
+                            <span class="language-tag">Vietnamese 越南語</span>
+                            <span class="language-tag">Turkish 土耳其語</span>
+                            <span class="language-tag">Hindi 印地語</span>
+                            <span class="language-tag">Italian 意大利語</span>
+                            <span class="language-tag">Thai 泰語</span>
+                            <span class="language-tag">Swahili 斯瓦希里語</span>
+                            <span class="language-tag">Korean 朝鮮語/韓國語</span>
+                            <span class="language-tag">Latin 拉丁語</span>
+                            <span class="language-tag">Icelandic 冰島語</span>
+                            <span class="language-tag">Norwegian 挪威語</span>
+                            <span class="language-tag">Finnish 芬蘭語</span>
+                            <span class="language-tag">Persian 波斯語</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    
     <div id="footer-container"></div>
     <script src="components/load-components.js"></script>
 </body>
