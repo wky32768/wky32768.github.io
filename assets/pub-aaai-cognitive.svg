@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="An iceberg of latent cognitive capability, its hidden depth quantified on a measuring gauge">
+  <defs>
+    <linearGradient id="bgA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDF8F3"/>
+      <stop offset="1" stop-color="#F1E7DA"/>
+    </linearGradient>
+    <linearGradient id="burgA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A63446"/>
+      <stop offset="1" stop-color="#8B2635"/>
+    </linearGradient>
+    <linearGradient id="iceA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B9515F"/>
+      <stop offset="1" stop-color="#8B2635"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" rx="20" fill="url(#bgA)"/>
+  <rect x="10" y="10" width="1180" height="400" rx="14" fill="none" stroke="#E4D7C7" stroke-width="2"/>
+
+  <!-- ===== LEFT: Iceberg — observable tip vs. latent depth ===== -->
+  <!-- sea -->
+  <rect x="70" y="196" width="470" height="168" rx="10" fill="#6B7B6E" opacity="0.12"/>
+  <!-- waterline -->
+  <line x1="70" y1="196" x2="540" y2="196" stroke="#6B7B6E" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- submerged mass (latent capability) -->
+  <path d="M250 196 H372 L410 250 L372 320 L300 352 L232 322 L206 250 Z" fill="url(#iceA)" opacity="0.45"/>
+  <!-- tip above water (observable performance) -->
+  <path d="M311 96 L372 196 H250 Z" fill="url(#iceA)"/>
+
+  <!-- latent capability nodes hidden inside the submerged mass -->
+  <g>
+    <line x1="300" y1="244" x2="342" y2="278" stroke="#fff" stroke-width="2" opacity="0.5"/>
+    <line x1="300" y1="244" x2="286" y2="300" stroke="#fff" stroke-width="2" opacity="0.5"/>
+    <line x1="342" y1="278" x2="286" y2="300" stroke="#fff" stroke-width="2" opacity="0.5"/>
+    <circle cx="300" cy="244" r="12" fill="#fff" stroke="#C9A227" stroke-width="4"/>
+    <circle cx="342" cy="278" r="12" fill="#fff" stroke="#6B7B6E" stroke-width="4"/>
+    <circle cx="286" cy="300" r="12" fill="#fff" stroke="#C9A227" stroke-width="4"/>
+  </g>
+
+  <!-- labels -->
+  <text x="432" y="150" font-family="'Source Sans 3', sans-serif" font-size="19" font-weight="600" fill="#8B2635">observable</text>
+  <text x="446" y="300" font-family="'Source Sans 3', sans-serif" font-size="19" font-weight="600" fill="#5A6B5E">latent</text>
+
+  <!-- flow arrow -->
+  <g stroke="#8B2635" stroke-width="5" stroke-linecap="round" fill="none">
+    <line x1="600" y1="210" x2="690" y2="210"/>
+    <polyline points="672,194 692,210 672,226"/>
+  </g>
+
+  <!-- ===== RIGHT: Gauge — measuring the unmeasurable ===== -->
+  <!-- gauge arc, sage -> gold -> burgundy -->
+  <path d="M790 300 A110 110 0 0 1 845 205" fill="none" stroke="#6B7B6E" stroke-width="14" stroke-linecap="round"/>
+  <path d="M845 205 A110 110 0 0 1 955 205" fill="none" stroke="#C9A227" stroke-width="14"/>
+  <path d="M955 205 A110 110 0 0 1 1010 300" fill="none" stroke="url(#burgA)" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- ticks -->
+  <g stroke="#8B7A66" stroke-width="3" stroke-linecap="round">
+    <line x1="790" y1="300" x2="808" y2="300"/>
+    <line x1="822" y1="222" x2="835" y2="232"/>
+    <line x1="900" y1="190" x2="900" y2="208"/>
+    <line x1="978" y1="222" x2="965" y2="232"/>
+    <line x1="1010" y1="300" x2="992" y2="300"/>
+  </g>
+
+  <!-- needle pointing into the measured zone -->
+  <line x1="900" y1="300" x2="925" y2="214" stroke="#8B2635" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="900" cy="300" r="12" fill="url(#burgA)"/>
+  <circle cx="900" cy="300" r="4" fill="#fff"/>
+
+  <!-- cognition spark above the gauge -->
+  <g transform="translate(900,150)">
+    <line x1="0" y1="-16" x2="0" y2="-28" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-14" y1="-6" x2="-24" y2="-12" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+    <line x1="14" y1="-6" x2="24" y2="-12" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="4" r="16" fill="#fff" stroke="#8B2635" stroke-width="4"/>
+    <text x="0" y="11" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#8B2635" text-anchor="middle">&#968;</text>
+  </g>
+
+  <!-- caption -->
+  <text x="900" y="350" font-family="'Source Sans 3', sans-serif" font-size="19" font-weight="600" fill="#5A5A5A" text-anchor="middle">quantified</text>
+</svg>

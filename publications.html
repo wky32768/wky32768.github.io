@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Publications - Keyi Wang (王可逸)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8B2635" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15110E" media="(prefers-color-scheme: dark)">
     <meta name="description" content="Publications by Keyi Wang, a postgraduate student at Fudan University. Includes papers on LLM cognitive capabilities and patents on human posture restoration.">
     <meta name="author" content="Keyi Wang">
     <meta name="robots" content="index, follow">
@@ -15,14 +17,28 @@
     <meta property="og:title" content="Publications - Keyi Wang (王可逸)">
     <meta property="og:description" content="Papers on LLM cognitive capabilities and patents on human posture restoration.">
 
+    <meta property="og:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>var pageLastModified = 'April 3, 2026';</script>
+    <script>
+        var pageLastModified = 'April 3, 2026';
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                if (t === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body>
@@ -35,45 +51,65 @@
         <section id="publications" aria-labelledby="publications-heading">
             <h2 id="publications-heading">Publications</h2>
             <div class="publications-container">
-                <article class="publication-card">
+                <article class="publication-card" id="pub-inslogicbench">
                     <div class="publication-image">
-                        <img src="assets/acl-logo.png" alt="ACL 2026 conference logo" class="publication-photo" loading="lazy">
+                        <img src="assets/pub-inslogicbench.svg" alt="Argumentation graph flowing into a claim adjudication verdict" class="publication-photo" loading="lazy">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Conference Paper</span>
                         <p class="authors">Jin Liu, Yunpeng Liu, <strong>Keyi Wang</strong>, Jie Shi, Xiao Xu, Wenkang Huang, Xingzhong Xu, Xin Liang, Yanghua Xiao</p>
                         <h3 class="publication-title">InsLogicBench: An Argumentation Logic Grounded Benchmark for Complex Insurance Claims Adjudication</h3>
-                        <p class="publication-meta">ACL 2026 Main Conference</p>
+                        <div class="venue-row">
+                            <span class="venue-badge venue-acl"><i class="fas fa-calendar-day" aria-hidden="true"></i> ACL 2026 Main</span>
+                            <span class="ccf-badge">CCF-A</span>
+                        </div>
+                        <p class="publication-meta">San Diego, CA · July 5–7, 2026</p>
+                        <!-- Add resource buttons once links are ready:
+                        <div class="publication-links">
+                            <a class="pub-link" href="PDF_URL" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
+                            <a class="pub-link" href="CODE_URL" target="_blank" rel="noopener noreferrer"><i class="fas fa-code" aria-hidden="true"></i> Code</a>
+                        </div>
+                        -->
                     </div>
                 </article>
-                <article class="publication-card">
+                <article class="publication-card" id="pub-immediate-inference">
                     <div class="publication-image">
-                        <img src="assets/acl-logo.png" alt="ACL 2026 conference logo" class="publication-photo" loading="lazy">
+                        <img src="assets/pub-immediate-inference.svg" alt="The traditional square of opposition diagram from term logic" class="publication-photo" loading="lazy">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Conference Paper</span>
                         <p class="authors">Sihang Jiang, Zhiyu Lu, <strong>Keyi Wang</strong>, Jiaqing Liang, Yanghua Xiao, Xiaojun Meng, Jiansheng Wei</p>
                         <h3 class="publication-title">Immediate Inference: The Missing Foundation in Large Language Model Logical Reasoning</h3>
-                        <p class="publication-meta">ACL 2026 Main Conference</p>
+                        <div class="venue-row">
+                            <span class="venue-badge venue-acl"><i class="fas fa-calendar-day" aria-hidden="true"></i> ACL 2026 Main</span>
+                            <span class="oral-badge"><i class="fas fa-microphone" aria-hidden="true"></i> Oral</span>
+                            <span class="ccf-badge">CCF-A</span>
+                        </div>
+                        <p class="publication-meta">San Diego, CA · July 5–7, 2026</p>
                     </div>
                 </article>
                 <article class="publication-card">
                     <div class="publication-image">
-                        <img src="assets/danxin.jpg" alt="Cognitive capabilities diagram for LLM research" class="publication-photo" loading="lazy">
+                        <img src="assets/pub-aaai-cognitive.svg" alt="An iceberg of latent cognitive capability, its hidden depth quantified on a measuring gauge" class="publication-photo" loading="lazy">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Conference Paper</span>
-                        <p class="authors">Cui Danxin, Sihang Jiang, <strong>Keyi Wang</strong>, Zhiyi Duan, Yanghua Xiao, Jiaqing Liang, Minggui He, Shimin Tao, Yilun Liu, Bi Yude</p>
-                        <h3 class="publication-title"><a
-                            href="https://ojs.aaai.org/index.php/AAAI/article/view/40302" target="_blank" rel="noopener noreferrer">
-                            Measuring the Unmeasurable: Unveiling Latent Cognitive Capabilities of LLM
-                        </a></h3>
-                        <p class="publication-meta">AAAI 2026 Main Conference, Singapore, January 24, 2026</p>
+                        <p class="authors">Cui Danxin, Sihang Jiang, <strong>Keyi Wang</strong>, Zhiyi Duan, Yanghua Xiao, Bi Yude, Jiaqing Liang, Minggui He, Shimin Tao, Yilun Liu</p>
+                        <h3 class="publication-title">Measuring the Unmeasurable: Unveiling Latent Cognitive Capabilities of LLMs</h3>
+                        <div class="venue-row">
+                            <span class="venue-badge venue-aaai"><i class="fas fa-calendar-day" aria-hidden="true"></i> AAAI 2026</span>
+                            <span class="poster-badge"><i class="fas fa-image" aria-hidden="true"></i> Poster</span>
+                            <span class="ccf-badge">CCF-A</span>
+                        </div>
+                        <p class="publication-meta">Singapore · January 24, 2026</p>
+                        <div class="publication-links">
+                            <a class="pub-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/40302" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Paper</a>
+                        </div>
                     </div>
                 </article>
                 <article class="publication-card">
                     <div class="publication-image">
-                        <img src="assets/patent.jpg" alt="Human posture restoration technology illustration" class="publication-photo" loading="lazy">
+                        <img src="assets/pub-patent.svg" alt="A degraded human posture restored to a clean pose by a diffusion model" class="publication-photo" loading="lazy">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Patent</span>
@@ -82,7 +118,51 @@
                             href="https://kns.cnki.net/kcms2/article/abstract?v=db-EbSzo3ogQQ2suhcDkqH9SG6WMZMtoP-UEqjPJ5R-ZD2f3vMr_SVaDm9J2U9Kf5ZHrSSXUojANLN1z7NpOtcXUIsbTfL9A82s50WDhG2wQvBrOO-IHhKgOPnHdBNS3G10nU4CN_E9hBiFN-CQX1PuzJPp3rtuSyxU6WfOyzh5rwHFVAKfQPA==&uniplatform=NZKPT&language=CHS" target="_blank" rel="noopener noreferrer">
                             A Human Posture Scene Restoration Method Based on the Adaptive Network Enhanced Diffusion Model (一種基於適配網絡增强擴散模型的人體姿態場景恢復方法)
                         </a></h3>
-                        <p class="publication-meta">CN202311293866.1[P]. 2024.01.12</p>
+                        <span class="venue-badge"><i class="fas fa-file-contract" aria-hidden="true"></i> Patent · CN202311293866.1</span>
+                        <p class="publication-meta">Granted · January 12, 2024</p>
+                        <div class="publication-links">
+                            <a class="pub-link" href="https://kns.cnki.net/kcms2/article/abstract?v=db-EbSzo3ogQQ2suhcDkqH9SG6WMZMtoP-UEqjPJ5R-ZD2f3vMr_SVaDm9J2U9Kf5ZHrSSXUojANLN1z7NpOtcXUIsbTfL9A82s50WDhG2wQvBrOO-IHhKgOPnHdBNS3G10nU4CN_E9hBiFN-CQX1PuzJPp3rtuSyxU6WfOyzh5rwHFVAKfQPA==&uniplatform=NZKPT&language=CHS" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> CNKI</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <h3 class="pub-group-heading" id="preprints-heading">Preprints</h3>
+            <div class="publications-container" aria-labelledby="preprints-heading">
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <img src="assets/pub-genericagent.svg" alt="A verbose context compressed into a dense, token-efficient core by a self-evolving agent" class="publication-photo" loading="lazy">
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Preprint</span>
+                        <p class="authors">Jiaqing Liang, Jinyi Han, Weijia Li, Xinyi Wang, Zhoujia Zhang, Zishang Jiang, Ying Liao, Tingyun Li, Ying Huang, Hao Shen, Hanyu Wu, Fang Guo, <strong>Keyi Wang</strong>, Zhonghua Hong, Zhiyu Lu, Lipeng Ma, Sihang Jiang, Yanghua Xiao</p>
+                        <h3 class="publication-title">GenericAgent: A Token-Efficient Self-Evolving LLM Agent via Contextual Information Density Maximization</h3>
+                        <div class="venue-row">
+                            <span class="venue-badge"><i class="fas fa-file-lines" aria-hidden="true"></i> arXiv:2604.17091</span>
+                        </div>
+                        <p class="publication-meta">April 2026</p>
+                        <div class="publication-links">
+                            <a class="pub-link" href="https://arxiv.org/abs/2604.17091" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> arXiv</a>
+                            <a class="pub-link" href="https://arxiv.org/pdf/2604.17091" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <img src="assets/pub-sea-eval.svg" alt="A rising capability trajectory of a self-evolving agent, evaluated continuously across tasks beyond single episodes" class="publication-photo" loading="lazy">
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Preprint</span>
+                        <p class="authors">Sihang Jiang, Lipeng Ma, Zhonghua Hong, <strong>Keyi Wang</strong>, Zhiyu Lu, Tengfei Wang, Shisong Chen, Jinghao Zhang, Tianjun Pan, Weijia Li, Jiaqing Liang, Yanghua Xiao</p>
+                        <h3 class="publication-title">SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment</h3>
+                        <div class="venue-row">
+                            <span class="venue-badge"><i class="fas fa-file-lines" aria-hidden="true"></i> arXiv:2604.08988</span>
+                        </div>
+                        <p class="publication-meta">April 2026</p>
+                        <div class="publication-links">
+                            <a class="pub-link" href="https://arxiv.org/abs/2604.08988" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> arXiv</a>
+                            <a class="pub-link" href="https://arxiv.org/pdf/2604.08988" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
+                        </div>
                     </div>
                 </article>
             </div>

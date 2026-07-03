@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Interests - Keyi Wang (王可逸)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8B2635" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15110E" media="(prefers-color-scheme: dark)">
     <meta name="description" content="Interests of Keyi Wang including language learning, video collections on linguistic topics, and various languages such as French, Spanish, Arabic, and more.">
     <meta name="author" content="Keyi Wang">
     <meta name="robots" content="index, follow">
@@ -15,14 +17,28 @@
     <meta property="og:title" content="Interests - Keyi Wang (王可逸)">
     <meta property="og:description" content="Language learning, video collections on linguistic topics, and various languages.">
 
+    <meta property="og:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>var pageLastModified = 'April 3, 2026';</script>
+    <script>
+        var pageLastModified = 'April 3, 2026';
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                if (t === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); }
+            } catch (e) {}
+        })();
+    </script>
     <style>
         .video-collection {
             margin: 2rem 0;
@@ -72,6 +88,17 @@
             color: var(--color-ink);
             margin-bottom: 0.5rem;
             font-size: 1.4rem;
+        }
+
+        .collection-stats {
+            color: var(--color-ink-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-stats i {
+            color: var(--color-burgundy);
+            margin-right: 2px;
         }
 
         .collection-link {
@@ -152,7 +179,7 @@
             box-shadow: 0 4px 12px rgba(139, 38, 53, 0.2);
         }
 
-        @media (max-width: var(--bp-sm)) {
+        @media (max-width: 480px) {
             .collection-header {
                 flex-direction: column;
                 text-align: center;
@@ -184,9 +211,10 @@
             <div class="video-collection">
                 <div class="collection-container">
                     <div class="collection-header">
-                        <img src="assets/ling.png" alt="Video Collection Cover" class="collection-cover" loading="lazy">
+                        <img src="assets/ling.jpg" alt="Video Collection Cover" class="collection-cover" width="1000" height="562" loading="lazy">
                         <div class="collection-info">
                             <h3>Language Discussion Community <span class="chinese-title">語言雜談共同體</span></h3>
+                            <p class="collection-stats"><i class="fas fa-video" aria-hidden="true"></i> 23 videos · <i class="fas fa-eye" aria-hidden="true"></i> 82,000+ views · linguistics, geography and history</p>
                             <a href="https://space.bilibili.com/220871609/lists/1560464?type=season" target="_blank" rel="noopener noreferrer" class="collection-link">
                                 View Full Collection
                             </a>

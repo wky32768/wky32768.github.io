@@ -3,26 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Internship - Keyi Wang (王可逸)</title>
+    <title>Experience - Keyi Wang (王可逸)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Internship experience of Keyi Wang at Qi-AnXin Technology Group Inc. in Hangzhou, China.">
+    <meta name="theme-color" content="#8B2635" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15110E" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Experience of Keyi Wang: security services internship at Qi-AnXin, and teaching of programming, linguistics, geography and history.">
     <meta name="author" content="Keyi Wang">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wky32768.github.io/internship.html">
-    <meta property="og:title" content="Internship - Keyi Wang (王可逸)">
-    <meta property="og:description" content="Internship experience at Qi-AnXin Technology Group Inc. in security services.">
+    <meta property="og:title" content="Experience - Keyi Wang (王可逸)">
+    <meta property="og:description" content="Security services internship at Qi-AnXin, plus teaching of programming, linguistics, geography and history.">
+
+    <meta property="og:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>var pageLastModified = 'April 3, 2026';</script>
+    <script>
+        var pageLastModified = 'April 3, 2026';
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                if (t === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body>
@@ -32,26 +48,71 @@
     <div id="nav-container"></div>
 
     <main id="main-content">
-        <section id="internship" aria-labelledby="internship-heading">
-            <h2 id="internship-heading">Internship</h2>
+        <section id="experience" aria-labelledby="experience-heading">
+            <h2 id="experience-heading">Experience</h2>
+
+            <h3 class="exp-subhead"><i class="fas fa-briefcase" aria-hidden="true"></i> Industry</h3>
             <article class="internship-card">
                 <div class="internship-logo">
                     <img src="assets/qax.jpg" alt="Qi-AnXin Technology Group Logo" class="logo" loading="lazy">
                 </div>
                 <div class="internship-content">
                     <h3><a href="https://www.qianxin.com/" target="_blank" rel="noopener noreferrer">Qi-AnXin Technology Group Inc. (奇安信)</a></h3>
-                    <p class="internship-date">July 2024 – August 2024</p>
-                    <p class="internship-position">Internship in Security Services</p>
-                    <p class="internship-location">Hangzhou, China</p>
+                    <p class="internship-date">July 2024 – August 2024 · Hangzhou, China</p>
+                    <p class="internship-position">Security Services Intern</p>
+                    <ul class="exp-points">
+                        <li>Conducted vulnerability assessments and reported 10+ critical issues, including username enumeration, SMS bombing, and sensitive file leakage.</li>
+                        <li>Took part in 3 external penetration tests for enterprises and provincial departments, delivering detailed reports and recommended mitigations.</li>
+                    </ul>
                     <div class="internship-skills">
-                        <span class="skill-tag">Burpsuite</span>
+                        <span class="skill-tag">Burp Suite</span>
                         <span class="skill-tag">Dirsearch</span>
                         <span class="skill-tag">CKnife</span>
                         <span class="skill-tag">Kali</span>
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">PHP</span>
                         <span class="skill-tag">AWVS</span>
-                        <span class="skill-tag">OWASP TOP10</span>
+                        <span class="skill-tag">OWASP Top 10</span>
+                    </div>
+                </div>
+            </article>
+
+            <h3 class="exp-subhead"><i class="fas fa-chalkboard-user" aria-hidden="true"></i> Teaching</h3>
+            <article class="internship-card">
+                <div class="internship-logo">
+                    <div class="exp-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                </div>
+                <div class="internship-content">
+                    <h3>Shenzhen Zhisike Culture and Education Technology Co., Ltd.</h3>
+                    <p class="internship-date">September 2024 – February 2026</p>
+                    <p class="internship-position">Programming Instructor</p>
+                    <ul class="exp-points">
+                        <li>Taught 100+ hours of foundational C++ and Python, plus USACO Bronze and Silver competitive-programming tutorials.</li>
+                    </ul>
+                    <div class="internship-skills">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">USACO</span>
+                        <span class="skill-tag">Algorithms</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="internship-card">
+                <div class="internship-logo">
+                    <div class="exp-icon"><i class="fas fa-language" aria-hidden="true"></i></div>
+                </div>
+                <div class="internship-content">
+                    <h3><a href="https://space.bilibili.com/220871609" target="_blank" rel="noopener noreferrer">Language Chat Community · Zhuoyue College, HDU</a></h3>
+                    <p class="internship-date">May 2023 – August 2025 · Hangzhou, China</p>
+                    <p class="internship-position">Instructor</p>
+                    <ul class="exp-points">
+                        <li>Created a course series on linguistics, geography, and history — published 23 videos reaching 82,000+ views online.</li>
+                    </ul>
+                    <div class="internship-skills">
+                        <span class="skill-tag">Linguistics</span>
+                        <span class="skill-tag">Geography</span>
+                        <span class="skill-tag">Science Communication</span>
                     </div>
                 </div>
             </article>

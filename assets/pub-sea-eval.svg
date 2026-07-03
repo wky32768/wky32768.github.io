@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="A rising capability trajectory of a self-evolving agent, evaluated continuously across tasks beyond single episodes">
+  <defs>
+    <linearGradient id="bgS" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDF8F3"/>
+      <stop offset="1" stop-color="#F1E7DA"/>
+    </linearGradient>
+    <linearGradient id="burgS" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A63446"/>
+      <stop offset="1" stop-color="#8B2635"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" rx="20" fill="url(#bgS)"/>
+  <rect x="10" y="10" width="1180" height="400" rx="14" fill="none" stroke="#E4D7C7" stroke-width="2"/>
+
+  <!-- capability axis -->
+  <text x="96" y="92" font-family="'Source Sans 3', sans-serif" font-size="15" font-weight="600" fill="#5A5A5A">capability</text>
+  <g stroke="#8B2635" stroke-width="4" stroke-linecap="round" fill="#8B2635">
+    <line x1="120" y1="330" x2="120" y2="104"/>
+    <polygon points="120,96 112,112 128,112" stroke="none"/>
+    <line x1="120" y1="330" x2="960" y2="330"/>
+  </g>
+
+  <!-- episode boundaries (dashed) that continuous evaluation crosses -->
+  <g stroke="#CFC9BD" stroke-width="2" stroke-dasharray="5 7">
+    <line x1="300" y1="120" x2="300" y2="326"/>
+    <line x1="470" y1="120" x2="470" y2="326"/>
+    <line x1="640" y1="120" x2="640" y2="326"/>
+    <line x1="810" y1="120" x2="810" y2="326"/>
+  </g>
+  <text x="640" y="360" font-family="'Source Sans 3', sans-serif" font-size="14" fill="#9AA79C" text-anchor="middle">episode boundaries</text>
+
+  <!-- evolution trajectory -->
+  <polyline points="210,300 385,262 555,224 725,186 875,150" fill="none" stroke="url(#burgS)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- evaluation check discs under each step -->
+  <g>
+    <g transform="translate(210,334)"><circle r="9" fill="#6B7B6E"/><polyline points="-4,0 -1,4 5,-4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g transform="translate(385,334)"><circle r="9" fill="#6B7B6E"/><polyline points="-4,0 -1,4 5,-4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g transform="translate(555,334)"><circle r="9" fill="#6B7B6E"/><polyline points="-4,0 -1,4 5,-4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g transform="translate(725,334)"><circle r="9" fill="#6B7B6E"/><polyline points="-4,0 -1,4 5,-4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+
+  <!-- trajectory nodes -->
+  <g fill="#fff">
+    <circle cx="210" cy="300" r="15" stroke="#6B7B6E" stroke-width="4"/>
+    <circle cx="385" cy="262" r="15" stroke="#C9A227" stroke-width="4"/>
+    <circle cx="555" cy="224" r="15" stroke="#6B7B6E" stroke-width="4"/>
+    <circle cx="725" cy="186" r="15" stroke="#C9A227" stroke-width="4"/>
+  </g>
+  <!-- final evaluated state -->
+  <circle cx="875" cy="150" r="21" fill="url(#burgS)"/>
+  <polyline points="864,150 872,158 888,141" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- caption -->
+  <text x="540" y="392" font-family="'Source Sans 3', sans-serif" font-size="18" font-style="italic" font-weight="600" fill="#5A6B5E" text-anchor="middle">continuous evaluation, beyond episodic assessment</text>
+</svg>

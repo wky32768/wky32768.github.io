@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Education - Keyi Wang (王可逸)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8B2635" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15110E" media="(prefers-color-scheme: dark)">
     <meta name="description" content="Education history of Keyi Wang: M.Sc. at Fudan University, B.Eng. at Hangzhou Dianzi University, exchange at Kristianstad University in Sweden.">
     <meta name="author" content="Keyi Wang">
     <meta name="robots" content="index, follow">
@@ -15,14 +17,28 @@
     <meta property="og:title" content="Education - Keyi Wang (王可逸)">
     <meta property="og:description" content="M.Sc. at Fudan University, B.Eng. at Hangzhou Dianzi University, exchange at Kristianstad University in Sweden.">
 
+    <meta property="og:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>var pageLastModified = 'April 3, 2026';</script>
+    <script>
+        var pageLastModified = 'April 3, 2026';
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                if (t === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body>
@@ -44,6 +60,7 @@
                         <span class="timeline-date">Sept. 2025 – July 2028</span>
                         <h3><a href="https://www.fudan.edu.cn/">Fudan University</a></h3>
                         <p class="degree">M.Sc. in Computer Science and Technology</p>
+                        <p class="lab"><i class="fas fa-flask" aria-hidden="true"></i> Knowledge Works Lab · Advised by Prof. Yanghua Xiao</p>
                         <p class="location">Shanghai, China</p>
                     </div>
                 </div>
@@ -56,7 +73,8 @@
                     <div class="timeline-content">
                         <span class="timeline-date">Sept. 2021 – June 2025</span>
                         <h3><a href="http://www.hdu.edu.cn/">Hangzhou Dianzi University</a></h3>
-                        <p class="degree">B.Eng. in Computer Science and Technology</p>
+                        <p class="degree">B.Eng. (Honors) in Computer Science and Technology</p>
+                        <p class="lab"><i class="fas fa-flask" aria-hidden="true"></i> Media Intelligence Lab · Advised by Prof. Zhou Yu and Assoc. Prof. Xiaoxi Huang</p>
                         <p class="location">Hangzhou, China</p>
                         <p class="gpa">GPA: 4.36/5 (88.6/100) · Top 2.7%</p>
                     </div>

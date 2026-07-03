@@ -1,0 +1,8 @@
+# Playwright MCP scratch output
+.playwright-mcp/
+
+# Local, machine-specific screenshots / scratch
+homepage.png
+
+# Local Claude Code settings (machine-specific)
+.claude/settings.local.json

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="A degraded human posture restored to a clean pose by an adaptive diffusion model">
+  <defs>
+    <linearGradient id="bgP" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDF8F3"/>
+      <stop offset="1" stop-color="#F1E7DA"/>
+    </linearGradient>
+    <linearGradient id="burgP" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A63446"/>
+      <stop offset="1" stop-color="#8B2635"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" rx="20" fill="url(#bgP)"/>
+  <rect x="10" y="10" width="1180" height="400" rx="14" fill="none" stroke="#E4D7C7" stroke-width="2"/>
+
+  <!-- ===== LEFT: degraded posture (noisy, broken) ===== -->
+  <g transform="translate(300,86)">
+    <!-- noise specks -->
+    <g fill="#6B7B6E" opacity="0.35">
+      <circle cx="-80" cy="40" r="3"/>
+      <circle cx="90" cy="70" r="4"/>
+      <circle cx="-95" cy="150" r="3"/>
+      <circle cx="80" cy="200" r="3"/>
+      <circle cx="-40" cy="255" r="4"/>
+      <circle cx="62" cy="24" r="3"/>
+      <circle cx="20" cy="270" r="3"/>
+      <circle cx="-70" cy="212" r="3"/>
+    </g>
+    <g fill="#C9A227" opacity="0.45">
+      <circle cx="-58" cy="92" r="3"/>
+      <circle cx="72" cy="140" r="3"/>
+      <circle cx="-28" cy="-14" r="3"/>
+    </g>
+    <!-- broken bones (dashed, faded) -->
+    <g stroke="#9AA79C" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 8" fill="none">
+      <line x1="-40" y1="45" x2="40" y2="45"/>
+      <line x1="-40" y1="45" x2="-60" y2="95"/>
+      <line x1="-60" y1="95" x2="-70" y2="145"/>
+      <line x1="40" y1="45" x2="60" y2="95"/>
+      <line x1="60" y1="95" x2="70" y2="145"/>
+      <line x1="0" y1="30" x2="0" y2="120"/>
+      <line x1="-28" y1="125" x2="28" y2="125"/>
+      <line x1="-28" y1="125" x2="-32" y2="185"/>
+      <line x1="-32" y1="185" x2="-34" y2="240"/>
+      <line x1="28" y1="125" x2="32" y2="185"/>
+      <line x1="32" y1="185" x2="34" y2="240"/>
+    </g>
+    <!-- head -->
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#9AA79C" stroke-width="5" stroke-dasharray="5 7"/>
+    <!-- faded joints -->
+    <g fill="#fff" stroke="#9AA79C" stroke-width="3">
+      <circle cx="-40" cy="45" r="6"/>
+      <circle cx="40" cy="45" r="6"/>
+      <circle cx="-70" cy="145" r="6"/>
+      <circle cx="70" cy="145" r="6"/>
+      <circle cx="0" cy="120" r="6"/>
+      <circle cx="-34" cy="240" r="6"/>
+      <circle cx="34" cy="240" r="6"/>
+    </g>
+    <text x="0" y="288" font-family="'Source Sans 3', sans-serif" font-size="19" font-weight="600" fill="#5A6B5E" text-anchor="middle">degraded</text>
+  </g>
+
+  <!-- ===== flow arrow with diffusion label ===== -->
+  <text x="600" y="180" font-family="'Source Sans 3', sans-serif" font-size="16" font-weight="600" fill="#9A8420" text-anchor="middle">diffusion</text>
+  <g stroke="#8B2635" stroke-width="5" stroke-linecap="round" fill="none">
+    <line x1="555" y1="210" x2="645" y2="210"/>
+    <polyline points="627,194 647,210 627,226"/>
+  </g>
+
+  <!-- ===== RIGHT: restored posture (clean) ===== -->
+  <g transform="translate(900,86)">
+    <!-- bones -->
+    <g stroke="#6B7B6E" stroke-width="6" stroke-linecap="round" fill="none">
+      <line x1="0" y1="18" x2="0" y2="30"/>
+      <line x1="0" y1="30" x2="-40" y2="45"/>
+      <line x1="0" y1="30" x2="40" y2="45"/>
+      <line x1="-40" y1="45" x2="40" y2="45"/>
+      <line x1="-40" y1="45" x2="-60" y2="95"/>
+      <line x1="-60" y1="95" x2="-70" y2="145"/>
+      <line x1="40" y1="45" x2="60" y2="95"/>
+      <line x1="60" y1="95" x2="70" y2="145"/>
+      <line x1="0" y1="30" x2="0" y2="120"/>
+      <line x1="0" y1="120" x2="-28" y2="125"/>
+      <line x1="0" y1="120" x2="28" y2="125"/>
+      <line x1="-28" y1="125" x2="28" y2="125"/>
+      <line x1="-28" y1="125" x2="-32" y2="185"/>
+      <line x1="-32" y1="185" x2="-34" y2="240"/>
+      <line x1="28" y1="125" x2="32" y2="185"/>
+      <line x1="32" y1="185" x2="34" y2="240"/>
+    </g>
+    <!-- head -->
+    <circle cx="0" cy="0" r="18" fill="url(#burgP)"/>
+    <!-- joints -->
+    <g fill="#fff" stroke="#8B2635" stroke-width="4">
+      <circle cx="0" cy="30" r="7"/>
+      <circle cx="-40" cy="45" r="7"/>
+      <circle cx="40" cy="45" r="7"/>
+      <circle cx="-60" cy="95" r="7"/>
+      <circle cx="60" cy="95" r="7"/>
+      <circle cx="-70" cy="145" r="7"/>
+      <circle cx="70" cy="145" r="7"/>
+      <circle cx="0" cy="120" r="7"/>
+      <circle cx="-28" cy="125" r="7"/>
+      <circle cx="28" cy="125" r="7"/>
+      <circle cx="-32" cy="185" r="7"/>
+      <circle cx="32" cy="185" r="7"/>
+      <circle cx="-34" cy="240" r="7"/>
+      <circle cx="34" cy="240" r="7"/>
+    </g>
+    <text x="0" y="288" font-family="'Source Sans 3', sans-serif" font-size="19" font-weight="600" fill="#8B2635" text-anchor="middle">restored</text>
+  </g>
+</svg>

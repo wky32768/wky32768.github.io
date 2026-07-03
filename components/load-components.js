@@ -41,18 +41,67 @@ function highlightCurrentPage() {
     });
 }
 
-// 设置页面最后修改日期
+// 深色模式切换
+function setupThemeToggle() {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    const icon = toggle.querySelector('i');
+
+    function render(theme) {
+        const isDark = theme === 'dark';
+        if (icon) {
+            icon.classList.toggle('fa-sun', isDark);
+            icon.classList.toggle('fa-moon', !isDark);
+        }
+        toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    // 初始状态由 <head> 内联脚本设置，这里只同步图标
+    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    render(current);
+
+    toggle.addEventListener('click', function () {
+        const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        render(next);
+    });
+}
+
+// 设置页脚版权年份
+function setFooterYear() {
+    const yearSpan = document.getElementById('footerYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+}
+
+// 设置页面最后修改日期（优先使用文件真实修改时间，自动更新）
 function setLastModifiedDate() {
-    // 支持新的 span 结构
+    let text = (typeof pageLastModified !== 'undefined') ? pageLastModified : '';
+
+    // document.lastModified 反映 HTML 文件的最后修改时间（本地服务器 / GitHub Pages 均可用）
+    try {
+        const d = new Date(document.lastModified);
+        if (!isNaN(d.getTime()) && d.getFullYear() > 1970) {
+            text = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+    } catch (e) {}
+
     const lastModifiedSpan = document.getElementById('lastModifiedDate');
-    if (lastModifiedSpan && typeof pageLastModified !== 'undefined') {
-        lastModifiedSpan.textContent = pageLastModified;
+    if (lastModifiedSpan) {
+        lastModifiedSpan.textContent = text;
         return;
     }
     // 兼容旧的 .last-modified 结构
     const lastModifiedElement = document.querySelector('.last-modified');
-    if (lastModifiedElement && typeof pageLastModified !== 'undefined') {
-        lastModifiedElement.textContent = 'Last Modified: ' + pageLastModified;
+    if (lastModifiedElement && text) {
+        lastModifiedElement.textContent = 'Last Modified: ' + text;
     }
 }
 
@@ -164,11 +213,40 @@ document.addEventListener('DOMContentLoaded', function() {
         // 所有组件加载完成后初始化功能
         highlightCurrentPage();
         setupMobileMenu();
+        setupThemeToggle();
+        setFooterYear();
         setLastModifiedDate();
         setupBackToTop();
         initAnimations();
+        setupScrollReveal();
     });
 });
+
+// 滚动入场动画（用 JS 加 .reveal，关闭 JS 时内容照常可见）
+function setupScrollReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const targets = document.querySelectorAll(
+        '.publication-card, .timeline-item, .award-card, .friend-card, .news-item, .internship-card, .skill-group'
+    );
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach(function (el, i) {
+        el.classList.add('reveal');
+        el.style.transitionDelay = (Math.min(i, 6) * 60) + 'ms';
+        observer.observe(el);
+    });
+}
 
 // 初始化动画
 function initAnimations() {

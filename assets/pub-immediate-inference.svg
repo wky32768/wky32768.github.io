@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="The traditional square of opposition diagram from term logic">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDF8F3"/>
+      <stop offset="1" stop-color="#F1E7DA"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" rx="20" fill="url(#bg2)"/>
+  <rect x="10" y="10" width="1180" height="400" rx="14" fill="none" stroke="#E4D7C7" stroke-width="2"/>
+
+  <!-- Square of opposition: corners A (top-left), E (top-right), I (bottom-left), O (bottom-right) -->
+  <g font-family="Georgia, 'Playfair Display', serif">
+    <!-- contradictories (diagonals) -->
+    <g stroke="#C9A227" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round">
+      <line x1="430" y1="120" x2="770" y2="300"/>
+      <line x1="770" y1="120" x2="430" y2="300"/>
+    </g>
+    <!-- edges -->
+    <g stroke="#8B2635" stroke-width="4">
+      <line x1="430" y1="120" x2="770" y2="120"/>  <!-- contraries -->
+      <line x1="430" y1="300" x2="770" y2="300"/>  <!-- subcontraries -->
+      <line x1="430" y1="120" x2="430" y2="300"/>  <!-- subalternation -->
+      <line x1="770" y1="120" x2="770" y2="300"/>
+    </g>
+    <!-- arrowheads on subalternation (downward) -->
+    <g fill="#8B2635">
+      <polygon points="430,300 422,278 438,278"/>
+      <polygon points="770,300 762,278 778,278"/>
+    </g>
+
+    <!-- corner discs -->
+    <g>
+      <circle cx="430" cy="120" r="40" fill="#8B2635"/>
+      <circle cx="770" cy="120" r="40" fill="#6B7B6E"/>
+      <circle cx="430" cy="300" r="40" fill="#6B7B6E"/>
+      <circle cx="770" cy="300" r="40" fill="#8B2635"/>
+    </g>
+    <g fill="#fff" font-size="44" font-weight="700" text-anchor="middle">
+      <text x="430" y="136">A</text>
+      <text x="770" y="136">E</text>
+      <text x="430" y="316">I</text>
+      <text x="770" y="316">O</text>
+    </g>
+
+    <!-- edge labels -->
+    <g fill="#5A5A5A" font-family="'Source Sans 3', sans-serif" font-size="20" text-anchor="middle">
+      <text x="600" y="104">contraries</text>
+      <text x="600" y="332">subcontraries</text>
+    </g>
+    <g fill="#9A8420" font-family="'Source Sans 3', sans-serif" font-size="19" text-anchor="middle">
+      <text x="600" y="222">contradictories</text>
+    </g>
+  </g>
+</svg>

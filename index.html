@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Keyi Wang (王可逸) - M.Sc. Student at Fudan University</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8B2635" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15110E" media="(prefers-color-scheme: dark)">
     <meta name="description" content="Keyi Wang is a postgraduate student at Fudan University, supervised by Prof. Yanghua Xiao. His research interests include Artificial Intelligence, Algorithm, Linguistic, and Geography.">
     <meta name="author" content="Keyi Wang">
     <meta name="robots" content="index, follow">
@@ -29,7 +31,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>var pageLastModified = 'April 3, 2026';</script>
+    <script>
+        var pageLastModified = 'April 3, 2026';
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                if (t === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Keyi Wang",
+        "alternateName": "王可逸",
+        "url": "https://wky32768.github.io/",
+        "image": "https://wky32768.github.io/assets/keyiwang.jpg",
+        "jobTitle": "M.Sc. Student in Computer Science",
+        "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Fudan University"
+        },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Hangzhou Dianzi University" },
+            { "@type": "CollegeOrUniversity", "name": "Kristianstad University" }
+        ],
+        "sameAs": [
+            "https://github.com/wky32768",
+            "https://scholar.google.com/citations?hl=en&user=U_e6LikAAAAJ",
+            "https://space.bilibili.com/220871609"
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -40,34 +77,87 @@
     <div id="nav-container"></div>
 
     <main id="main-content">
-        <section id="about" aria-labelledby="about-heading">
-            <h2 id="about-heading">About</h2>
-            <div class="about-container">
-                <div class="photo-wrapper">
-                    <img src="assets/keyiwang.jpg" alt="Portrait photo of Keyi Wang" class="photo" loading="eager">
+        <section id="about" class="hero" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="sr-only">About</h2>
+            <div class="hero-grid">
+                <div class="hero-photo">
+                    <div class="photo-wrapper">
+                        <img src="assets/keyiwang.jpg" alt="Portrait photo of Keyi Wang" class="photo" width="800" height="1200" loading="eager">
+                    </div>
+                    <div class="social-links hero-social" role="list" aria-label="Social media links">
+                        <a href="mailto:wky32768@qq.com" class="social-link email" title="Send email" target="_blank" rel="noopener noreferrer" role="listitem">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span class="sr-only">Email</span>
+                        </a>
+                        <a href="https://github.com/wky32768" class="social-link github" title="View GitHub profile" target="_blank" rel="noopener noreferrer" role="listitem">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=U_e6LikAAAAJ" class="social-link scholar" title="View Google Scholar profile" target="_blank" rel="noopener noreferrer" role="listitem">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            <span class="sr-only">Google Scholar</span>
+                        </a>
+                        <a href="https://space.bilibili.com/220871609" class="social-link bilibili" title="View Bilibili channel" target="_blank" rel="noopener noreferrer" role="listitem">
+                            <i class="fab fa-bilibili" aria-hidden="true"></i>
+                            <span class="sr-only">Bilibili</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <p class="about-summary">M.Sc. student at Fudan University | Research in Knowledge Works Lab | interests in AI, Algorithms & Linguistics</p>
-                    <p>My name's Keyi Wang, I'm currently a postgraduate student at <a
-                            href="https://www.fudan.edu.cn/">Fudan University</a>, China, doing my research in <a
-                            href="http://kw.fudan.edu.cn/">Knowledge Works Research Laboratory</a>, supervised by <a
-                            href="http://kw.fudan.edu.cn/people/xiaoyanghua/">Prof. Yanghua Xiao</a>.</p>
-                    <p>Before that, I
-                        did my bachelor at <a href="http://www.hdu.edu.cn/">Hangzhou Dianzi University, China</a>
-                        (supervised by <a
-                            href="https://scholar.google.com/citations?user=yidozyMAAAAJ&hl=en&oi=ao">Prof. Zhou Yu</a> and
-                        <a href="https://faculty.hdu.edu.cn/jsjxy/hxx/main.htm">Assoc. Prof. Xiaoxi Huang</a>) and
-                        exchanged in <a href="https://hkr.se/">Kristianstad University, Sweden.</a>
-                    </p>
+                <div class="hero-text">
+                    <p class="hero-eyebrow"><i class="fas fa-flask" aria-hidden="true"></i> M.Sc. · <a href="http://kw.fudan.edu.cn/">Knowledge Works Lab</a>, <a href="https://www.fudan.edu.cn/">Fudan University</a></p>
+                    <p class="hero-headline">I study how large language models <span class="accent">reason</span> — and I'm fascinated by how humans do, across <span class="accent">20+ languages</span>.</p>
+                    <div class="hero-bio">
+                        <p>I'm a postgraduate student at <a href="https://www.fudan.edu.cn/">Fudan University</a>, China, doing my research in the <a href="http://kw.fudan.edu.cn/">Knowledge Works Research Laboratory</a>, supervised by <a href="http://kw.fudan.edu.cn/people/xiaoyanghua/">Prof. Yanghua Xiao</a>.</p>
+                        <p>Before that, I did my bachelor at <a href="http://www.hdu.edu.cn/">Hangzhou Dianzi University, China</a> (supervised by <a href="https://scholar.google.com/citations?user=yidozyMAAAAJ&hl=en&oi=ao">Prof. Zhou Yu</a> and <a href="https://faculty.hdu.edu.cn/jsjxy/hxx/main.htm">Assoc. Prof. Xiaoxi Huang</a>) and exchanged at <a href="https://hkr.se/">Kristianstad University, Sweden</a>.</p>
+                    </div>
+                    <h3 class="sr-only">Research Interests</h3>
+                    <div class="interest-tags">
+                        <span class="tag">Natural Language Processing</span>
+                        <span class="tag">LLM Agents</span>
+                        <span class="tag">LLM Reasoning and Evaluation</span>
+                        <span class="tag">Computational Linguistics</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="interests">
-                        <h3 class="sr-only">Research Interests</h3>
-                        <div class="interest-tags">
-                            <span class="tag">Artificial Intelligence</span>
-                            <span class="tag">Algorithm</span>
-                            <span class="tag">Linguistic</span>
-                            <span class="tag">Geography</span>
-                        </div>
+        <section id="news" aria-labelledby="news-heading">
+            <h2 id="news-heading">News</h2>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-date">Jul 2026</span>
+                    <div class="news-body">Two papers accepted to <a href="https://2026.aclweb.org/" target="_blank" rel="noopener noreferrer"><strong>ACL 2026</strong></a> Main Conference in San Diego — <a href="publications.html#pub-inslogicbench"><em>InsLogicBench</em></a> and <a href="publications.html#pub-immediate-inference"><em>Immediate Inference</em></a> (Oral). <a href="publications.html">See publications →</a></div>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Jan 2026</span>
+                    <div class="news-body">Presented <a href="https://ojs.aaai.org/index.php/AAAI/article/view/40302" target="_blank" rel="noopener noreferrer"><em>“Measuring the Unmeasurable: Unveiling Latent Cognitive Capabilities of LLM”</em></a> at <a href="https://aaai.org/conference/aaai/aaai-26/" target="_blank" rel="noopener noreferrer"><strong>AAAI 2026</strong></a> in Singapore.</div>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Sep 2025</span>
+                    <div class="news-body">Began my <a href="education.html"><strong>M.Sc.</strong></a> in Computer Science at <a href="https://www.fudan.edu.cn/">Fudan University</a>, joining the <a href="http://kw.fudan.edu.cn/">Knowledge Works Lab</a>.</div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills and Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3><i class="fas fa-language" aria-hidden="true"></i> Languages</h3>
+                    <div class="interest-tags">
+                        <span class="tag">Chinese — Native</span>
+                        <span class="tag">English — C1 (IELTS 7.0)</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i> Tech Stack</h3>
+                    <div class="interest-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">LaTeX</span>
+                        <span class="tag">vLLM</span>
+                        <span class="tag">Llama Factory</span>
+                        <span class="tag">Claude Code</span>
                     </div>
                 </div>
             </div>
@@ -79,25 +169,8 @@
                 <ul class="contact-list">
                     <li><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:wky32768@qq.com">wky32768@qq.com</a></li>
                     <li><i class="fab fa-github" aria-hidden="true"></i> GitHub: <a href="https://github.com/wky32768" target="_blank" rel="noopener noreferrer">wky32768</a></li>
+                    <li><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar: <a href="https://scholar.google.com/citations?hl=en&user=U_e6LikAAAAJ" target="_blank" rel="noopener noreferrer">Keyi Wang</a></li>
                 </ul>
-                <div class="social-links" role="list" aria-label="Social media links">
-                    <a href="mailto:wky32768@qq.com" class="social-link email" title="Send email" target="_blank" rel="noopener noreferrer" role="listitem">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <span class="sr-only">Email</span>
-                    </a>
-                    <a href="https://github.com/wky32768" class="social-link github" title="View GitHub profile" target="_blank" rel="noopener noreferrer" role="listitem">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                        <span class="sr-only">GitHub</span>
-                    </a>
-                    <a href="https://space.bilibili.com/220871609" class="social-link bilibili" title="View Bilibili channel" target="_blank" rel="noopener noreferrer" role="listitem">
-                        <i class="fab fa-bilibili" aria-hidden="true"></i>
-                        <span class="sr-only">Bilibili</span>
-                    </a>
-                    <span class="social-link scholar" title="Google Scholar profile" role="listitem">
-                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                        <span class="sr-only">Google Scholar</span>
-                    </span>
-                </div>
             </div>
         </section>
     </main>
