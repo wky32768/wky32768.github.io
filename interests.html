@@ -21,10 +21,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
 
+    <link rel="canonical" href="https://wky32768.github.io/interests.html">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,6 +130,11 @@
             background-color: white;
         }
 
+        .video-player .stat-note {
+            margin-top: 0.75rem;
+            text-align: right;
+        }
+
         .video-player iframe {
             width: 100%;
             height: 450px;
@@ -214,7 +222,12 @@
                         <img src="assets/ling.jpg" alt="Video Collection Cover" class="collection-cover" width="1000" height="562" loading="lazy">
                         <div class="collection-info">
                             <h3>Language Discussion Community <span class="chinese-title">語言雜談共同體</span></h3>
-                            <p class="collection-stats"><i class="fas fa-video" aria-hidden="true"></i> 23 videos · <i class="fas fa-eye" aria-hidden="true"></i> 82,000+ views · linguistics, geography and history</p>
+                            <p class="collection-stats">
+                                <i class="fas fa-video" aria-hidden="true"></i> <span data-stat="bilibili.collection.videos">23</span> videos ·
+                                <i class="fas fa-eye" aria-hidden="true"></i> <span data-stat="bilibili.collection.views">82,778</span> views ·
+                                <i class="fas fa-user-group" aria-hidden="true"></i> <span data-stat="bilibili.follower">1,198</span> followers
+                            </p>
+                            <p class="collection-stats">linguistics, geography and history</p>
                             <a href="https://space.bilibili.com/220871609/lists/1560464?type=season" target="_blank" rel="noopener noreferrer" class="collection-link">
                                 View Full Collection
                             </a>
@@ -222,8 +235,13 @@
                     </div>
 
                     <div class="video-player">
-                        <iframe src="https://player.bilibili.com/player.html?bvid=BV18J3ezoEEj&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true" title="Language discussion video" loading="lazy">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV18J3ezoEEj&page=1&autoplay=0&high_quality=1" title="Language discussion video: Norwegian" allow="fullscreen; picture-in-picture" loading="lazy">
                         </iframe>
+                        <p class="stat-note" data-stat-requires="bilibili.featured">
+                            <i class="fas fa-play" aria-hidden="true"></i>
+                            <span data-stat="bilibili.featured.views">1,563</span> plays on this episode ·
+                            live from Bilibili, updated <span data-stat-date="bilibili.updated_at">weekly</span>
+                        </p>
                     </div>
 
                     <div class="languages-section">
@@ -259,6 +277,7 @@
 
     <div id="footer-container"></div>
     <script src="components/load-components.js"></script>
+    <script src="assets/stats.js" defer></script>
 </body>
 
 </html>

@@ -105,6 +105,37 @@ function setLastModifiedDate() {
     }
 }
 
+// 访客计数（不蒜子）。页脚是 innerHTML 注入的，其中的 <script> 不会执行，
+// 所以在这里手动加载，并且只有拿到数字后才把整行显示出来。
+function setupVisitorCounter() {
+    const counter = document.getElementById('siteCounter');
+    if (!counter) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    const pv = document.getElementById('busuanzi_container_site_pv');
+    const uv = document.getElementById('busuanzi_container_site_uv');
+    const filled = (container) => {
+        const value = container && container.querySelector('span');
+        return !!(value && value.textContent.trim());
+    };
+
+    const deadline = Date.now() + 8000;
+    (function poll() {
+        if (filled(pv) || filled(uv)) {
+            // 只显示真正拿到数字的那部分
+            if (!filled(pv)) { pv.remove(); document.querySelector('.counter-sep')?.remove(); }
+            if (!filled(uv)) { uv.remove(); document.querySelector('.counter-sep')?.remove(); }
+            counter.hidden = false;
+            return;
+        }
+        if (Date.now() < deadline) setTimeout(poll, 300);
+    })();
+}
+
 // 移动端菜单切换
 function setupMobileMenu() {
     const navToggle = document.getElementById('navToggle');
@@ -216,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setupThemeToggle();
         setFooterYear();
         setLastModifiedDate();
+        setupVisitorCounter();
         setupBackToTop();
         initAnimations();
         setupScrollReveal();

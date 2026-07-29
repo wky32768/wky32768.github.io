@@ -2176,3 +2176,90 @@ a, button, .nav-toggle, .social-link, .tag, .skill-tag, .language-tag, .friend-c
     .news-date { justify-self: start; }
     .theme-toggle { left: var(--space-sm); width: 38px; height: 38px; }
 }
+
+/* ---------- Live stats (Bilibili / Google Scholar / visitors) ----------
+   Values come from assets/stats.json, refreshed weekly by GitHub Actions.
+   Markup keeps a last-known number so a failed fetch degrades to stale,
+   never to blank. See assets/stats.js. */
+.stat-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.stat-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 0.5rem 1rem;
+    background: var(--color-cream-dark);
+    border: 1px solid rgba(139, 38, 53, 0.12);
+    border-radius: var(--border-radius-full);
+    color: var(--color-ink);
+    line-height: 1.2;
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+a.stat-pill:hover {
+    text-decoration: none;
+    color: var(--color-ink);
+    border-color: rgba(139, 38, 53, 0.35);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-burgundy);
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    color: var(--color-ink-light);
+}
+
+/* the global external-link glyph would break the pill's baseline */
+.stat-pill[target="_blank"]::after { display: none; }
+
+.stat-note {
+    flex-basis: 100%;
+    font-size: 0.82rem;
+    color: var(--color-ink-light);
+    margin: 0;
+}
+
+.stat-note i { color: var(--color-burgundy); margin-right: 4px; }
+
+.stat-inline {
+    font-variant-numeric: tabular-nums;
+    color: var(--color-ink-light);
+    font-size: 0.92rem;
+}
+
+.stat-inline .stat-live { color: var(--color-burgundy); font-weight: 600; }
+
+footer .site-counter {
+    margin-top: var(--space-xs);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+footer .site-counter i { margin-right: 4px; }
+footer .site-counter .counter-sep { margin: 0 6px; }
+
+[data-theme="dark"] .stat-pill {
+    background: var(--surface-2);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 480px) {
+    .stat-strip { gap: var(--space-xs); }
+    .stat-pill { padding: 0.45rem 0.8rem; }
+    .stat-value { font-size: 1.1rem; }
+}

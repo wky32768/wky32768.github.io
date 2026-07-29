@@ -21,10 +21,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
 
+    <link rel="canonical" href="https://wky32768.github.io/publications.html">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +53,27 @@
     <main id="main-content">
         <section id="publications" aria-labelledby="publications-heading">
             <h2 id="publications-heading">Publications</h2>
+
+            <!-- Removed entirely by assets/stats.js when Scholar data is unavailable. -->
+            <div class="stat-strip" data-stat-requires="scholar.citations" aria-label="Google Scholar metrics">
+                <a class="stat-pill" href="https://scholar.google.com/citations?hl=en&user=U_e6LikAAAAJ" target="_blank" rel="noopener noreferrer">
+                    <span class="stat-value" data-stat="scholar.citations">—</span>
+                    <span class="stat-label">Citations</span>
+                </a>
+                <span class="stat-pill">
+                    <span class="stat-value" data-stat="scholar.h_index">—</span>
+                    <span class="stat-label">h-index</span>
+                </span>
+                <span class="stat-pill" data-stat-hide-zero="scholar.i10_index">
+                    <span class="stat-value" data-stat="scholar.i10_index">—</span>
+                    <span class="stat-label">i10-index</span>
+                </span>
+                <p class="stat-note">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    Live from Google Scholar · updated <span data-stat-date="scholar.updated_at">weekly</span>
+                </p>
+            </div>
+
             <div class="publications-container">
                 <article class="publication-card" id="pub-inslogicbench">
                     <div class="publication-image">
@@ -171,6 +195,7 @@
 
     <div id="footer-container"></div>
     <script src="components/load-components.js"></script>
+    <script src="assets/stats.js" defer></script>
 </body>
 
 </html>
