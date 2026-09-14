@@ -298,6 +298,11 @@
             white-space: nowrap;
         }
 
+        .ktv-song-tags span.feature {
+            background: rgba(139, 38, 53, 0.08);
+            color: var(--color-burgundy);
+        }
+
         mark {
             background: rgba(201, 162, 39, 0.3);
             color: inherit;
@@ -370,6 +375,7 @@
         [data-theme="dark"] .ktv-chip { background: rgba(230, 138, 153, 0.1); border-color: rgba(230, 138, 153, 0.2); }
         [data-theme="dark"] .ktv-chip[aria-pressed="true"] { color: white; border-color: transparent; }
         [data-theme="dark"] .ktv-song-tags span { background: rgba(159, 178, 162, 0.14); }
+        [data-theme="dark"] .ktv-song-tags span.feature { background: rgba(230, 138, 153, 0.12); }
 
         @media (max-width: 768px) {
             .ktv-toolbar {
@@ -435,7 +441,8 @@
     <script src="components/load-components.js"></script>
     <script>
     (function () {
-        var state = { songs: [], query: '', view: 'all', sort: 'artist', filters: { lang: new Set(), tags: new Set() } };
+        var TEMPOS = ['慢歌', '中板', '快歌'];
+        var state = { songs: [], query: '', view: 'all', sort: 'artist', filters: { lang: new Set(), tempo: new Set(), style: new Set(), tags: new Set() } };
         var $ = function (id) { return document.getElementById(id); };
         var collator = new Intl.Collator('zh-Hans-CN');
 
@@ -459,7 +466,7 @@
         function buildSearchIndex() {
             state.songs.forEach(function (s) {
                 var fields = [s.title, s.artist, s.album];
-                s._text = fold(fields.concat(s.tags, s.note || '').join(' '));
+                s._text = fold(fields.concat(s.tempo, s.style, s.tags, s.note || '').join(' '));
                 s._py = fields.map(initials).join(' ');
             });
         }
@@ -467,6 +474,8 @@
         function matches(s) {
             var f = state.filters;
             if (f.lang.size && !f.lang.has(s.lang)) return false;
+            if (f.tempo.size && !f.tempo.has(s.tempo)) return false;
+            if (f.style.size && !f.style.has(s.style)) return false;
             for (var t of f.tags) { if (s.tags.indexOf(t) < 0) return false; }
             var q = state.query;
             if (!q) return true;
@@ -495,7 +504,10 @@
                     '<div class="ktv-song-title">' + highlight(s.title) + '</div>' +
                     '<div class="ktv-song-sub">' + sub + (s.note ? ' · ' + esc(s.note) : '') + '</div>' +
                 '</div>' +
-                '<div class="ktv-song-tags">' + s.tags.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') + '</div>' +
+                '<div class="ktv-song-tags">' +
+                    [s.tempo, s.style].map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') +
+                    s.tags.map(function (t) { return '<span class="feature">' + esc(t) + '</span>'; }).join('') +
+                '</div>' +
             '</li>';
         }
 
@@ -519,7 +531,7 @@
 
         function hasFilters() {
             var f = state.filters;
-            return f.lang.size + f.tags.size > 0;
+            return f.lang.size + f.tempo.size + f.style.size + f.tags.size > 0;
         }
 
         function renderResults() {
@@ -558,8 +570,10 @@
         // 筛选标签：显示在“其它条件不变时”能命中的数量，0 的置灰
         function renderFilters() {
             var groups = [
-                { key: 'lang', label: '语言', values: uniq(state.songs.map(function (s) { return s.lang; })) },
-                { key: 'tags', label: '标签', values: tagsByFrequency() }
+                { key: 'lang', label: '语言', values: byFrequency(function (s) { return [s.lang]; }) },
+                { key: 'tempo', label: '节奏', values: TEMPOS },
+                { key: 'style', label: '风格', values: byFrequency(function (s) { return [s.style]; }) },
+                { key: 'tags', label: '特点', values: byFrequency(function (s) { return s.tags; }) }
             ];
             $('ktvFilters').innerHTML = groups.map(function (g) {
                 return '<div class="ktv-chip-row" role="group" aria-label="' + g.label + '"><span class="ktv-chip-label">' + g.label + '</span>' +
@@ -584,9 +598,10 @@
 
         function uniq(arr) { return Array.from(new Set(arr)); }
 
-        function tagsByFrequency() {
+        // pick(s) 返回这首歌在该维度上的取值数组；按出现次数从多到少排列
+        function byFrequency(pick) {
             var freq = {};
-            state.songs.forEach(function (s) { s.tags.forEach(function (t) { freq[t] = (freq[t] || 0) + 1; }); });
+            state.songs.forEach(function (s) { pick(s).forEach(function (t) { freq[t] = (freq[t] || 0) + 1; }); });
             return Object.keys(freq).sort(function (a, b) { return freq[b] - freq[a] || collator.compare(a, b); });
         }
 
