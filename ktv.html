@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>KTV 歌单 - Keyi Wang (王可逸)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8B2635" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15110E" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Keyi Wang 的 KTV 歌单：按歌手、专辑、标签浏览，支持搜索和随机点歌。">
+    <meta name="author" content="Keyi Wang">
+    <meta name="robots" content="noindex">
+
+    <link rel="canonical" href="https://wky32768.github.io/ktv">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts 在国内经常超时，用 media=print 技巧避免阻塞渲染 -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- 拼音首字母搜索（异步加载，未加载完时退化为普通搜索） -->
+    <script id="pinyinLib" src="assets/vendor/pinyin-pro.js" async></script>
+    <script>
+        var pageLastModified = 'September 14, 2026';
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                if (t === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); }
+            } catch (e) {}
+        })();
+    </script>
+    <style>
+        .ktv-subtitle {
+            color: var(--color-ink-light);
+            margin: -1rem 0 1.5rem;
+        }
+
+        /* ---------- 顶部工具栏（滚动时吸顶） ---------- */
+        .ktv-toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            margin: 0 calc(-1 * var(--space-xl));
+            padding: var(--space-sm) var(--space-xl);
+            border-bottom: 1px solid var(--color-cream-dark);
+        }
+
+        .ktv-search-row {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .ktv-search {
+            position: relative;
+            flex: 1;
+        }
+
+        .ktv-search i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-ink-light);
+            pointer-events: none;
+        }
+
+        .ktv-search input {
+            width: 100%;
+            min-height: 44px;
+            padding: 0 40px 0 40px;
+            font: inherit;
+            font-size: 1rem;
+            color: var(--color-ink);
+            background: var(--color-cream);
+            border: 1px solid var(--color-cream-dark);
+            border-radius: var(--border-radius-full);
+            outline: none;
+            transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+        }
+
+        .ktv-search input:focus {
+            border-color: var(--color-burgundy);
+            box-shadow: 0 0 0 3px rgba(139, 38, 53, 0.12);
+        }
+
+        .ktv-search input::-webkit-search-cancel-button { display: none; }
+
+        .ktv-clear {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            background: transparent;
+            color: var(--color-ink-light);
+            cursor: pointer;
+        }
+
+        .ktv-random {
+            min-height: 44px;
+            padding: 0 1.1rem;
+            border: none;
+            border-radius: var(--border-radius-full);
+            background: var(--gradient-warm);
+            color: white;
+            font: inherit;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+        }
+
+        .ktv-random:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 38, 53, 0.25);
+        }
+
+        .ktv-filters {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: var(--space-xs);
+        }
+
+        .ktv-chip-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 2px 0;
+        }
+
+        .ktv-chip-row::-webkit-scrollbar { display: none; }
+
+        .ktv-chip-label {
+            flex: none;
+            font-size: 0.8rem;
+            color: var(--color-ink-light);
+            min-width: 3em;
+        }
+
+        .ktv-chip {
+            flex: none;
+            padding: 4px 12px;
+            border-radius: var(--border-radius-full);
+            border: 1px solid rgba(139, 38, 53, 0.15);
+            background: rgba(139, 38, 53, 0.06);
+            color: var(--color-burgundy);
+            font: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all var(--duration-fast) var(--ease-out);
+        }
+
+        .ktv-chip .count {
+            opacity: 0.6;
+            margin-left: 3px;
+            font-size: 0.75rem;
+        }
+
+        .ktv-chip[aria-pressed="true"] {
+            background: var(--gradient-warm);
+            border-color: transparent;
+            color: white;
+        }
+
+        .ktv-chip:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+
+        /* ---------- 视图切换 + 排序 ---------- */
+        .ktv-viewbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-xs);
+            margin: var(--space-md) 0 var(--space-sm);
+        }
+
+        .ktv-tabs {
+            display: inline-flex;
+            padding: 3px;
+            background: var(--color-cream-dark);
+            border-radius: var(--border-radius-full);
+        }
+
+        .ktv-tab {
+            padding: 6px 16px;
+            border: none;
+            border-radius: var(--border-radius-full);
+            background: transparent;
+            color: var(--color-ink-light);
+            font: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .ktv-tab[aria-selected="true"] {
+            background: white;
+            color: var(--color-burgundy);
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .ktv-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.85rem;
+            color: var(--color-ink-light);
+        }
+
+        .ktv-meta select {
+            font: inherit;
+            font-size: 0.85rem;
+            color: var(--color-ink);
+            background: var(--color-cream);
+            border: 1px solid var(--color-cream-dark);
+            border-radius: var(--border-radius-sm);
+            padding: 4px 6px;
+        }
+
+        /* ---------- 歌曲列表 ---------- */
+        .ktv-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ktv-song {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: 10px 12px;
+            border-radius: var(--border-radius-md);
+            border-bottom: 1px solid var(--color-cream-dark);
+            transition: background var(--duration-fast) var(--ease-out);
+        }
+
+        .ktv-song:hover { background: var(--color-cream); }
+
+        .ktv-song.picked {
+            background: rgba(201, 162, 39, 0.16);
+            box-shadow: inset 3px 0 0 var(--color-gold);
+            animation: ktvPulse 1.2s var(--ease-out) 2;
+        }
+
+        @keyframes ktvPulse {
+            50% { background: rgba(201, 162, 39, 0.32); }
+        }
+
+        .ktv-song-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .ktv-song-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-ink);
+        }
+
+        .ktv-song-sub {
+            font-size: 0.85rem;
+            color: var(--color-ink-light);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .ktv-song-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 4px;
+            max-width: 45%;
+        }
+
+        .ktv-song-tags span {
+            font-size: 0.75rem;
+            padding: 1px 8px;
+            border-radius: var(--border-radius-full);
+            background: rgba(107, 123, 110, 0.12);
+            color: var(--color-sage);
+            white-space: nowrap;
+        }
+
+        mark {
+            background: rgba(201, 162, 39, 0.3);
+            color: inherit;
+            border-radius: 2px;
+        }
+
+        /* ---------- 分组视图 ---------- */
+        .ktv-group {
+            border: 1px solid var(--color-cream-dark);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--space-xs);
+            overflow: hidden;
+        }
+
+        .ktv-group > summary {
+            display: flex;
+            align-items: baseline;
+            gap: var(--space-xs);
+            padding: 12px 16px;
+            cursor: pointer;
+            list-style: none;
+            background: var(--color-cream);
+            font-weight: 600;
+            color: var(--color-ink);
+        }
+
+        .ktv-group > summary::-webkit-details-marker { display: none; }
+
+        .ktv-group > summary::before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.7rem;
+            color: var(--color-burgundy);
+            transition: transform var(--duration-fast) var(--ease-out);
+        }
+
+        .ktv-group[open] > summary::before { transform: rotate(90deg); }
+
+        .ktv-group > summary .count {
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--color-ink-light);
+        }
+
+        .ktv-group .ktv-group {
+            border: none;
+            border-top: 1px solid var(--color-cream-dark);
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .ktv-group .ktv-group > summary {
+            background: transparent;
+            padding-left: 32px;
+            font-weight: 500;
+        }
+
+        .ktv-group .ktv-list { padding: 0 8px 4px; }
+
+        .ktv-empty {
+            text-align: center;
+            padding: var(--space-xl) 0;
+            color: var(--color-ink-light);
+        }
+
+        /* ---------- 深色模式 ---------- */
+        [data-theme="dark"] .ktv-toolbar { background: var(--surface); }
+        [data-theme="dark"] .ktv-tab[aria-selected="true"] { background: var(--surface-2); }
+        [data-theme="dark"] .ktv-chip { background: rgba(230, 138, 153, 0.1); border-color: rgba(230, 138, 153, 0.2); }
+        [data-theme="dark"] .ktv-chip[aria-pressed="true"] { color: white; border-color: transparent; }
+        [data-theme="dark"] .ktv-song-tags span { background: rgba(159, 178, 162, 0.14); }
+
+        @media (max-width: 768px) {
+            .ktv-toolbar {
+                margin: 0 calc(-1 * var(--space-md));
+                padding: var(--space-sm) var(--space-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ktv-random .label { display: none; }
+            .ktv-song { flex-wrap: wrap; gap: 4px 10px; }
+            .ktv-song-tags { max-width: 100%; justify-content: flex-start; order: 3; flex-basis: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div id="header-container"></div>
+    <div id="nav-container"></div>
+
+    <main id="main-content">
+        <section id="ktv" aria-labelledby="ktv-heading">
+            <h2 id="ktv-heading">KTV 歌单</h2>
+            <p class="ktv-subtitle" id="ktvSubtitle">不知道唱什么的时候，来这里翻一翻。</p>
+
+            <div class="ktv-toolbar" id="ktvToolbar">
+                <div class="ktv-search-row">
+                    <label class="ktv-search">
+                        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="search" id="ktvQuery" placeholder="搜歌名、歌手、专辑、拼音缩写" autocomplete="off" aria-label="搜索歌曲">
+                        <button type="button" class="ktv-clear" id="ktvClear" aria-label="清空搜索" hidden><i class="fas fa-xmark" aria-hidden="true"></i></button>
+                    </label>
+                    <button type="button" class="ktv-random" id="ktvRandom" title="从当前结果里随机挑一首">
+                        <i class="fas fa-dice" aria-hidden="true"></i> <span class="label">帮我挑一首</span>
+                    </button>
+                </div>
+                <div class="ktv-filters" id="ktvFilters"></div>
+            </div>
+
+            <div class="ktv-viewbar">
+                <div class="ktv-tabs" role="tablist" aria-label="浏览方式">
+                    <button type="button" class="ktv-tab" role="tab" data-view="all" aria-selected="true">全部</button>
+                    <button type="button" class="ktv-tab" role="tab" data-view="artist" aria-selected="false">按歌手</button>
+                    <button type="button" class="ktv-tab" role="tab" data-view="album" aria-selected="false">按专辑</button>
+                </div>
+                <div class="ktv-meta">
+                    <span id="ktvCount" aria-live="polite"></span>
+                    <select id="ktvSort" aria-label="排序方式">
+                        <option value="artist">按歌手</option>
+                        <option value="year">按年份</option>
+                        <option value="title">按歌名</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="ktvResults"></div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="components/load-components.js"></script>
+    <script>
+    (function () {
+        var state = { songs: [], query: '', view: 'all', sort: 'artist', filters: { lang: new Set(), tags: new Set() } };
+        var $ = function (id) { return document.getElementById(id); };
+        var collator = new Intl.Collator('zh-Hans-CN');
+
+        function esc(s) {
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        // 小写并去掉重音符号（"à" -> "a"），逐字符处理保证下标不变，方便高亮
+        function fold(s) {
+            return String(s).toLowerCase().split('').map(function (c) { return c.normalize('NFD').charAt(0); }).join('');
+        }
+
+        // 拼音首字母，如 "反方向的钟" -> "ffxdz"；pinyin-pro 没加载成功时返回空串
+        function initials(text) {
+            if (!window.pinyinPro) return '';
+            return window.pinyinPro.pinyin(text, { pattern: 'first', toneType: 'none', type: 'array' }).join('').toLowerCase();
+        }
+
+        function buildSearchIndex() {
+            state.songs.forEach(function (s) {
+                var fields = [s.title, s.artist, s.album];
+                s._text = fold(fields.concat(s.tags, s.note || '').join(' '));
+                s._py = fields.map(initials).join(' ');
+            });
+        }
+
+        function matches(s) {
+            var f = state.filters;
+            if (f.lang.size && !f.lang.has(s.lang)) return false;
+            for (var t of f.tags) { if (s.tags.indexOf(t) < 0) return false; }
+            var q = state.query;
+            if (!q) return true;
+            return s._text.indexOf(q) >= 0 || s._py.indexOf(q) >= 0;
+        }
+
+        function highlight(text) {
+            var q = state.query;
+            var i = q ? fold(text).indexOf(q) : -1;
+            if (i < 0) return esc(text);
+            return esc(text.slice(0, i)) + '<mark>' + esc(text.slice(i, i + q.length)) + '</mark>' + esc(text.slice(i + q.length));
+        }
+
+        function sortSongs(list) {
+            var by = {
+                artist: function (a, b) { return collator.compare(a.artist, b.artist) || a.year - b.year; },
+                year: function (a, b) { return a.year - b.year || collator.compare(a.title, b.title); },
+                title: function (a, b) { return collator.compare(a.title, b.title); }
+            }[state.sort];
+            return list.slice().sort(by);
+        }
+
+        function songItem(s, sub) {
+            return '<li class="ktv-song" data-id="' + s._id + '">' +
+                '<div class="ktv-song-main">' +
+                    '<div class="ktv-song-title">' + highlight(s.title) + '</div>' +
+                    '<div class="ktv-song-sub">' + sub + (s.note ? ' · ' + esc(s.note) : '') + '</div>' +
+                '</div>' +
+                '<div class="ktv-song-tags">' + s.tags.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') + '</div>' +
+            '</li>';
+        }
+
+        function albumLabel(s) { return '《' + highlight(s.album) + '》' + s.year; }
+
+        function groupBy(list, key) {
+            var map = new Map();
+            list.forEach(function (s) {
+                var k = key(s);
+                if (!map.has(k)) map.set(k, []);
+                map.get(k).push(s);
+            });
+            return map;
+        }
+
+        // 有搜索或筛选时分组默认展开，否则折叠
+        function groupHtml(label, count, inner) {
+            var open = (state.query || hasFilters()) ? ' open' : '';
+            return '<details class="ktv-group"' + open + '><summary>' + label + ' <span class="count">' + count + ' 首</span></summary>' + inner + '</details>';
+        }
+
+        function hasFilters() {
+            var f = state.filters;
+            return f.lang.size + f.tags.size > 0;
+        }
+
+        function renderResults() {
+            var list = sortSongs(state.songs.filter(matches));
+            $('ktvCount').textContent = list.length + ' / ' + state.songs.length + ' 首';
+            var out;
+
+            if (!list.length) {
+                out = '<p class="ktv-empty"><i class="fas fa-microphone-slash" aria-hidden="true"></i> 没有符合条件的歌</p>';
+            } else if (state.view === 'all') {
+                out = '<ul class="ktv-list">' + list.map(function (s) {
+                    return songItem(s, highlight(s.artist) + ' · ' + albumLabel(s));
+                }).join('') + '</ul>';
+            } else {
+                var artists = groupBy(list, function (s) { return s.artist; });
+                out = Array.from(artists.keys()).sort(collator.compare).map(function (artist) {
+                    var songs = artists.get(artist);
+                    var inner;
+                    if (state.view === 'artist') {
+                        inner = '<ul class="ktv-list">' + songs.map(function (s) { return songItem(s, albumLabel(s)); }).join('') + '</ul>';
+                    } else {
+                        var albums = groupBy(songs.slice().sort(function (a, b) { return a.year - b.year; }), function (s) { return s.album; });
+                        inner = Array.from(albums.keys()).map(function (album) {
+                            var as = albums.get(album);
+                            return groupHtml('《' + highlight(album) + '》<span class="count">' + as[0].year + '</span>', as.length,
+                                '<ul class="ktv-list">' + as.map(function (s) { return songItem(s, highlight(s.artist)); }).join('') + '</ul>');
+                        }).join('');
+                    }
+                    return groupHtml(highlight(artist), songs.length, inner);
+                }).join('');
+            }
+            $('ktvResults').innerHTML = out;
+            renderFilters();
+        }
+
+        // 筛选标签：显示在“其它条件不变时”能命中的数量，0 的置灰
+        function renderFilters() {
+            var groups = [
+                { key: 'lang', label: '语言', values: uniq(state.songs.map(function (s) { return s.lang; })) },
+                { key: 'tags', label: '标签', values: tagsByFrequency() }
+            ];
+            $('ktvFilters').innerHTML = groups.map(function (g) {
+                return '<div class="ktv-chip-row" role="group" aria-label="' + g.label + '"><span class="ktv-chip-label">' + g.label + '</span>' +
+                    g.values.map(function (v) {
+                        var on = state.filters[g.key].has(v);
+                        var n = countWith(g.key, v);
+                        return '<button type="button" class="ktv-chip" data-key="' + g.key + '" data-value="' + esc(v) + '" aria-pressed="' + on + '"' +
+                            (n === 0 && !on ? ' disabled' : '') + '>' + esc(v) + '<span class="count">' + n + '</span></button>';
+                    }).join('') + '</div>';
+            }).join('');
+        }
+
+        function countWith(key, value) {
+            var saved = state.filters[key];
+            var trial = new Set(key === 'tags' ? saved : []);
+            trial.add(value);
+            state.filters[key] = trial;
+            var n = state.songs.filter(matches).length;
+            state.filters[key] = saved;
+            return n;
+        }
+
+        function uniq(arr) { return Array.from(new Set(arr)); }
+
+        function tagsByFrequency() {
+            var freq = {};
+            state.songs.forEach(function (s) { s.tags.forEach(function (t) { freq[t] = (freq[t] || 0) + 1; }); });
+            return Object.keys(freq).sort(function (a, b) { return freq[b] - freq[a] || collator.compare(a, b); });
+        }
+
+        function pickRandom() {
+            var list = state.songs.filter(matches);
+            if (!list.length) return;
+            var s = list[Math.floor(Math.random() * list.length)];
+            // 切到“全部”视图，保证选中的歌可见
+            if (state.view !== 'all') setView('all');
+            var el = document.querySelector('.ktv-song[data-id="' + s._id + '"]');
+            if (!el) return;
+            document.querySelectorAll('.ktv-song.picked').forEach(function (e) { e.classList.remove('picked'); });
+            el.classList.add('picked');
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function setView(view) {
+            state.view = view;
+            document.querySelectorAll('.ktv-tab').forEach(function (t) {
+                t.setAttribute('aria-selected', t.dataset.view === view);
+            });
+            renderResults();
+        }
+
+        function bindEvents() {
+            $('ktvQuery').addEventListener('input', function (e) {
+                state.query = fold(e.target.value.trim());
+                $('ktvClear').hidden = !state.query;
+                renderResults();
+            });
+            $('ktvClear').addEventListener('click', function () {
+                $('ktvQuery').value = '';
+                state.query = '';
+                this.hidden = true;
+                $('ktvQuery').focus();
+                renderResults();
+            });
+            $('ktvFilters').addEventListener('click', function (e) {
+                var chip = e.target.closest('.ktv-chip');
+                if (!chip) return;
+                var set = state.filters[chip.dataset.key];
+                var v = chip.dataset.value;
+                set.has(v) ? set.delete(v) : set.add(v);
+                renderResults();
+            });
+            document.querySelector('.ktv-tabs').addEventListener('click', function (e) {
+                var tab = e.target.closest('.ktv-tab');
+                if (tab) setView(tab.dataset.view);
+            });
+            $('ktvSort').addEventListener('change', function (e) {
+                state.sort = e.target.value;
+                renderResults();
+            });
+            $('ktvRandom').addEventListener('click', pickRandom);
+        }
+
+        function init(data) {
+            state.songs = data.songs.map(function (s, i) { s._id = i; s.tags = s.tags || []; return s; });
+            var artistCount = uniq(state.songs.map(function (s) { return s.artist; })).length;
+            $('ktvSubtitle').textContent = '共 ' + state.songs.length + ' 首 · ' + artistCount + ' 位歌手。不知道唱什么的时候，来这里翻一翻。';
+            buildSearchIndex();
+            // 拼音库晚于歌单加载完时，补建拼音索引
+            var lib = $('pinyinLib');
+            if (lib && !window.pinyinPro) {
+                lib.addEventListener('load', function () {
+                    buildSearchIndex();
+                    if (state.query) renderResults();
+                });
+            }
+            bindEvents();
+            renderResults();
+        }
+
+        // 不等 window.load：外部字体/CDN 超时会让 load 迟迟不触发
+        fetch('assets/ktv-songs.json')
+            .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(init)
+            .catch(function (err) {
+                console.error('Failed to load songs:', err);
+                $('ktvResults').innerHTML = '<p class="ktv-empty">歌单加载失败，请刷新重试。</p>';
+            });
+    })();
+    </script>
+</body>
+
+</html>
