@@ -1,0 +1,54 @@
+.douban-page { max-width: 1100px; }
+.douban-page section { margin-bottom: 28px; }
+.douban-page .tracker-intro { padding: 16px 0 28px; border-bottom: 1px solid var(--color-cream-dark); background: transparent; box-shadow: none; }
+.tracker-intro .eyebrow::before { display: none; }
+.eyebrow { font-size: .73rem; letter-spacing: .19em; color: var(--color-burgundy); font-weight: 600; margin-bottom: 12px; }
+.tracker-intro h1 { font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.3; margin-bottom: 18px; }
+.intro-copy { color: var(--color-ink-light); font-size: 1.1rem; }
+.snapshot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 25px; font-size: .85rem; color: var(--color-ink-light); }
+.progress-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin: 32px 0; }
+.progress-card, .list-panel { background: var(--color-white); border: 1px solid var(--color-cream-dark); border-radius: 16px; padding: 28px; }
+.progress-card { border-top: 3px solid var(--color-burgundy); }
+.progress-card.book { border-top-color: var(--color-sage); }
+.progress-card h2 { font-size: 1.2rem; margin: 0 0 16px; }
+.progress-card h2::after, .panel-heading h2::after, .methodology h2::after { display: none; }
+.progress-number { font-size: 3.7rem; line-height: 1.15; letter-spacing: -.05em; font-weight: 600; color: var(--color-burgundy); }
+.book .progress-number { color: var(--color-sage); }
+.progress-number small { font-size: 1.1rem; color: var(--color-ink-light); letter-spacing: 0; font-weight: 400; }
+progress { display: block; width: 100%; height: 9px; margin: 22px 0 12px; appearance: none; border: 0; border-radius: 10px; background: var(--color-cream-dark); }
+progress::-webkit-progress-bar { background: var(--color-cream-dark); border-radius: 10px; }
+progress::-webkit-progress-value { background: var(--color-burgundy); border-radius: 10px; }
+progress::-moz-progress-bar { background: var(--color-burgundy); }
+.book progress::-webkit-progress-value { background: var(--color-sage); }
+.book progress::-moz-progress-bar { background: var(--color-sage); }
+.card-detail, .panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+.card-detail, .muted { color: var(--color-ink-light); font-size: .85rem; }
+.card-note { font-size: .82rem; color: var(--color-ink-light); margin-top: 16px; }
+.panel-heading h2 { margin: 0; font-size: 1.55rem; }
+.panel-heading { margin-bottom: 18px; }
+.panel-heading .eyebrow { margin-bottom: 7px; }
+.filters { display: flex; align-items: end; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+.douban-page label { display: flex; flex-direction: column; gap: 7px; font-size: .8rem; color: var(--color-ink-light); }
+.douban-page select, .douban-page input { border: 1px solid var(--color-cream-dark); background: var(--color-cream); color: var(--color-ink); border-radius: 7px; min-height: 44px; padding: 8px 12px; font: inherit; font-size: .9rem; max-width: 100%; }
+.search-label { flex: 1; min-width: 160px; }
+.collection-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--color-cream-dark); }
+.rank { color: var(--color-ink-light); font-size: .85rem; font-variant-numeric: tabular-nums; }
+.work-title { font-weight: 600; font-size: .95rem; }
+.work-meta { margin-top: 5px; font-size: .78rem; color: var(--color-ink-light); }
+.badge { font-size: .75rem; border-radius: 20px; padding: 5px 10px; color: var(--color-ink-light); background: var(--color-cream-dark); white-space: nowrap; }
+.badge.done { color: var(--color-sage); background: var(--color-cream); border: 1px solid var(--color-sage); }
+.row-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
+.preferences-tools { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; color: var(--color-ink-light); font-size: .8rem; padding-bottom: 12px; }
+.preferences-tools > div { display: flex; gap: 8px; }
+.douban-page button.preference-toggle, .preferences-tools button { font: inherit; font-size: .8rem; min-height: 44px; padding: 8px 12px; border: 1px solid var(--color-cream-dark); border-radius: 7px; background: var(--color-cream); color: var(--color-ink); cursor: pointer; }
+.douban-page button.preference-toggle[aria-pressed="true"] { border-color: var(--color-burgundy); color: var(--color-burgundy); }
+.preferences-status { font-size: .8rem; color: var(--color-ink-light); }
+@media (max-width: 640px) { .row-actions { flex-direction: column; align-items: flex-end; gap: 6px; } }
+.empty { padding: 30px 0; text-align: center; color: var(--color-ink-light); }
+.methodology { padding-top: 20px; color: var(--color-ink-light); font-size: .85rem; }
+.methodology h2 { font-size: 1.1rem; }
+.methodology p { margin: 12px 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+[hidden] { display: none !important; }
+[data-theme="dark"] .progress-card { background: var(--surface); }
+@media (max-width: 640px) { .progress-cards { grid-template-columns: 1fr; } .progress-card, .list-panel { padding: 20px; } .collection-row { gap: 8px; grid-template-columns: 28px 1fr auto; } .badge { padding: 4px 7px; } }

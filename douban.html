@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#8B2635">
+    <title>豆瓣 Top250 · Keyi Wang</title>
+    <meta name="description" content="我的豆瓣 Top250 电影与书籍完成清单。">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="canonical" href="https://wky32768.github.io/douban.html">
+    <link rel="stylesheet" href="assets/styles-optimized.css">
+    <link rel="stylesheet" href="assets/douban.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        var pageLastModified = 'October 2, 2026';
+        try { if ((localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+    </script>
+    <script src="assets/douban.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">跳至正文</a>
+    <div id="header-container"></div>
+    <div id="nav-container"></div>
+    <main id="main-content" class="douban-page">
+        <section class="tracker-intro">
+            <p class="eyebrow">THE LONG LIST / 250 × 2</p>
+            <h1>在电影与书页之间</h1>
+            <p class="intro-copy">慢慢看，慢慢读。留一份属于自己的电影与书籍清单。</p>
+            <div class="snapshot"><span id="updated">正在读取豆瓣快照…</span><a href="https://www.douban.com/people/257515089/" target="_blank" rel="noopener noreferrer">我的豆瓣 ↗</a></div>
+        </section>
+        <p id="load-status" role="status" hidden></p>
+        <div id="tracker" hidden>
+            <div class="progress-cards" id="progress-cards"></div>
+            <section class="list-panel" aria-labelledby="list-heading">
+                <div class="panel-heading"><div><p class="eyebrow">THE COLLECTION</p><h2 id="list-heading">Top250 清单</h2></div><p id="list-count" aria-live="polite"></p></div>
+                <div class="filters">
+                    <label>类别<select id="category"><option value="movie">电影</option><option value="book">书籍</option></select></label>
+                    <label>状态<select id="completion"><option value="done">已完成</option><option value="all">全部作品</option><option value="todo">待完成</option><option value="unwanted">不想看 / 不想读</option></select></label>
+                    <label class="search-label">搜索作品<input id="search" type="search" placeholder="输入片名或书名" autocomplete="off"></label>
+                </div>
+                <div class="preferences-tools">
+                    <p>「不想看 / 不想读」保存在当前浏览器，每月更新不会覆盖。换设备前可导出备份。</p>
+                    <div><button id="export-preferences" type="button">导出备份</button><button id="import-preferences" type="button">导入备份</button><input id="preferences-file" type="file" accept="application/json,.json" hidden></div>
+                </div>
+                <p id="preferences-status" class="preferences-status" role="status" aria-live="polite"></p>
+                <div id="collection" class="collection-list"></div>
+            </section>
+        </div>
+        <section class="methodology" aria-labelledby="method-heading">
+            <h2 id="method-heading">关于这份记录</h2>
+            <p>数据来自豆瓣公开的「看过 / 读过」记录与本次更新时的 Top250 榜单，以豆瓣条目 ID 精确匹配。书籍不同版本可能对应不同 ID，因此读过其他版本不自动计入；影视总记录可能包含剧集。</p>
+            <p>每月更新一次电影、书籍 Top250 榜单和我的「看过 / 读过」清单，完成进度按最新榜单计算。数据暂时无法获取时保留上一次完整记录。</p>
+            <a href="https://movie.douban.com/top250" target="_blank" rel="noopener noreferrer">电影榜单 ↗</a> · <a href="https://book.douban.com/top250" target="_blank" rel="noopener noreferrer">书籍榜单 ↗</a>
+        </section>
+    </main>
+    <div id="footer-container"></div>
+    <script src="components/load-components.js"></script>
+</body>
+</html>

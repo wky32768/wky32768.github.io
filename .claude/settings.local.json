@@ -3,7 +3,14 @@
     "allow": [
       "Bash(gh auth:*)",
       "mcp__plugin_playwright_playwright__browser_navigate",
-      "WebSearch"
+      "WebSearch",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_close",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "Skill(run)",
+      "mcp__plugin_playwright_playwright__browser_wait_for",
+      "mcp__plugin_playwright_playwright__browser_console_messages",
+      "mcp__plugin_playwright_playwright__browser_evaluate"
     ]
   }
 }
