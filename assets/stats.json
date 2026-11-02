@@ -2,29 +2,29 @@
   "bilibili": {
     "uid": "220871609",
     "url": "https://space.bilibili.com/220871609",
-    "follower": 1306,
-    "updated_at": "2026-10-26T09:06:20Z",
+    "follower": 1323,
+    "updated_at": "2026-11-02T11:23:57Z",
     "collection": {
       "season_id": "1560464",
       "url": "https://space.bilibili.com/220871609/lists/1560464?type=season",
       "videos": 24,
-      "views": 90874
+      "views": 92081
     },
     "featured": {
       "bvid": "BV18J3ezoEEj",
       "title": "语言杂谈共同体-挪威语",
-      "views": 1660
+      "views": 1670
     }
   },
   "scholar": {
     "id": "U_e6LikAAAAJ",
     "url": "https://scholar.google.com/citations?hl=en&user=U_e6LikAAAAJ",
-    "citations": 31,
-    "citations_5y": 31,
+    "citations": 33,
+    "citations_5y": 33,
     "h_index": 2,
     "h_index_5y": 2,
     "i10_index": 2,
     "i10_index_5y": 2,
-    "updated_at": "2026-10-19T09:04:40Z"
+    "updated_at": "2026-11-02T11:25:46Z"
   }
 }
