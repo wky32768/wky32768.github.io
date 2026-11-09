@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="THiNKER 思客教育 wordmark">
+  <rect width="240" height="240" rx="26" fill="#FFFFFF"/>
+  <rect x="8" y="8" width="224" height="224" rx="20" fill="none" stroke="#E4D7C7" stroke-width="2"/>
+
+  <!-- open book mark -->
+  <g transform="translate(120,54)">
+    <path d="M-34 -14 Q-17 -22 0 -14 Q17 -22 34 -14 V22 Q17 14 0 22 Q-17 14 -34 22 Z" fill="#17324D"/>
+    <path d="M0 -14 V22" stroke="#FFFFFF" stroke-width="2" opacity="0.85"/>
+    <path d="M-26 -8 Q-14 -13 -5 -9 M-26 0 Q-14 -5 -5 -1" fill="none" stroke="#FFFFFF" stroke-width="1.6" opacity="0.5" stroke-linecap="round"/>
+    <path d="M5 -9 Q14 -13 26 -8 M5 -1 Q14 -5 26 0" fill="none" stroke="#FFFFFF" stroke-width="1.6" opacity="0.5" stroke-linecap="round"/>
+    <circle cx="30" cy="-20" r="5" fill="#C9A227"/>
+  </g>
+
+  <text x="120" y="128" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="37" font-weight="700" fill="#17324D" letter-spacing="0.5">THiNKER</text>
+  <line x1="62" y1="144" x2="178" y2="144" stroke="#8B2635" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="120" y="181" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="27" font-weight="700" fill="#8B2635" letter-spacing="5">思客教育</text>
+  <text x="120" y="204" text-anchor="middle" font-family="'Source Sans 3', Arial, sans-serif" font-size="10.5" fill="#8B7A66" letter-spacing="2.5">THINKER EDUCATION</text>
+</svg>

@@ -6,3 +6,6 @@ homepage.png
 
 # Local Claude Code settings (machine-specific)
 .claude/settings.local.json
+
+# WorkBuddy local workspace data (memory notes, never publish)
+.workbuddy/

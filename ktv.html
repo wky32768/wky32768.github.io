@@ -11,22 +11,22 @@
     <meta name="author" content="Keyi Wang">
     <meta name="robots" content="noindex">
 
-    <link rel="canonical" href="https://wky32768.github.io/ktv">
+    <link rel="canonical" href="https://wky32768.github.io/ktv.html">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    <link rel="stylesheet" href="assets/styles-optimized.css">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/styles-optimized.css?v=6ea0818f38">
+
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+
+
     <!-- Google Fonts 在国内经常超时，用 media=print 技巧避免阻塞渲染 -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/vendor/fonts.css">
     <!-- 拼音首字母搜索（异步加载，未加载完时退化为普通搜索） -->
     <script id="pinyinLib" src="assets/vendor/pinyin-pro.js" async></script>
     <script>
-        var pageLastModified = 'September 14, 2026';
+        var pageLastModified = 'November 9, 2026';
         (function () {
             try {
                 var t = localStorage.getItem('theme');
@@ -390,6 +390,7 @@
             .ktv-song-tags { max-width: 100%; justify-content: flex-start; order: 3; flex-basis: 100%; }
         }
     </style>
+    <link rel="stylesheet" href="assets/site-refinements.css?v=f27e71d617">
 </head>
 
 <body>
@@ -438,7 +439,7 @@
     </main>
 
     <div id="footer-container"></div>
-    <script src="components/load-components.js"></script>
+    <script src="components/load-components.js?v=b60bbebc26"></script>
     <script>
     (function () {
         var TEMPOS = ['慢歌', '中板', '快歌'];

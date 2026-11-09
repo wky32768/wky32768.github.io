@@ -1,7 +1,7 @@
 // 动态加载HTML组件
 async function loadComponent(componentPath, containerId) {
     try {
-        const response = await fetch(componentPath);
+        const response = await fetch(componentPath, { cache: 'no-cache' });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -81,113 +81,51 @@ function setFooterYear() {
     }
 }
 
-// 设置页面最后修改日期（优先使用文件真实修改时间，自动更新）
+// Use the editorial date, rather than a file timestamp changed by deployment.
 function setLastModifiedDate() {
-    let text = (typeof pageLastModified !== 'undefined') ? pageLastModified : '';
-
-    // document.lastModified 反映 HTML 文件的最后修改时间（本地服务器 / GitHub Pages 均可用）
-    try {
-        const d = new Date(document.lastModified);
-        if (!isNaN(d.getTime()) && d.getFullYear() > 1970) {
-            text = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-        }
-    } catch (e) {}
-
-    const lastModifiedSpan = document.getElementById('lastModifiedDate');
-    if (lastModifiedSpan) {
-        lastModifiedSpan.textContent = text;
-        return;
-    }
-    // 兼容旧的 .last-modified 结构
-    const lastModifiedElement = document.querySelector('.last-modified');
-    if (lastModifiedElement && text) {
-        lastModifiedElement.textContent = 'Last Modified: ' + text;
-    }
-}
-
-// 访客计数（不蒜子）。页脚是 innerHTML 注入的，其中的 <script> 不会执行，
-// 所以在这里手动加载，并且只有拿到数字后才把整行显示出来。
-function setupVisitorCounter() {
-    const counter = document.getElementById('siteCounter');
-    if (!counter) return;
-
-    const script = document.createElement('script');
-    script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-    script.async = true;
-    document.head.appendChild(script);
-
-    const pv = document.getElementById('busuanzi_container_site_pv');
-    const uv = document.getElementById('busuanzi_container_site_uv');
-    const filled = (container) => {
-        const value = container && container.querySelector('span');
-        return !!(value && value.textContent.trim());
-    };
-
-    const deadline = Date.now() + 8000;
-    (function poll() {
-        if (filled(pv) || filled(uv)) {
-            // 只显示真正拿到数字的那部分
-            if (!filled(pv)) { pv.remove(); document.querySelector('.counter-sep')?.remove(); }
-            if (!filled(uv)) { uv.remove(); document.querySelector('.counter-sep')?.remove(); }
-            counter.hidden = false;
-            return;
-        }
-        if (Date.now() < deadline) setTimeout(poll, 300);
-    })();
+    const target = document.getElementById('lastModifiedDate');
+    if (!target) return;
+    const value = typeof pageLastModified !== 'undefined' ? pageLastModified : '';
+    if (value) target.textContent = value;
+    else target.closest('.last-modified')?.remove();
 }
 
 // 移动端菜单切换
 function setupMobileMenu() {
-    const navToggle = document.getElementById('navToggle');
-    const navSection = document.getElementById('navSection');
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navSection');
     const nav = document.querySelector('nav');
-
-    if (navToggle && navSection && nav) {
-        // 设置 aria 属性
-        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-label', 'Toggle navigation menu');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navSection.setAttribute('aria-hidden', 'true');
-
-        navToggle.addEventListener('click', function() {
-            const expanded = navToggle.classList.toggle('active');
-            navSection.classList.toggle('active');
-            navToggle.setAttribute('aria-expanded', expanded);
-            navSection.setAttribute('aria-hidden', !expanded);
-        });
-
-        // 点击链接后关闭菜单
-        const navLinks = navSection.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navToggle.classList.remove('active');
-                navSection.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navSection.setAttribute('aria-hidden', 'true');
-            });
-        });
-
-        // 点击页面其他区域关闭菜单
-        document.addEventListener('click', function(event) {
-            if (!nav.contains(event.target)) {
-                navToggle.classList.remove('active');
-                navSection.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navSection.setAttribute('aria-hidden', 'true');
-            }
-        });
-
-        // ESC 键关闭菜单
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && navSection.classList.contains('active')) {
-                navToggle.classList.remove('active');
-                navSection.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navSection.setAttribute('aria-hidden', 'true');
-                navToggle.focus();
-            }
-        });
+    if (!toggle || !menu || !nav) return;
+    const mobile = window.matchMedia('(max-width: 1024px)');
+    toggle.setAttribute('aria-label', 'Toggle navigation menu');
+    function sync() {
+        const hidden = mobile.matches && !menu.classList.contains('active');
+        menu.setAttribute('aria-hidden', String(hidden));
+        menu.inert = hidden;
     }
+    function close() {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        sync();
+    }
+    toggle.addEventListener('click', () => {
+        const expanded = menu.classList.toggle('active');
+        toggle.classList.toggle('active', expanded);
+        toggle.setAttribute('aria-expanded', String(expanded));
+        sync();
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+    document.addEventListener('click', event => { if (!nav.contains(event.target)) close(); });
+    document.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        if (mobile.matches && menu.classList.contains('active')) {
+            close();
+            toggle.focus();
+        }
+    });
+    mobile.addEventListener('change', close);
+    close();
 }
 
 // 返回顶部按钮
@@ -247,38 +185,10 @@ document.addEventListener('DOMContentLoaded', function() {
         setupThemeToggle();
         setFooterYear();
         setLastModifiedDate();
-        setupVisitorCounter();
         setupBackToTop();
         initAnimations();
-        setupScrollReveal();
     });
 });
-
-// 滚动入场动画（用 JS 加 .reveal，关闭 JS 时内容照常可见）
-function setupScrollReveal() {
-    if (!('IntersectionObserver' in window)) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const targets = document.querySelectorAll(
-        '.publication-card, .timeline-item, .award-card, .friend-card, .news-item, .internship-card, .skill-group'
-    );
-    if (!targets.length) return;
-
-    const observer = new IntersectionObserver(function (entries, obs) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                obs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    targets.forEach(function (el, i) {
-        el.classList.add('reveal');
-        el.style.transitionDelay = (Math.min(i, 6) * 60) + 'ms';
-        observer.observe(el);
-    });
-}
 
 // 初始化动画
 function initAnimations() {
@@ -300,3 +210,60 @@ function initAnimations() {
         link.style.animationDelay = (index * 0.08 + 0.5) + 's';
     });
 }
+
+// Full-size publication figures, with native Escape and focus restoration.
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.citation-toggle').forEach(button => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        if (!panel) return;
+        button.addEventListener('click', () => {
+            panel.hidden = !panel.hidden;
+            button.setAttribute('aria-expanded', String(!panel.hidden));
+        });
+    });
+    document.querySelectorAll('.citation-copy').forEach(button => {
+        button.addEventListener('click', async () => {
+            const panel = button.closest('.citation-panel');
+            const text = panel.querySelector('code').textContent;
+            const feedback = panel.querySelector('.citation-feedback');
+            let copied = false;
+            try {
+                await navigator.clipboard.writeText(text);
+                copied = true;
+            } catch (error) {
+                const field = document.createElement('textarea');
+                field.value = text;
+                field.style.cssText = 'position:fixed;left:-9999px;top:0';
+                document.body.append(field);
+                field.select();
+                try { copied = document.execCommand('copy'); } catch (copyError) {}
+                field.remove();
+                button.focus();
+            }
+            feedback.textContent = copied ? 'Citation copied to clipboard.' : 'Copy was unavailable. Select the citation text and copy it manually.';
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dialog = document.getElementById('figure-dialog');
+    if (!dialog) return;
+    const image = document.getElementById('figure-dialog-image');
+    const title = document.getElementById('figure-dialog-title');
+    let figureOpener = null;
+    document.querySelectorAll('.figure-trigger').forEach(button => {
+        const original = button.querySelector('img');
+        const heading = button.closest('.publication-card').querySelector('.publication-title').textContent.trim();
+        button.setAttribute('aria-label', 'View figure: ' + heading);
+        button.addEventListener('click', () => {
+            figureOpener = button;
+            image.src = original.src;
+            image.alt = original.alt;
+            title.textContent = heading;
+            dialog.showModal();
+        });
+    });
+    dialog.querySelector('.figure-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => figureOpener?.focus());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+});

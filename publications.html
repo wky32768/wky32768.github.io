@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#8B2635" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#15110E" media="(prefers-color-scheme: dark)">
-    <meta name="description" content="Publications by Keyi Wang, a postgraduate student at Fudan University. Includes papers on LLM cognitive capabilities and patents on human posture restoration.">
+    <meta name="description" content="Research publications by Keyi Wang on LLM reasoning, evaluation, discourse-level instruction following, and agents.">
     <meta name="author" content="Keyi Wang">
     <meta name="robots" content="index, follow">
 
@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wky32768.github.io/publications.html">
     <meta property="og:title" content="Publications - Keyi Wang (王可逸)">
-    <meta property="og:description" content="Papers on LLM cognitive capabilities and patents on human posture restoration.">
+    <meta property="og:description" content="Papers on LLM reasoning, evaluation, instruction following, and agents.">
 
     <meta property="og:image" content="https://wky32768.github.io/assets/keyiwang.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -26,14 +26,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    <link rel="stylesheet" href="assets/styles-optimized.css">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/styles-optimized.css?v=6ea0818f38">
+
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+
+
+    <link rel="stylesheet" href="assets/vendor/fonts.css">
     <script>
-        var pageLastModified = 'April 3, 2026';
+        var pageLastModified = 'November 9, 2026';
         (function () {
             try {
                 var t = localStorage.getItem('theme');
@@ -42,9 +42,10 @@
             } catch (e) {}
         })();
     </script>
+    <link rel="stylesheet" href="assets/site-refinements.css?v=f27e71d617">
 </head>
 
-<body>
+<body class="academic-publications">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <div id="header-container"></div>
@@ -54,72 +55,188 @@
         <section id="publications" aria-labelledby="publications-heading">
             <h2 id="publications-heading">Publications</h2>
 
-            <!-- Removed entirely by assets/stats.js when Scholar data is unavailable. -->
+            <!-- Numbers are the last-known snapshot; assets/stats.js replaces them when it loads. -->
             <div class="stat-strip" data-stat-requires="scholar.citations" aria-label="Google Scholar metrics">
                 <a class="stat-pill" href="https://scholar.google.com/citations?hl=en&user=U_e6LikAAAAJ" target="_blank" rel="noopener noreferrer">
-                    <span class="stat-value" data-stat="scholar.citations">—</span>
+                    <span class="stat-value" data-stat="scholar.citations">38</span>
                     <span class="stat-label">Citations</span>
                 </a>
                 <span class="stat-pill">
-                    <span class="stat-value" data-stat="scholar.h_index">—</span>
+                    <span class="stat-value" data-stat="scholar.h_index">2</span>
                     <span class="stat-label">h-index</span>
                 </span>
                 <span class="stat-pill" data-stat-hide-zero="scholar.i10_index">
-                    <span class="stat-value" data-stat="scholar.i10_index">—</span>
+                    <span class="stat-value" data-stat="scholar.i10_index">2</span>
                     <span class="stat-label">i10-index</span>
                 </span>
                 <p class="stat-note">
                     <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                    Live from Google Scholar · updated <span data-stat-date="scholar.updated_at">weekly</span>
+                    Google Scholar · updated <span data-stat-date="scholar.updated_at">9 Nov 2026</span>
                 </p>
             </div>
 
             <div class="publications-container">
-                <article class="publication-card" id="pub-inslogicbench">
+                <article class="publication-card" id="pub-knowing-but-not-doing">
                     <div class="publication-image">
-                        <img src="assets/pub-inslogicbench.svg" alt="Argumentation graph flowing into a claim adjudication verdict" class="publication-photo" loading="lazy">
+                        <button class="figure-trigger" type="button" aria-label="View enlarged figure"><img src="assets/pub-knowing-but-not-doing.svg?v=20261109b" alt="Recognizing discourse constraints versus following them during generation" class="publication-photo" loading="lazy"><span class="figure-hint">View figure <i class="fas fa-expand" aria-hidden="true"></i></span></button>
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Conference Paper</span>
-                        <p class="authors">Jin Liu, Yunpeng Liu, <strong>Keyi Wang</strong>, Jie Shi, Xiao Xu, Wenkang Huang, Xingzhong Xu, Xin Liang, Yanghua Xiao</p>
-                        <h3 class="publication-title">InsLogicBench: An Argumentation Logic Grounded Benchmark for Complex Insurance Claims Adjudication</h3>
+                        <h3 class="publication-title">Knowing but Not Doing: Discourse-level Constraints Adherence of Large Language Models</h3>
+                        <p class="authors">Zhonghua Hong, Sihang Jiang, <strong>Keyi Wang</strong>, Xiaojun Meng, Jiansheng Wei, Jiaqing Liang, Yanghua Xiao</p>
                         <div class="venue-row">
-                            <span class="venue-badge venue-acl"><i class="fas fa-calendar-day" aria-hidden="true"></i> ACL 2026 Main</span>
-                            <span class="ccf-badge">CCF-A</span>
+                            <span class="venue-badge"><i class="fas fa-calendar-day" aria-hidden="true"></i> Findings of EMNLP 2026</span>
+                            <span class="ccf-badge">CCF-B</span>
                         </div>
-                        <p class="publication-meta">San Diego, CA · July 5–7, 2026</p>
-                        <!-- Add resource buttons once links are ready:
+                        <p class="publication-meta">Budapest, Hungary · October 2026</p>
                         <div class="publication-links">
-                            <a class="pub-link" href="PDF_URL" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
-                            <a class="pub-link" href="CODE_URL" target="_blank" rel="noopener noreferrer"><i class="fas fa-code" aria-hidden="true"></i> Code</a>
+                            <a class="pub-link" href="https://aclanthology.org/2026.findings-emnlp.1083/" target="_blank" rel="noopener noreferrer">Paper</a>
+                            <a class="pub-link" href="https://aclanthology.org/2026.findings-emnlp.1083.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+                            <button class="pub-link citation-toggle" type="button" aria-expanded="false" aria-controls="citation-knowing-but-not-doing">BibTeX</button>
                         </div>
-                        -->
+                    </div>
+                                    <div class="citation-panel" id="citation-knowing-but-not-doing" hidden>
+                        <div class="citation-toolbar"><span>BibTeX citation</span><button class="citation-copy" type="button"><i class="far fa-copy" aria-hidden="true"></i> Copy</button></div>
+                        <pre tabindex="0"><code>@inproceedings{hong-etal-2026-knowing,
+    title = &quot;Knowing but Not Doing: Discourse-level Constraints Adherence of Large Language Models&quot;,
+    author = &quot;Hong, Zhonghua  and
+      Jiang, Sihang  and
+      Wang, Keyi  and
+      Meng, Xiaojun  and
+      Wei, Jiansheng  and
+      Liang, Jiaqing  and
+      Xiao, Yanghua&quot;,
+    editor = &quot;Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond&quot;,
+    booktitle = &quot;Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2026&quot;,
+    month = oct,
+    year = &quot;2026&quot;,
+    address = &quot;Budapest, Hungary&quot;,
+    publisher = &quot;Association for Computational Linguistics&quot;,
+    url = &quot;https://aclanthology.org/2026.findings-emnlp.1083/&quot;,
+    doi = &quot;10.18653/2026.findings-emnlp.1083&quot;,
+    pages = &quot;22934--22949&quot;,
+    ISBN = &quot;979-8-89176-462-0&quot;
+}
+
+</code></pre>
+                        <p class="citation-feedback" role="status" aria-live="polite"></p>
                     </div>
                 </article>
                 <article class="publication-card" id="pub-immediate-inference">
                     <div class="publication-image">
-                        <img src="assets/pub-immediate-inference.svg" alt="The traditional square of opposition diagram from term logic" class="publication-photo" loading="lazy">
+                        <button class="figure-trigger" type="button" aria-label="View enlarged figure"><img src="assets/pub-immediate-inference.svg?v=6f38a38f34" alt="The traditional square of opposition diagram from term logic" class="publication-photo" loading="lazy"><span class="figure-hint">View figure <i class="fas fa-expand" aria-hidden="true"></i></span></button>
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Conference Paper</span>
-                        <p class="authors">Sihang Jiang, Zhiyu Lu, <strong>Keyi Wang</strong>, Jiaqing Liang, Yanghua Xiao, Xiaojun Meng, Jiansheng Wei</p>
                         <h3 class="publication-title">Immediate Inference: The Missing Foundation in Large Language Model Logical Reasoning</h3>
+                        <p class="authors">Sihang Jiang, Zhiyu Lu, <strong>Keyi Wang</strong>, Jiaqing Liang, Yanghua Xiao, Xiaojun Meng, Jiansheng Wei</p>
                         <div class="venue-row">
                             <span class="venue-badge venue-acl"><i class="fas fa-calendar-day" aria-hidden="true"></i> ACL 2026 Main</span>
                             <span class="oral-badge"><i class="fas fa-microphone" aria-hidden="true"></i> Oral</span>
                             <span class="ccf-badge">CCF-A</span>
                         </div>
                         <p class="publication-meta">San Diego, CA · July 5–7, 2026</p>
+                        <div class="publication-links">
+                            <a class="pub-link" href="https://aclanthology.org/2026.acl-long.808/" target="_blank" rel="noopener noreferrer">Paper</a>
+                            <a class="pub-link" href="https://aclanthology.org/2026.acl-long.808.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+
+                            <a class="pub-link" href="https://github.com/michaellu5475/IIBench" target="_blank" rel="noopener noreferrer">Dataset</a>
+                            <button class="pub-link citation-toggle" type="button" aria-expanded="false" aria-controls="citation-immediate-inference">BibTeX</button>
+                        </div>
+                    </div>
+                                    <div class="citation-panel" id="citation-immediate-inference" hidden>
+                        <div class="citation-toolbar"><span>BibTeX citation</span><button class="citation-copy" type="button"><i class="far fa-copy" aria-hidden="true"></i> Copy</button></div>
+                        <pre tabindex="0"><code>@inproceedings{jiang-etal-2026-immediate,
+    title = &quot;Immediate Inference: The Missing Foundation in Large Language Model Logical Reasoning&quot;,
+    author = &quot;Jiang, Sihang  and
+      Lu, Zhiyu  and
+      Wang, Keyi  and
+      Liang, Jiaqing  and
+      Xiao, Yanghua  and
+      Meng, Xiaojun  and
+      Wei, Jiansheng&quot;,
+    editor = &quot;Liakata, Maria  and
+      Moreira, Viviane P.  and
+      Zhang, Jiajun  and
+      Jurgens, David&quot;,
+    booktitle = &quot;Proceedings of the 64th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)&quot;,
+    month = jul,
+    year = &quot;2026&quot;,
+    address = &quot;San Diego, California, United States&quot;,
+    publisher = &quot;Association for Computational Linguistics&quot;,
+    url = &quot;https://aclanthology.org/2026.acl-long.808/&quot;,
+    doi = &quot;10.18653/v1/2026.acl-long.808&quot;,
+    pages = &quot;17766--17799&quot;,
+    ISBN = &quot;979-8-89176-390-6&quot;
+}
+
+</code></pre>
+                        <p class="citation-feedback" role="status" aria-live="polite"></p>
                     </div>
                 </article>
-                <article class="publication-card">
+                <article class="publication-card" id="pub-inslogicbench">
                     <div class="publication-image">
-                        <img src="assets/pub-aaai-cognitive.svg" alt="An iceberg of latent cognitive capability, its hidden depth quantified on a measuring gauge" class="publication-photo" loading="lazy">
+                        <button class="figure-trigger" type="button" aria-label="View enlarged figure"><img src="assets/pub-inslogicbench.svg?v=402e5eac4a" alt="Argumentation graph flowing into a claim adjudication verdict" class="publication-photo" loading="lazy"><span class="figure-hint">View figure <i class="fas fa-expand" aria-hidden="true"></i></span></button>
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Conference Paper</span>
+                        <h3 class="publication-title">InsLogicBench: An Argumentation Logic Grounded Benchmark for Complex Insurance Claims Adjudication</h3>
+                        <p class="authors">Jin Liu, Yunpeng Liu, <strong>Keyi Wang</strong>, Jie Shi, Xiao Xu, Wenkang Huang, Xingzhong Xu, Xin Liang, Yanghua Xiao</p>
+                        <div class="venue-row">
+                            <span class="venue-badge venue-acl"><i class="fas fa-calendar-day" aria-hidden="true"></i> ACL 2026 Main</span>
+                            <span class="ccf-badge">CCF-A</span>
+                        </div>
+                        <p class="publication-meta">San Diego, CA · July 5–7, 2026</p>
+                        <div class="publication-links">
+                            <a class="pub-link" href="https://aclanthology.org/2026.acl-long.1035/" target="_blank" rel="noopener noreferrer">Paper</a>
+                            <a class="pub-link" href="https://aclanthology.org/2026.acl-long.1035.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+
+                            <button class="pub-link citation-toggle" type="button" aria-expanded="false" aria-controls="citation-inslogicbench">BibTeX</button>
+                        </div>
+                    </div>
+                                    <div class="citation-panel" id="citation-inslogicbench" hidden>
+                        <div class="citation-toolbar"><span>BibTeX citation</span><button class="citation-copy" type="button"><i class="far fa-copy" aria-hidden="true"></i> Copy</button></div>
+                        <pre tabindex="0"><code>@inproceedings{liu-etal-2026-inslogicbench,
+    title = &quot;{I}ns{L}ogic{B}ench: An Argumentation Logic Grounded Benchmark for Complex Insurance Claims Adjudication&quot;,
+    author = &quot;Liu, Jin  and
+      Liu, Yunpeng  and
+      Wang, Keyi  and
+      Shi, Jie  and
+      Xu, Xiao  and
+      Huang, Wenkang  and
+      Xu, Xingzhong  and
+      Liang, Xin  and
+      Xiao, Yanghua&quot;,
+    editor = &quot;Liakata, Maria  and
+      Moreira, Viviane P.  and
+      Zhang, Jiajun  and
+      Jurgens, David&quot;,
+    booktitle = &quot;Proceedings of the 64th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)&quot;,
+    month = jul,
+    year = &quot;2026&quot;,
+    address = &quot;San Diego, California, United States&quot;,
+    publisher = &quot;Association for Computational Linguistics&quot;,
+    url = &quot;https://aclanthology.org/2026.acl-long.1035/&quot;,
+    doi = &quot;10.18653/v1/2026.acl-long.1035&quot;,
+    pages = &quot;22592--22619&quot;,
+    ISBN = &quot;979-8-89176-390-6&quot;
+}
+
+</code></pre>
+                        <p class="citation-feedback" role="status" aria-live="polite"></p>
+                    </div>
+                </article>
+                <article class="publication-card" id="pub-measuring-the-unmeasurable">
+                    <div class="publication-image">
+                        <button class="figure-trigger" type="button" aria-label="View enlarged figure"><img src="assets/pub-aaai-cognitive.svg" alt="An iceberg of latent cognitive capability, its hidden depth quantified on a measuring gauge" class="publication-photo" loading="lazy"><span class="figure-hint">View figure <i class="fas fa-expand" aria-hidden="true"></i></span></button>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Conference Paper</span>
+                        <h3 class="publication-title">Measuring the Unmeasurable: Unveiling Latent Cognitive Capabilities of LLM</h3>
                         <p class="authors">Cui Danxin, Sihang Jiang, <strong>Keyi Wang</strong>, Zhiyi Duan, Yanghua Xiao, Bi Yude, Jiaqing Liang, Minggui He, Shimin Tao, Yilun Liu</p>
-                        <h3 class="publication-title">Measuring the Unmeasurable: Unveiling Latent Cognitive Capabilities of LLMs</h3>
                         <div class="venue-row">
                             <span class="venue-badge venue-aaai"><i class="fas fa-calendar-day" aria-hidden="true"></i> AAAI 2026</span>
                             <span class="poster-badge"><i class="fas fa-image" aria-hidden="true"></i> Poster</span>
@@ -128,20 +245,118 @@
                         <p class="publication-meta">Singapore · January 24, 2026</p>
                         <div class="publication-links">
                             <a class="pub-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/40302" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Paper</a>
+
+                            <a class="pub-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/40302/44263" target="_blank" rel="noopener noreferrer">PDF</a>
+                            <a class="pub-link" href="https://github.com/CogProbe/CogEval" target="_blank" rel="noopener noreferrer">Dataset</a>
+                            <button class="pub-link citation-toggle" type="button" aria-expanded="false" aria-controls="citation-measuring-the-unmeasurable">BibTeX</button>
                         </div>
+                    </div>
+                                    <div class="citation-panel" id="citation-measuring-the-unmeasurable" hidden>
+                        <div class="citation-toolbar"><span>BibTeX citation</span><button class="citation-copy" type="button"><i class="far fa-copy" aria-hidden="true"></i> Copy</button></div>
+                        <pre tabindex="0"><code>@article{wang-coauthors-2026-measuring-the-unmeasurable,
+  title = {Measuring the Unmeasurable: Unveiling Latent Cognitive Capabilities of LLM},
+  author = {Danxin, Cui and Jiang, Sihang and Wang, Keyi and Duan, Zhiyi and Xiao, Yanghua and Yude, Bi and Liang, Jiaqing and He, Minggui and Tao, Shimin and Liu, Yilun},
+  year = {2026},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume = {40},
+  number = {36},
+  pages = {30485--30493},
+  doi = {10.1609/aaai.v40i36.40302},
+  url = {https://ojs.aaai.org/index.php/AAAI/article/view/40302}
+}
+</code></pre>
+                        <p class="citation-feedback" role="status" aria-live="polite"></p>
+                    </div>
+                </article>
+
+            </div>
+
+            <h3 class="pub-group-heading" id="preprints-heading">Technical Reports</h3>
+            <div class="publications-container" aria-labelledby="preprints-heading">
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <button class="figure-trigger" type="button" aria-label="View enlarged figure"><img src="assets/pub-genericagent.svg" alt="A verbose context compressed into a dense, token-efficient core by a self-evolving agent" class="publication-photo" loading="lazy"><span class="figure-hint">View figure <i class="fas fa-expand" aria-hidden="true"></i></span></button>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Technical Report</span>
+                        <h3 class="publication-title">GenericAgent: A Token-Efficient Self-Evolving LLM Agent via Contextual Information Density Maximization</h3>
+                        <p class="authors">Jiaqing Liang, Jinyi Han, Weijia Li, Xinyi Wang, Zhoujia Zhang, Zishang Jiang, Ying Liao, Tingyun Li, Ying Huang, Hao Shen, Hanyu Wu, Fang Guo, <strong>Keyi Wang</strong>, Zhonghua Hong, Zhiyu Lu, Lipeng Ma, Sihang Jiang, Yanghua Xiao</p>
+                        <div class="venue-row">
+                            <span class="venue-badge"><i class="fas fa-file-lines" aria-hidden="true"></i> arXiv:2604.17091</span>
+                        </div>
+                        <p class="publication-meta">April 2026</p>
+                        <div class="publication-links">
+                            <a class="pub-link" href="https://arxiv.org/abs/2604.17091" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> arXiv</a>
+                            <a class="pub-link" href="https://arxiv.org/pdf/2604.17091" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
+
+                            <a class="pub-link" href="https://github.com/lsdefine/GenericAgent" target="_blank" rel="noopener noreferrer">Code</a>
+                            <button class="pub-link citation-toggle" type="button" aria-expanded="false" aria-controls="citation-genericagent">BibTeX</button>
+                        </div>
+                    </div>
+                                    <div class="citation-panel" id="citation-genericagent" hidden>
+                        <div class="citation-toolbar"><span>BibTeX citation</span><button class="citation-copy" type="button"><i class="far fa-copy" aria-hidden="true"></i> Copy</button></div>
+                        <pre tabindex="0"><code>@misc{wang-coauthors-2026-genericagent,
+  title = {GenericAgent: A Token-Efficient Self-Evolving LLM Agent via Contextual Information Density Maximization (V1.0)},
+  author = {Liang, Jiaqing and Han, Jinyi and Li, Weijia and Wang, Xinyi and Zhang, Zhoujia and Jiang, Zishang and Liao, Ying and Li, Tingyun and Huang, Ying and Shen, Hao and Wu, Hanyu and Guo, Fang and Wang, Keyi and Hong, Zhonghua and Lu, Zhiyu and Ma, Lipeng and Jiang, Sihang and Xiao, Yanghua},
+  year = {2026},
+  eprint = {2604.17091},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  url = {https://arxiv.org/abs/2604.17091}
+}
+</code></pre>
+                        <p class="citation-feedback" role="status" aria-live="polite"></p>
                     </div>
                 </article>
                 <article class="publication-card">
                     <div class="publication-image">
-                        <img src="assets/pub-patent.svg" alt="A degraded human posture restored to a clean pose by a diffusion model" class="publication-photo" loading="lazy">
+                        <button class="figure-trigger" type="button" aria-label="View enlarged figure"><img src="assets/pub-sea-eval.svg" alt="A rising capability trajectory of a self-evolving agent, evaluated continuously across tasks beyond single episodes" class="publication-photo" loading="lazy"><span class="figure-hint">View figure <i class="fas fa-expand" aria-hidden="true"></i></span></button>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Technical Report</span>
+                        <h3 class="publication-title">SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment</h3>
+                        <p class="authors">Sihang Jiang, Lipeng Ma, Zhonghua Hong, <strong>Keyi Wang</strong>, Zhiyu Lu, Tengfei Wang, Shisong Chen, Jinghao Zhang, Tianjun Pan, Weijia Li, Jiaqing Liang, Yanghua Xiao</p>
+                        <div class="venue-row">
+                            <span class="venue-badge"><i class="fas fa-file-lines" aria-hidden="true"></i> arXiv:2604.08988</span>
+                        </div>
+                        <p class="publication-meta">April 2026</p>
+                        <div class="publication-links">
+                            <a class="pub-link" href="https://arxiv.org/abs/2604.08988" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> arXiv</a>
+                            <a class="pub-link" href="https://arxiv.org/pdf/2604.08988" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
+
+                            <a class="pub-link" href="https://leaperovo.github.io/SEA-Eval/" target="_blank" rel="noopener noreferrer">Project</a>
+                            <button class="pub-link citation-toggle" type="button" aria-expanded="false" aria-controls="citation-sea-eval">BibTeX</button>
+                        </div>
+                    </div>
+                                    <div class="citation-panel" id="citation-sea-eval" hidden>
+                        <div class="citation-toolbar"><span>BibTeX citation</span><button class="citation-copy" type="button"><i class="far fa-copy" aria-hidden="true"></i> Copy</button></div>
+                        <pre tabindex="0"><code>@misc{wang-coauthors-2026-sea-eval,
+  title = {SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment},
+  author = {Jiang, Sihang and Ma, Lipeng and Hong, Zhonghua and Wang, Keyi and Lu, Zhiyu and Wang, Tengfei and Chen, Shisong and Zhang, Jinghao and Pan, Tianjun and Li, Weijia and Liang, Jiaqing and Xiao, Yanghua},
+  year = {2026},
+  eprint = {2604.08988},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url = {https://arxiv.org/abs/2604.08988}
+}
+</code></pre>
+                        <p class="citation-feedback" role="status" aria-live="polite"></p>
+                    </div>
+                </article>
+            </div>
+            <h3 class="pub-group-heading" id="patents-heading">Patents</h3>
+            <div class="publications-container" aria-labelledby="patents-heading">
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <button class="figure-trigger" type="button" aria-label="View enlarged figure"><img src="assets/pub-patent.svg" alt="A degraded human posture restored to a clean pose by a diffusion model" class="publication-photo" loading="lazy"><span class="figure-hint">View figure <i class="fas fa-expand" aria-hidden="true"></i></span></button>
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Patent</span>
-                        <p class="authors">Ding Chen, <strong>Keyi Wang</strong>, Zhou Yu, Jun Yu</p>
                         <h3 class="publication-title"><a
                             href="https://kns.cnki.net/kcms2/article/abstract?v=db-EbSzo3ogQQ2suhcDkqH9SG6WMZMtoP-UEqjPJ5R-ZD2f3vMr_SVaDm9J2U9Kf5ZHrSSXUojANLN1z7NpOtcXUIsbTfL9A82s50WDhG2wQvBrOO-IHhKgOPnHdBNS3G10nU4CN_E9hBiFN-CQX1PuzJPp3rtuSyxU6WfOyzh5rwHFVAKfQPA==&uniplatform=NZKPT&language=CHS" target="_blank" rel="noopener noreferrer">
                             A Human Posture Scene Restoration Method Based on the Adaptive Network Enhanced Diffusion Model (一種基於適配網絡增强擴散模型的人體姿態場景恢復方法)
                         </a></h3>
+                        <p class="authors">Ding Chen, <strong>Keyi Wang</strong>, Zhou Yu, Jun Yu</p>
                         <span class="venue-badge"><i class="fas fa-file-contract" aria-hidden="true"></i> Patent · CN202311293866.1</span>
                         <p class="publication-meta">Granted · January 12, 2024</p>
                         <div class="publication-links">
@@ -150,51 +365,15 @@
                     </div>
                 </article>
             </div>
-
-            <h3 class="pub-group-heading" id="preprints-heading">Preprints</h3>
-            <div class="publications-container" aria-labelledby="preprints-heading">
-                <article class="publication-card">
-                    <div class="publication-image">
-                        <img src="assets/pub-genericagent.svg" alt="A verbose context compressed into a dense, token-efficient core by a self-evolving agent" class="publication-photo" loading="lazy">
-                    </div>
-                    <div class="publication-content">
-                        <span class="publication-type">Preprint</span>
-                        <p class="authors">Jiaqing Liang, Jinyi Han, Weijia Li, Xinyi Wang, Zhoujia Zhang, Zishang Jiang, Ying Liao, Tingyun Li, Ying Huang, Hao Shen, Hanyu Wu, Fang Guo, <strong>Keyi Wang</strong>, Zhonghua Hong, Zhiyu Lu, Lipeng Ma, Sihang Jiang, Yanghua Xiao</p>
-                        <h3 class="publication-title">GenericAgent: A Token-Efficient Self-Evolving LLM Agent via Contextual Information Density Maximization</h3>
-                        <div class="venue-row">
-                            <span class="venue-badge"><i class="fas fa-file-lines" aria-hidden="true"></i> arXiv:2604.17091</span>
-                        </div>
-                        <p class="publication-meta">April 2026</p>
-                        <div class="publication-links">
-                            <a class="pub-link" href="https://arxiv.org/abs/2604.17091" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> arXiv</a>
-                            <a class="pub-link" href="https://arxiv.org/pdf/2604.17091" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="publication-card">
-                    <div class="publication-image">
-                        <img src="assets/pub-sea-eval.svg" alt="A rising capability trajectory of a self-evolving agent, evaluated continuously across tasks beyond single episodes" class="publication-photo" loading="lazy">
-                    </div>
-                    <div class="publication-content">
-                        <span class="publication-type">Preprint</span>
-                        <p class="authors">Sihang Jiang, Lipeng Ma, Zhonghua Hong, <strong>Keyi Wang</strong>, Zhiyu Lu, Tengfei Wang, Shisong Chen, Jinghao Zhang, Tianjun Pan, Weijia Li, Jiaqing Liang, Yanghua Xiao</p>
-                        <h3 class="publication-title">SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment</h3>
-                        <div class="venue-row">
-                            <span class="venue-badge"><i class="fas fa-file-lines" aria-hidden="true"></i> arXiv:2604.08988</span>
-                        </div>
-                        <p class="publication-meta">April 2026</p>
-                        <div class="publication-links">
-                            <a class="pub-link" href="https://arxiv.org/abs/2604.08988" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> arXiv</a>
-                            <a class="pub-link" href="https://arxiv.org/pdf/2604.08988" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
         </section>
     </main>
 
+    <dialog id="figure-dialog" class="figure-dialog" aria-labelledby="figure-dialog-title">
+        <div class="figure-dialog-heading"><p id="figure-dialog-title"></p><button class="figure-close" type="button" aria-label="Close enlarged figure">×</button></div>
+        <img id="figure-dialog-image" alt="">
+    </dialog>
     <div id="footer-container"></div>
-    <script src="components/load-components.js"></script>
+    <script src="components/load-components.js?v=b60bbebc26"></script>
     <script src="assets/stats.js" defer></script>
 </body>
 
